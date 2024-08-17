@@ -19,7 +19,7 @@
             <div class="logo-text">NaphatDev</div>
         </div>
         <nav>
-            <a href="goal">เป้าหมาย</a>
+            <a href="#goal">เป้าหมาย</a>
         </nav>
     </header>
 
@@ -121,6 +121,53 @@
         <div class="m"></div>
     </div> -->
 
+
+
+    <!-- About Me Section -->
+    <section id="about-me">
+        <div class="about-me-content">
+            <div class="about-me-text">
+                <h1>นายณภัทร ปัญโญ (Mr. Naphat Panyo)</h1>
+                <p>
+                    ผมชื่อนายณภัทร ปัญโญ อายุ <span id="age"></span> ปัจจุบันศึกษาอยู่ที่โรงเรียนดาราวิทยาลัย
+                    ผมมีความสนใจและความชำนาญในด้านเทคโนโลยีและวิศวกรรม ผมเคยเข้าร่วมการแข่งขันหุ่นยนต์ของ 
+                    First Tech Challenge Thailand ในปี 2023 และปี 2024 ซึ่งเป็นประสบการณ์ที่สำคัญและช่วยพัฒนาทักษะทางด้านเทคนิคและการทำงานเป็นทีมของผม
+                    นอกจากนี้ ผมยังเคยผ่านการฝึกงานจากกองช่างในเทศบาลตำบลเวียงยอง อำเภอเมือง จังหวัดลำพูน
+                    ซึ่งทำให้ผมได้เรียนรู้และเข้าใจการทำงานในหน่วยงานภาครัฐและการประยุกต์ใช้ทักษะวิศวกรรมในชีวิตจริง
+                </p>
+                <p>วันเกิด: 30 เมษายน พ.ศ.2550 (<span id="age">17 ปี</span>)</p>
+                <p>แผนการเรียน: วิทยาศาสตร์-คณิตศาสตร์ เตรียมวิศวกรรมศาสตร์</p>
+
+                <!-- Academic Results Table -->
+                <table id="academic-results">
+                    <thead>
+                        <tr>
+                            <th>ระดับชั้น</th>
+                            <th>ภาคเรียน</th>
+                            <th>รายวิชา</th>
+                            <th>หน่วยกิต</th>
+                            <th>ผลประเมิน</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Example row, add more rows as needed -->
+                        <tr>
+                            <td>มัธยมศึกษาปีที่ 4</td>
+                            <td>1</td>
+                            <td>คณิตศาสตร์</td>
+                            <td>1</td>
+                            <td>4</td>
+                        </tr>
+                        <!-- Repeat similar rows for all 68 entries -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="about-me-image">
+                <img src="https://i.postimg.cc/7YGJqSZk/My-Profile.png" alt="Profile Image">
+            </div>
+        </div>
+    </section>
+
     
 
     <script>
@@ -163,6 +210,21 @@
             const fullMenu = document.getElementById('fullMenu');
             fullMenu.classList.toggle('show');
         }
+
+        // Calculate age dynamically based on the birthdate
+        function calculateAge() {
+            const birthdate = new Date('2007-04-30'); // Set birthdate here
+            const today = new Date();
+            let age = today.getFullYear() - birthdate.getFullYear();
+            const monthDifference = today.getMonth() - birthdate.getMonth();
+            if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthdate.getDate())) {
+                age--;
+            }
+            document.getElementById('age').textContent = `${age} ปี`;
+        }
+
+        // Call the function to set the age when the page loads
+        window.onload = calculateAge;
 
     </script>
 
