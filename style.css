@@ -281,3 +281,66 @@ text-decoration: none; /* ปิดการแสดงเส้นใต้เ
 .full-menu ul li a:hover {
     background: #f0f0f0;
 }
+
+/* Style for the About Me Section */
+#about-me {
+    padding: 20px;
+    background: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.about-me-content {
+    display: flex;
+    align-items: flex-start;
+    max-width: 1000px; /* Adjust as needed */
+    width: 100%;
+    margin: auto;
+}
+
+.about-me-text {
+    flex: 2;
+    padding-right: 20px; /* Space between text and image */
+}
+
+.about-me-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-me-image img {
+    width: 100%;
+    height: auto;
+    max-width: 300px; /* Adjust as needed */
+    aspect-ratio: 3 / 4; /* Maintain 3:4 aspect ratio */
+}
+
+/* Style for the Academic Results Table */
+#academic-results {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#academic-results th, #academic-results td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#academic-results th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+/* Style for paragraphs in the About Me Section */
+#about-me p {
+    margin-bottom: 10px; /* Space between paragraphs */
+    line-height: 1.6; /* Line height for better readability */
+    text-align: justify; /* Justify text for full-width alignment */
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
