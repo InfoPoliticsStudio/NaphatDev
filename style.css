@@ -402,7 +402,7 @@ text-decoration: none; /* ปิดการแสดงเส้นใต้เ
         display: none;
     }
     #about-me {
-        height: 100vh;
+        height: calc(100vh - 145px);
     }
 }
 
