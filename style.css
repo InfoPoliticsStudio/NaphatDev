@@ -201,6 +201,7 @@ text-decoration: none; /* ปิดการแสดงเส้นใต้เ
 
 .timeline-content p {
     margin: 10px 0 0 0;
+    width: 90%;
 }
 .countdown-group:first-child .countdown{
     justify-content: flex-end;
