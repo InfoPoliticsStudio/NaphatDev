@@ -127,7 +127,7 @@ text-decoration: none; /* ปิดการแสดงเส้นใต้เ
 .timeline {
     position: relative;
     max-width: 1200px;
-    margin: 0px auto 80px; /* เพิ่ม top margin เพื่อเว้นระยะจาก header */
+    margin: 80px auto ; /* เพิ่ม top margin เพื่อเว้นระยะจาก header */
 }
 
 .timeline-box {
