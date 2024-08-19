@@ -385,7 +385,7 @@ text-decoration: none; /* ปิดการแสดงเส้นใต้เ
         display: none;
     }
     #about-me {
-        width: 400vh;
+        height: 100vh;
     }
 }
 @media (max-width: 730px) {
