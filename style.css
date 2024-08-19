@@ -194,7 +194,7 @@ text-decoration: none; /* ปิดการแสดงเส้นใต้เ
 }
 
 .timeline-content img {
-    width: 100%;
+    width: 90%;
     height: auto;
     border-radius: 6px;
 }
