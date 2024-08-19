@@ -384,9 +384,6 @@ text-decoration: none; /* ปิดการแสดงเส้นใต้เ
     #academic-results{
         display: none;
     }
-    #about-me {
-        height: 100vh;
-    }
 }
 @media (max-width: 730px) {
     .about-me-image img {
@@ -403,6 +400,9 @@ text-decoration: none; /* ปิดการแสดงเส้นใต้เ
     }
     #academic-results-2{
         display: none;
+    }
+    #about-me {
+        height: 100vh;
     }
 }
 
