@@ -21,6 +21,7 @@ header {
     position: fixed;
     top: 0;
     width: -webkit-fill-available;
+    width: -moz-available;
     background-color: var(--c-blue);
     color: white;
     display: flex;
