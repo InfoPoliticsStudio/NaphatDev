@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แดชบอร์ด</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-container {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>แดชบอร์ดแอดมิน</h1>
+        <!-- โค้ดแสดงข้อมูลและแบบฟอร์มแก้ไขจากตัวอย่างที่แล้ว -->
+        <div class="actions">
+            <button onclick="calculateTotal()">คำนวณ</button>
+            <button onclick="logout()">ออกจากระบบ</button>
+        </div>
+    </div>
+
+    <script>
+        function logout() {
+            localStorage.removeItem('isLoggedIn');
+            window.location.href = 'login.html'; // ส่งกลับไปยังหน้าเข้าสู่ระบบ
+        }
+
+        // ตรวจสอบว่าผู้ใช้ได้ล็อกอินแล้วหรือไม่
+        window.onload = function() {
+            if (localStorage.getItem('isLoggedIn') !== 'true') {
+                window.location.href = 'login.html'; // หากไม่ได้ล็อกอิน ส่งกลับไปยังหน้าเข้าสู่ระบบ
+            }
+        };
+
+        // คำนวณยอดรวม (ใช้โค้ดจากตัวอย่างก่อนหน้า)
+        function calculateTotal() {
+            // โค้ดการคำนวณจากตัวอย่างที่แล้ว
+        }
+    </script>
+</body>
+</html>
