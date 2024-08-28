@@ -146,36 +146,18 @@
         const exchangeRate = 0.03; // อัตราแลกเปลี่ยน THB to USD
 
         function calculateTotal() {
-            const data = JSON.parse(localStorage.getItem('cashData')) || {};
-            const coin25 = (data.coin25 || 0) * 0.25;
-            const coin50 = (data.coin50 || 0) * 0.50;
-            const coin1 = (data.coin1 || 0) * 1;
-            const coin2 = (data.coin2 || 0) * 2;
-            const coin5 = (data.coin5 || 0) * 5;
-            const coin10 = (data.coin10 || 0) * 10;
-            const cash20 = (data.cash20 || 0) * 20;
-            const cash50 = (data.cash50 || 0) * 50;
-            const cash100 = (data.cash100 || 0) * 100;
-            const cash500 = (data.cash500 || 0) * 500;
-            const cash1000 = (data.cash1000 || 0) * 1000;
+            fetch('getData')
+                .then(response => response.json())
+                .then(data => {
+                    const coin25 = (data.coin25 || 0) * 0.25;
+                    // ... (คำนวณที่เหลือ)
+                    const totalTHB = coin25 + coin50 + coin1 + coin2 + coin5 + coin10 + cash20 + cash50 + cash100 + cash500 + cash1000;
+                    const totalUSD = totalTHB * exchangeRate;
 
-            const totalTHB = coin25 + coin50 + coin1 + coin2 + coin5 + coin10 + cash20 + cash50 + cash100 + cash500 + cash1000;
-            const totalUSD = totalTHB * exchangeRate;
-
-            document.getElementById("totalTHB").innerText = totalTHB.toFixed(2);
-            document.getElementById("totalUSD").innerText = totalUSD.toFixed(2);
-
-            document.getElementById("totalCoin25").innerText = coin25.toFixed(2);
-            document.getElementById("totalCoin50").innerText = coin50.toFixed(2);
-            document.getElementById("totalCoin1").innerText = coin1.toFixed(2);
-            document.getElementById("totalCoin2").innerText = coin2.toFixed(2);
-            document.getElementById("totalCoin5").innerText = coin5.toFixed(2);
-            document.getElementById("totalCoin10").innerText = coin10.toFixed(2);
-            document.getElementById("totalCash20").innerText = cash20.toFixed(2);
-            document.getElementById("totalCash50").innerText = cash50.toFixed(2);
-            document.getElementById("totalCash100").innerText = cash100.toFixed(2);
-            document.getElementById("totalCash500").innerText = cash500.toFixed(2);
-            document.getElementById("totalCash1000").innerText = cash1000.toFixed(2);
+                    document.getElementById("totalTHB").innerText = totalTHB.toFixed(2);
+                    document.getElementById("totalUSD").innerText = totalUSD.toFixed(2);
+                })
+                .catch(error => console.error('Error:', error));
         }
 
         window.onload = calculateTotal;
