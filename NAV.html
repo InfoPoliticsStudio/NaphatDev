@@ -78,62 +78,64 @@
             <tbody>
                 <tr>
                     <td>เหรียญ 25 สตางค์</td>
-                    <td><input type="number" id="coin25" value="0" min="0"></td>
+                    <td><input type="number" id="coin25" value="0" readonly></td>
                     <td id="totalCoin25">0</td>
                 </tr>
                 <tr>
                     <td>เหรียญ 50 สตางค์</td>
-                    <td><input type="number" id="coin50" value="0" min="0"></td>
+                    <td><input type="number" id="coin50" value="0" readonly></td>
                     <td id="totalCoin50">0</td>
                 </tr>
                 <tr>
                     <td>เหรียญ 1 บาท</td>
-                    <td><input type="number" id="coin1" value="0" min="0"></td>
+                    <td><input type="number" id="coin1" value="0" readonly></td>
                     <td id="totalCoin1">0</td>
                 </tr>
                 <tr>
                     <td>เหรียญ 2 บาท</td>
-                    <td><input type="number" id="coin2" value="0" min="0"></td>
+                    <td><input type="number" id="coin2" value="0" readonly></td>
                     <td id="totalCoin2">0</td>
                 </tr>
                 <tr>
                     <td>เหรียญ 5 บาท</td>
-                    <td><input type="number" id="coin5" value="0" min="0"></td>
+                    <td><input type="number" id="coin5" value="0" readonly></td>
                     <td id="totalCoin5">0</td>
                 </tr>
                 <tr>
                     <td>เหรียญ 10 บาท</td>
-                    <td><input type="number" id="coin10" value="0" min="0"></td>
+                    <td><input type="number" id="coin10" value="0" readonly></td>
                     <td id="totalCoin10">0</td>
                 </tr>
                 <tr>
                     <td>ธนบัตร 20 บาท</td>
-                    <td><input type="number" id="cash20" value="0" min="0"></td>
+                    <td><input type="number" id="cash20" value="0" readonly></td>
                     <td id="totalCash20">0</td>
                 </tr>
                 <tr>
                     <td>ธนบัตร 50 บาท</td>
-                    <td><input type="number" id="cash50" value="0" min="0"></td>
+                    <td><input type="number" id="cash50" value="0" readonly></td>
                     <td id="totalCash50">0</td>
                 </tr>
                 <tr>
                     <td>ธนบัตร 100 บาท</td>
-                    <td><input type="number" id="cash100" value="0" min="0"></td>
+                    <td><input type="number" id="cash100" value="0" readonly></td>
                     <td id="totalCash100">0</td>
                 </tr>
                 <tr>
                     <td>ธนบัตร 500 บาท</td>
-                    <td><input type="number" id="cash500" value="0" min="0"></td>
+                    <td><input type="number" id="cash500" value="0" readonly></td>
                     <td id="totalCash500">0</td>
                 </tr>
                 <tr>
                     <td>ธนบัตร 1,000 บาท</td>
-                    <td><input type="number" id="cash1000" value="0" min="0"></td>
+                    <td><input type="number" id="cash1000" value="0" readonly></td>
                     <td id="totalCash1000">0</td>
                 </tr>
             </tbody>
         </table>
     </div>
+
+    
 
     <script>
         function goToLogin() {
@@ -146,14 +148,14 @@
             const coin25 = document.getElementById("coin25").value * 0.25;
             const coin50 = document.getElementById("coin50").value * 0.50;
             const coin1 = document.getElementById("coin1").value * 1;
-            const coin25 = document.getElementById("coin2").value * 2;
-            const coin50 = document.getElementById("coin5").value * 5;
-            const coin1 = document.getElementById("coin10").value * 10;
-            const coin1 = document.getElementById("cash20").value * 20;
-            const coin1 = document.getElementById("cash50").value * 50;
-            const coin1 = document.getElementById("cash100").value * 100;
-            const coin1 = document.getElementById("cash500").value * 500;
-            const coin1 = document.getElementById("cash1000").value * 1000;
+            const coin2 = document.getElementById("coin2").value * 2;
+            const coin5 = document.getElementById("coin5").value * 5;
+            const coin10 = document.getElementById("coin10").value * 10;
+            const cash20 = document.getElementById("cash20").value * 20;
+            const cash50 = document.getElementById("cash50").value * 50;
+            const cash100 = document.getElementById("cash100").value * 100;
+            const cash500 = document.getElementById("cash500").value * 500;
+            const cash1000 = document.getElementById("cash1000").value * 1000;
             // เพิ่มการคำนวณสำหรับเหรียญและธนบัตรอื่น ๆ ตามที่คุณต้องการ
 
             const totalTHB = coin25 + coin50 + coin1 + coin2 + coin5 + coin10 + cash20 + cash50 + cash100 + cash500 + cash1000; // เพิ่มผลรวมทั้งหมดที่นี่
@@ -175,6 +177,9 @@
             document.getElementById("totalCash1000").innerText = cash1000.toFixed(2);
             // แสดงผลลัพธ์ในแต่ละแถวของตาราง
         }
+
+        // เรียกใช้ฟังก์ชัน calculateTotal เมื่อหน้าเว็บถูกโหลดเพื่อคำนวณและแสดงผลลัพธ์
+        window.onload = calculateTotal;
     </script>
 </body>
 </html>
