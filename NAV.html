@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
     <title>ทรัพย์สินสุทธิ</title>
     <style>
         body {
@@ -19,17 +22,6 @@
         }
         .header h1 {
             margin: 0;
-        }
-        .header button {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .header button:hover {
-            background-color: #45a049;
         }
         table {
             width: 100%;
@@ -48,119 +40,148 @@
     </style>
 </head>
 <body>
-    
-    <div class="container">
-        <div class="header">
-            <h1>ทรัพย์สินสุทธิ</h1>
-            <button onclick="goToLogin()">Login สำหรับแอดมิน</button>
-        </div>
-        
-        <div class="summary">
-            <div>จำนวนเงินรวม:</div>
-            <div id="totalTHB">0</div>
-            <div>บาท (THB)</div>
-        </div>
-        <div class="summary">
-            <div>จำนวนเงินรวม:</div>
-            <div id="totalUSD">0</div>
-            <div>ดอลลาร์สหรัฐ (USD)</div>
-        </div>
-        
-        <!-- ตารางแสดงข้อมูลที่ไม่สามารถแก้ไขได้ -->
-        <table>
-            <thead>
-                <tr>
-                    <th>รายการ</th>
-                    <th>จำนวน</th>
-                    <th>รวม (บาท)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>เหรียญ 25 สตางค์</td>
-                    <td><input type="number" id="coin25" value="0" readonly>3</td>
-                    <td id="totalCoin25">0</td>
-                </tr>
-                <tr>
-                    <td>เหรียญ 50 สตางค์</td>
-                    <td><input type="number" id="coin50" value="0" readonly>2</td>
-                    <td id="totalCoin50">0</td>
-                </tr>
-                <tr>
-                    <td>เหรียญ 1 บาท</td>
-                    <td><input type="number" id="coin1" value="0" readonly>130</td>
-                    <td id="totalCoin1">0</td>
-                </tr>
-                <tr>
-                    <td>เหรียญ 2 บาท</td>
-                    <td><input type="number" id="coin2" value="0" readonly>9</td>
-                    <td id="totalCoin2">0</td>
-                </tr>
-                <tr>
-                    <td>เหรียญ 5 บาท</td>
-                    <td><input type="number" id="coin5" value="0" readonly>58</td>
-                    <td id="totalCoin5">0</td>
-                </tr>
-                <tr>
-                    <td>เหรียญ 10 บาท</td>
-                    <td><input type="number" id="coin10" value="0" readonly>10</td>
-                    <td id="totalCoin10">0</td>
-                </tr>
-                <tr>
-                    <td>ธนบัตร 20 บาท</td>
-                    <td><input type="number" id="cash20" value="0" readonly>346</td>
-                    <td id="totalCash20">0</td>
-                </tr>
-                <tr>
-                    <td>ธนบัตร 50 บาท</td>
-                    <td><input type="number" id="cash50" value="0" readonly>1</td>
-                    <td id="totalCash50">0</td>
-                </tr>
-                <tr>
-                    <td>ธนบัตร 100 บาท</td>
-                    <td><input type="number" id="cash100" value="0" readonly>11</td>
-                    <td id="totalCash100">0</td>
-                </tr>
-                <tr>
-                    <td>ธนบัตร 500 บาท</td>
-                    <td><input type="number" id="cash500" value="0" readonly>0</td>
-                    <td id="totalCash500">0</td>
-                </tr>
-                <tr>
-                    <td>ธนบัตร 1,000 บาท</td>
-                    <td><input type="number" id="cash1000" value="0" readonly>1</td>
-                    <td id="totalCash1000">0</td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="header">
+        <h1>ทรัพย์สินสุทธิ</h1>
     </div>
 
-    
+    <div class="summary">
+        <div>จำนวนเงินรวม:</div>
+        <div id="totalTHB">0</div>
+        <div>บาท (THB)</div>
+    </div>
+    <div class="summary">
+        <div>จำนวนเงินรวม:</div>
+        <div id="totalUSD">0</div>
+        <div>ดอลลาร์สหรัฐ (USD)</div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>รายการ</th>
+                <th>จำนวน</th>
+                <th>รวม (บาท)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>เหรียญ 25 สตางค์</td>
+                <td id="coin25">0</td>
+                <td id="totalCoin25">0</td>
+            </tr>
+            <tr>
+                <td>เหรียญ 50 สตางค์</td>
+                <td id="coin50">0</td>
+                <td id="totalCoin50">0</td>
+            </tr>
+            <tr>
+                <td>เหรียญ 1 บาท</td>
+                <td id="coin1">0</td>
+                <td id="totalCoin1">0</td>
+            </tr>
+            <tr>
+                <td>เหรียญ 2 บาท</td>
+                <td id="coin2">0</td>
+                <td id="totalCoin2">0</td>
+            </tr>
+            <tr>
+                <td>เหรียญ 5 บาท</td>
+                <td id="coin5">0</td>
+                <td id="totalCoin5">0</td>
+            </tr>
+            <tr>
+                <td>เหรียญ 10 บาท</td>
+                <td id="coin10">0</td>
+                <td id="totalCoin10">0</td>
+            </tr>
+            <tr>
+                <td>ธนบัตร 20 บาท</td>
+                <td id="cash20">0</td>
+                <td id="totalCash20">0</td>
+            </tr>
+            <tr>
+                <td>ธนบัตร 50 บาท</td>
+                <td id="cash50">0</td>
+                <td id="totalCash50">0</td>
+            </tr>
+            <tr>
+                <td>ธนบัตร 100 บาท</td>
+                <td id="cash100">0</td>
+                <td id="totalCash100">0</td>
+            </tr>
+            <tr>
+                <td>ธนบัตร 500 บาท</td>
+                <td id="cash500">0</td>
+                <td id="totalCash500">0</td>
+            </tr>
+            <tr>
+                <td>ธนบัตร 1,000 บาท</td>
+                <td id="cash1000">0</td>
+                <td id="totalCash1000">0</td>
+            </tr>
+        </tbody>
+    </table>
 
     <script>
-        
-        function goToLogin() {
-            window.location.href = 'login.html'; // เปลี่ยนไปยังหน้าแอดมิน
-        }
-        
         const exchangeRate = 0.03; // อัตราแลกเปลี่ยน THB to USD
 
-        function calculateTotal() {
-            fetch('getData')
+        function fetchData() {
+            fetch('https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec')
                 .then(response => response.json())
                 .then(data => {
-                    const coin25 = (data.coin25 || 0) * 0.25;
-                    // ... (คำนวณที่เหลือ)
-                    const totalTHB = coin25 + coin50 + coin1 + coin2 + coin5 + coin10 + cash20 + cash50 + cash100 + cash500 + cash1000;
-                    const totalUSD = totalTHB * exchangeRate;
+                    // Update HTML elements with fetched data
+                    document.getElementById("coin25").innerText = data.coin25;
+                    document.getElementById("coin50").innerText = data.coin50;
+                    document.getElementById("coin1").innerText = data.coin1;
+                    document.getElementById("coin2").innerText = data.coin2;
+                    document.getElementById("coin5").innerText = data.coin5;
+                    document.getElementById("coin10").innerText = data.coin10;
+                    document.getElementById("cash20").innerText = data.cash20;
+                    document.getElementById("cash50").innerText = data.cash50;
+                    document.getElementById("cash100").innerText = data.cash100;
+                    document.getElementById("cash500").innerText = data.cash500;
+                    document.getElementById("cash1000").innerText = data.cash1000;
 
-                    document.getElementById("totalTHB").innerText = totalTHB.toFixed(2);
-                    document.getElementById("totalUSD").innerText = totalUSD.toFixed(2);
+                    calculateTotal();
                 })
                 .catch(error => console.error('Error:', error));
         }
 
-        window.onload = calculateTotal;
+        function calculateTotal() {
+            const coin25 = document.getElementById("coin25").innerText * 0.25;
+            const coin50 = document.getElementById("coin50").innerText * 0.50;
+            const coin1 = document.getElementById("coin1").innerText * 1;
+            const coin2 = document.getElementById("coin2").innerText * 2;
+            const coin5 = document.getElementById("coin5").innerText * 5;
+            const coin10 = document.getElementById("coin10").innerText * 10;
+            const cash20 = document.getElementById("cash20").innerText * 20;
+            const cash50 = document.getElementById("cash50").innerText * 50;
+            const cash100 = document.getElementById("cash100").innerText * 100;
+            const cash500 = document.getElementById("cash500").innerText * 500;
+            const cash1000 = document.getElementById("cash1000").innerText * 1000;
+
+            const totalTHB = coin25 + coin50 + coin1 + coin2 + coin5 + coin10 + cash20 + cash50 + cash100 + cash500 + cash1000;
+            const totalUSD = totalTHB * exchangeRate;
+
+            document.getElementById("totalTHB").innerText = totalTHB.toFixed(2);
+            document.getElementById("totalUSD").innerText = totalUSD.toFixed(2);
+
+            // Update total in the table
+            document.getElementById("totalCoin25").innerText = coin25.toFixed(2);
+            document.getElementById("totalCoin50").innerText = coin50.toFixed(2);
+                        document.getElementById("totalCoin1").innerText = coin1.toFixed(2);
+            document.getElementById("totalCoin2").innerText = coin2.toFixed(2);
+            document.getElementById("totalCoin5").innerText = coin5.toFixed(2);
+            document.getElementById("totalCoin10").innerText = coin10.toFixed(2);
+            document.getElementById("totalCash20").innerText = cash20.toFixed(2);
+            document.getElementById("totalCash50").innerText = cash50.toFixed(2);
+            document.getElementById("totalCash100").innerText = cash100.toFixed(2);
+            document.getElementById("totalCash500").innerText = cash500.toFixed(2);
+            document.getElementById("totalCash1000").innerText = cash1000.toFixed(2);
+        }
+
+        // Fetch data on page load
+        document.addEventListener("DOMContentLoaded", fetchData);
     </script>
 </body>
 </html>
