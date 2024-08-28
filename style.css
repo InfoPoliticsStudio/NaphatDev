@@ -313,7 +313,7 @@ text-decoration: none; /* ปิดการแสดงเส้นใต้เ
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    height: calc(100vh - 470px);
+/*     height: calc(100vh - 470px); */
 }
 
 .about-me-content {
