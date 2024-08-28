@@ -134,10 +134,46 @@
 
     <script>
         <script>
+        
         function logout() {
             window.location.href = 'NAV.html'; // เปลี่ยนไปยังหน้าแสดงข้อมูล
         }
-        
+
+        function saveChanges() {
+            const data = {
+                coin25: document.getElementById("coin25").value,
+                coin50: document.getElementById("coin50").value,
+                coin1: document.getElementById("coin1").value,
+                coin2: document.getElementById("coin2").value,
+                coin5: document.getElementById("coin5").value,
+                coin10: document.getElementById("coin10").value,
+                cash20: document.getElementById("cash20").value,
+                cash50: document.getElementById("cash50").value,
+                cash100: document.getElementById("cash100").value,
+                cash500: document.getElementById("cash500").value,
+                cash1000: document.getElementById("cash1000").value
+            };
+
+            fetch('saveData', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+            .then(response => response.json())
+            .then(result => alert("บันทึกการเปลี่ยนแปลงเรียบร้อยแล้ว"))
+            .catch(error => console.error('Error:', error));
+        }
+
+        function calculateTotal() {
+            // ฟังก์ชันคำนวณรวมเหมือนเดิม
+        }
+
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('input', calculateTotal);
+        });
+
         function saveChanges() {
             const data = {
                 coin25: document.getElementById("coin25").value,
@@ -158,7 +194,18 @@
         }
 
         function calculateTotal() {
-            // ฟังก์ชันคำนวณรวมเหมือนเดิม
+            fetch('getData')
+                .then(response => response.json())
+                .then(data => {
+                    const coin25 = (data.coin25 || 0) * 0.25;
+                    // ... (คำนวณที่เหลือ)
+                    const totalTHB = coin25 + coin50 + coin1 + coin2 + coin5 + coin10 + cash20 + cash50 + cash100 + cash500 + cash1000;
+                    const totalUSD = totalTHB * exchangeRate;
+
+                    document.getElementById("totalTHB").innerText = totalTHB.toFixed(2);
+                    document.getElementById("totalUSD").innerText = totalUSD.toFixed(2);
+                })
+                .catch(error => console.error('Error:', error));
         }
 
         document.querySelectorAll('input').forEach(input => {
