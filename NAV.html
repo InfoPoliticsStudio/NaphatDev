@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>คำนวณทรัพย์สินสุทธิ</title>
+    <style>
+        /* ใส่ CSS ในนี้ หรือแยกเป็นไฟล์ CSS ต่างหาก */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        .summary {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: right;
+        }
+        th {
+            background-color: #f2f2f2;
+            text-align: left;
+        }
+        .actions {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>คำนวณทรัพย์สินสุทธิ</h1>
+        <div class="summary">
+            <div>จำนวนเงินรวม:</div>
+            <div id="totalTHB">0</div>
+            <div>บาท (THB)</div>
+        </div>
+        <div class="summary">
+            <div>จำนวนเงินรวม:</div>
+            <div id="totalUSD">0</div>
+            <div>ดอลลาร์สหรัฐ (USD)</div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>รายการ</th>
+                    <th>จำนวน</th>
+                    <th>รวม (บาท)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>เหรียญ 25 สตางค์</td>
+                    <td><input type="number" id="coin25" value="0" min="0"></td>
+                    <td id="totalCoin25">0</td>
+                </tr>
+                <tr>
+                    <td>เหรียญ 50 สตางค์</td>
+                    <td><input type="number" id="coin50" value="0" min="0"></td>
+                    <td id="totalCoin50">0</td>
+                </tr>
+                <tr>
+                    <td>เหรียญ 1 บาท</td>
+                    <td><input type="number" id="coin1" value="0" min="0"></td>
+                    <td id="totalCoin1">0</td>
+                </tr>
+                <!-- เพิ่มรายการอื่น ๆ ตามที่คุณต้องการ -->
+            </tbody>
+        </table>
+        <div class="actions">
+            <button onclick="calculateTotal()">คำนวณ</button>
+        </div>
+    </div>
+
+    <script>
+        const exchangeRate = 0.03; // อัตราแลกเปลี่ยน THB to USD
+
+        function calculateTotal() {
+            const coin25 = document.getElementById("coin25").value * 0.25;
+            const coin50 = document.getElementById("coin50").value * 0.50;
+            const coin1 = document.getElementById("coin1").value * 1;
+            // เพิ่มการคำนวณสำหรับเหรียญและธนบัตรอื่น ๆ ตามที่คุณต้องการ
+
+            const totalTHB = coin25 + coin50 + coin1; // เพิ่มผลรวมทั้งหมดที่นี่
+            const totalUSD = totalTHB * exchangeRate;
+
+            document.getElementById("totalTHB").innerText = totalTHB.toFixed(2);
+            document.getElementById("totalUSD").innerText = totalUSD.toFixed(2);
+
+            document.getElementById("totalCoin25").innerText = coin25.toFixed(2);
+            document.getElementById("totalCoin50").innerText = coin50.toFixed(2);
+            document.getElementById("totalCoin1").innerText = coin1.toFixed(2);
+            // แสดงผลลัพธ์ในแต่ละแถวของตาราง
+        }
+    </script>
+</body>
+</html>
