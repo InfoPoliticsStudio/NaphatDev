@@ -405,9 +405,6 @@ text-decoration: none; /* ปิดการแสดงเส้นใต้เ
     .about-me-text {
         padding-right: 0; /* Remove right padding */
     }
-    #academic-results-2{
-        display: none;
-    }
     #about-me {
         height: calc(100vh - 145px);
     }
