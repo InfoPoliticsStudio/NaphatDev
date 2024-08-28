@@ -54,6 +54,18 @@
             <h1>ทรัพย์สินสุทธิ</h1>
             <button onclick="goToLogin()">Login สำหรับแอดมิน</button>
         </div>
+        
+        <div class="summary">
+            <div>จำนวนเงินรวม:</div>
+            <div id="totalTHB">0</div>
+            <div>บาท (THB)</div>
+        </div>
+        <div class="summary">
+            <div>จำนวนเงินรวม:</div>
+            <div id="totalUSD">0</div>
+            <div>ดอลลาร์สหรัฐ (USD)</div>
+        </div>
+        
         <!-- ตารางแสดงข้อมูลที่ไม่สามารถแก้ไขได้ -->
         <table>
             <thead>
@@ -126,6 +138,42 @@
     <script>
         function goToLogin() {
             window.location.href = 'login.html'; // เปลี่ยนไปยังหน้า login
+        }
+        
+        const exchangeRate = 0.03; // อัตราแลกเปลี่ยน THB to USD
+
+        function calculateTotal() {
+            const coin25 = document.getElementById("coin25").value * 0.25;
+            const coin50 = document.getElementById("coin50").value * 0.50;
+            const coin1 = document.getElementById("coin1").value * 1;
+            const coin25 = document.getElementById("coin2").value * 2;
+            const coin50 = document.getElementById("coin5").value * 5;
+            const coin1 = document.getElementById("coin10").value * 10;
+            const coin1 = document.getElementById("cash20").value * 20;
+            const coin1 = document.getElementById("cash50").value * 50;
+            const coin1 = document.getElementById("cash100").value * 100;
+            const coin1 = document.getElementById("cash500").value * 500;
+            const coin1 = document.getElementById("cash1000").value * 1000;
+            // เพิ่มการคำนวณสำหรับเหรียญและธนบัตรอื่น ๆ ตามที่คุณต้องการ
+
+            const totalTHB = coin25 + coin50 + coin1 + coin2 + coin5 + coin10 + cash20 + cash50 + cash100 + cash500 + cash1000; // เพิ่มผลรวมทั้งหมดที่นี่
+            const totalUSD = totalTHB * exchangeRate;
+
+            document.getElementById("totalTHB").innerText = totalTHB.toFixed(2);
+            document.getElementById("totalUSD").innerText = totalUSD.toFixed(2);
+
+            document.getElementById("totalCoin25").innerText = coin25.toFixed(2);
+            document.getElementById("totalCoin50").innerText = coin50.toFixed(2);
+            document.getElementById("totalCoin1").innerText = coin1.toFixed(2);
+            document.getElementById("totalCoin2").innerText = coin2.toFixed(2);
+            document.getElementById("totalCoin5").innerText = coin5.toFixed(2);
+            document.getElementById("totalCoin10").innerText = coin10.toFixed(2);
+            document.getElementById("totalCash20").innerText = cash20.toFixed(2);
+            document.getElementById("totalCash50").innerText = cash50.toFixed(2);
+            document.getElementById("totalCash100").innerText = cash100.toFixed(2);
+            document.getElementById("totalCash500").innerText = cash500.toFixed(2);
+            document.getElementById("totalCash1000").innerText = cash1000.toFixed(2);
+            // แสดงผลลัพธ์ในแต่ละแถวของตาราง
         }
     </script>
 </body>
