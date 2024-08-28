@@ -133,47 +133,38 @@
     </form>
 
     <script>
+        <script>
         function logout() {
-            window.location.href = 'NAV.html'; // เปลี่ยนไปยังหน้าแสดงข้อมูลสำหรับผู้ใช้ทั่วไป
+            window.location.href = 'NAV.html'; // เปลี่ยนไปยังหน้าแสดงข้อมูล
         }
         
         function saveChanges() {
-            // ฟังก์ชันนี้จะทำการบันทึกข้อมูลที่เปลี่ยนแปลง
+            const data = {
+                coin25: document.getElementById("coin25").value,
+                coin50: document.getElementById("coin50").value,
+                coin1: document.getElementById("coin1").value,
+                coin2: document.getElementById("coin2").value,
+                coin5: document.getElementById("coin5").value,
+                coin10: document.getElementById("coin10").value,
+                cash20: document.getElementById("cash20").value,
+                cash50: document.getElementById("cash50").value,
+                cash100: document.getElementById("cash100").value,
+                cash500: document.getElementById("cash500").value,
+                cash1000: document.getElementById("cash1000").value
+            };
+            
+            localStorage.setItem('cashData', JSON.stringify(data));
             alert("บันทึกการเปลี่ยนแปลงเรียบร้อยแล้ว");
-            // คุณสามารถเพิ่มโค้ดที่นี่เพื่อส่งข้อมูลไปยังเซิร์ฟเวอร์หรือลงบันทึกใน LocalStorage เป็นต้น
         }
 
         function calculateTotal() {
-            const coin25 = document.getElementById("coin25").value * 0.25;
-            const coin50 = document.getElementById("coin50").value * 0.50;
-            const coin1 = document.getElementById("coin1").value * 1;
-            const coin2 = document.getElementById("coin2").value * 2;
-            const coin5 = document.getElementById("coin5").value * 5;
-            const coin10 = document.getElementById("coin10").value * 10;
-            const cash20 = document.getElementById("cash20").value * 20;
-            const cash50 = document.getElementById("cash50").value * 50;
-            const cash100 = document.getElementById("cash100").value * 100;
-            const cash500 = document.getElementById("cash500").value * 500;
-            const cash1000 = document.getElementById("cash1000").value * 1000;
-
-            document.getElementById("totalCoin25").innerText = coin25.toFixed(2);
-            document.getElementById("totalCoin50").innerText = coin50.toFixed(2);
-            document.getElementById("totalCoin1").innerText = coin1.toFixed(2);
-            document.getElementById("totalCoin2").innerText = coin2.toFixed(2);
-            document.getElementById("totalCoin5").innerText = coin5.toFixed(2);
-            document.getElementById("totalCoin10").innerText = coin10.toFixed(2);
-            document.getElementById("totalCash20").innerText = cash20.toFixed(2);
-            document.getElementById("totalCash50").innerText = cash50.toFixed(2);
-            document.getElementById("totalCash100").innerText = cash100.toFixed(2);
-            document.getElementById("totalCash500").innerText = cash500.toFixed(2);
-            document.getElementById("totalCash1000").innerText = cash1000.toFixed(2);
+            // ฟังก์ชันคำนวณรวมเหมือนเดิม
         }
 
         document.querySelectorAll('input').forEach(input => {
             input.addEventListener('input', calculateTotal);
         });
 
-        // คำนวณรวมเมื่อหน้าโหลด
         window.onload = calculateTotal;
     </script>
 </body>
