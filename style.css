@@ -15,6 +15,12 @@ body {
     font-family: "Prompt", sans-serif;
     overflow-x: hidden;
     scroll-behavior: smooth;
+    overflow: hidden; /* ปิดการเลื่อนโดยอัตโนมัติ */
+}
+
+body {
+    scroll-snap-type: y mandatory; /* บังคับการเลื่อนในแนว y (แนวตั้ง) */
+    overflow-y: scroll; /* เปิดการเลื่อนในแนว y */
 }
 
 /* สไตล์ของ Header */
@@ -434,4 +440,10 @@ red{
 
 none{
     color: #ffb600;
+}
+
+
+.section {
+    height: 100vh; /* แต่ละ section สูงเท่ากับหน้าจอ */
+    scroll-snap-align: start; /* จัดให้ section แต่ละหน้าจอ align ที่จุดเริ่มต้น */
 }
