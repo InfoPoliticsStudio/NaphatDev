@@ -10,11 +10,13 @@
 }
 /* ลบ padding และ margin ของ body */
 body {
-    padding: 0;
-    margin: 0;
     font-family: "Prompt", sans-serif;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
     overflow: hidden; /* ปิดการเลื่อนโดยอัตโนมัติ */
 }
 
@@ -443,7 +445,7 @@ none{
 }
 
 
-.section {
+section {
     height: 100vh; /* แต่ละ section สูงเท่ากับหน้าจอ */
     scroll-snap-align: start; /* จัดให้ section แต่ละหน้าจอ align ที่จุดเริ่มต้น */
 }
