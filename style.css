@@ -390,9 +390,7 @@ text-decoration: none; /* ปิดการแสดงเส้นใต้เ
     margin-block-end: 0;
 }
 @media (min-width: 730px) {
-    #academic-results{
-        display: none;
-    }
+    
 }
 @media (max-width: 730px) {
     .about-me-image img {
@@ -418,9 +416,6 @@ text-decoration: none; /* ปิดการแสดงเส้นใต้เ
 @media (min-width: 855px) {
     .about-me-image img {
         max-width: 225px; /* Set max-width to 225px */
-    }
-    #academic-results{
-        display: none;
     }
 }
 
