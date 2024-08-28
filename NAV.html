@@ -138,27 +138,28 @@
     
 
     <script>
+        
         function goToLogin() {
-            window.location.href = 'login.html'; // เปลี่ยนไปยังหน้า login
+            window.location.href = 'login.html'; // เปลี่ยนไปยังหน้าแอดมิน
         }
         
         const exchangeRate = 0.03; // อัตราแลกเปลี่ยน THB to USD
 
         function calculateTotal() {
-            const coin25 = document.getElementById("coin25").value * 0.25;
-            const coin50 = document.getElementById("coin50").value * 0.50;
-            const coin1 = document.getElementById("coin1").value * 1;
-            const coin2 = document.getElementById("coin2").value * 2;
-            const coin5 = document.getElementById("coin5").value * 5;
-            const coin10 = document.getElementById("coin10").value * 10;
-            const cash20 = document.getElementById("cash20").value * 20;
-            const cash50 = document.getElementById("cash50").value * 50;
-            const cash100 = document.getElementById("cash100").value * 100;
-            const cash500 = document.getElementById("cash500").value * 500;
-            const cash1000 = document.getElementById("cash1000").value * 1000;
-            // เพิ่มการคำนวณสำหรับเหรียญและธนบัตรอื่น ๆ ตามที่คุณต้องการ
+            const data = JSON.parse(localStorage.getItem('cashData')) || {};
+            const coin25 = (data.coin25 || 0) * 0.25;
+            const coin50 = (data.coin50 || 0) * 0.50;
+            const coin1 = (data.coin1 || 0) * 1;
+            const coin2 = (data.coin2 || 0) * 2;
+            const coin5 = (data.coin5 || 0) * 5;
+            const coin10 = (data.coin10 || 0) * 10;
+            const cash20 = (data.cash20 || 0) * 20;
+            const cash50 = (data.cash50 || 0) * 50;
+            const cash100 = (data.cash100 || 0) * 100;
+            const cash500 = (data.cash500 || 0) * 500;
+            const cash1000 = (data.cash1000 || 0) * 1000;
 
-            const totalTHB = coin25 + coin50 + coin1 + coin2 + coin5 + coin10 + cash20 + cash50 + cash100 + cash500 + cash1000; // เพิ่มผลรวมทั้งหมดที่นี่
+            const totalTHB = coin25 + coin50 + coin1 + coin2 + coin5 + coin10 + cash20 + cash50 + cash100 + cash500 + cash1000;
             const totalUSD = totalTHB * exchangeRate;
 
             document.getElementById("totalTHB").innerText = totalTHB.toFixed(2);
@@ -175,10 +176,8 @@
             document.getElementById("totalCash100").innerText = cash100.toFixed(2);
             document.getElementById("totalCash500").innerText = cash500.toFixed(2);
             document.getElementById("totalCash1000").innerText = cash1000.toFixed(2);
-            // แสดงผลลัพธ์ในแต่ละแถวของตาราง
         }
 
-        // เรียกใช้ฟังก์ชัน calculateTotal เมื่อหน้าเว็บถูกโหลดเพื่อคำนวณและแสดงผลลัพธ์
         window.onload = calculateTotal;
     </script>
 </body>
