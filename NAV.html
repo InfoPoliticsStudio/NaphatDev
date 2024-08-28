@@ -152,6 +152,7 @@
     </div>
 
     <script>
+        
         const exchangeRate = 0.03; // อัตราแลกเปลี่ยน THB to USD
 
         function formatNumber(number) {
@@ -196,21 +197,21 @@
             const totalTHB = coin25 + coin50 + coin1 + coin2 + coin5 + coin10 + cash20 + cash50 + cash100 + cash500 + cash1000;
             const totalUSD = totalTHB * exchangeRate;
 
-            document.getElementById("totalTHB").innerText = totalTHB.toFixed(2);
-            document.getElementById("totalUSD").innerText = totalUSD.toFixed(2);
+            document.getElementById("totalTHB").innerText = formatNumber(totalTHB);
+            document.getElementById("totalUSD").innerText = formatNumber(totalUSD);
 
             // Update total in the table
-            document.getElementById("totalCoin25").innerText = coin25.toFixed(2);
-            document.getElementById("totalCoin50").innerText = coin50.toFixed(2);
-                        document.getElementById("totalCoin1").innerText = coin1.toFixed(2);
-            document.getElementById("totalCoin2").innerText = coin2.toFixed(2);
-            document.getElementById("totalCoin5").innerText = coin5.toFixed(2);
-            document.getElementById("totalCoin10").innerText = coin10.toFixed(2);
-            document.getElementById("totalCash20").innerText = cash20.toFixed(2);
-            document.getElementById("totalCash50").innerText = cash50.toFixed(2);
-            document.getElementById("totalCash100").innerText = cash100.toFixed(2);
-            document.getElementById("totalCash500").innerText = cash500.toFixed(2);
-            document.getElementById("totalCash1000").innerText = cash1000.toFixed(2);
+            document.getElementById("totalCoin25").innerText = formatNumber(coin25);
+            document.getElementById("totalCoin50").innerText = formatNumber(coin50);
+            document.getElementById("totalCoin1").innerText = formatNumber(coin1);
+            document.getElementById("totalCoin2").innerText = formatNumber(coin2);
+            document.getElementById("totalCoin5").innerText = formatNumber(coin5);
+            document.getElementById("totalCoin10").innerText = formatNumber(coin10);
+            document.getElementById("totalCash20").innerText = formatNumber(cash20);
+            document.getElementById("totalCash50").innerText = formatNumber(cash50);
+            document.getElementById("totalCash100").innerText = formatNumber(cash100);
+            document.getElementById("totalCash500").innerText = formatNumber(cash500);
+            document.getElementById("totalCash1000").innerText = formatNumber(cash1000);
         }
 
         // Fetch data on page load
