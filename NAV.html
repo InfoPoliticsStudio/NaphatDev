@@ -154,6 +154,10 @@
     <script>
         const exchangeRate = 0.03; // อัตราแลกเปลี่ยน THB to USD
 
+        function formatNumber(number) {
+            return number.toLocaleString('th-TH', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+
         function fetchData() {
             fetch('https://script.google.com/macros/s/AKfycbx7KtI5aODL2YzRxZzPRictIIeN12uyaH694B5hJh0_4m0WhfDZqQcP8nW-VWrwu_XzBQ/exec?action=getUsers')
                 .then(response => response.json())
