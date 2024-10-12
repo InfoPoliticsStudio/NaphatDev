@@ -437,8 +437,7 @@ none{
 
 
 footer {
-    
-    height: 100vh; /* footer สูงเท่ากับหน้าจอ */
+
     display: flex;
     justify-content: center;
     font-size: 2em;
