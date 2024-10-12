@@ -436,11 +436,6 @@ none{
 }
 
 
-section {
-    height: 100vh; /* แต่ละ section สูงเท่ากับหน้าจอ */
-    scroll-snap-align: start; /* จัดให้ section แต่ละหน้าจอ align ที่จุดเริ่มต้น */
-}
-
 footer {
     
     height: 100vh; /* footer สูงเท่ากับหน้าจอ */
