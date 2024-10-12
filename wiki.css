@@ -1,6 +1,8 @@
         #bodyContent{
             position: relative;
             z-index: 0;
+            padding-left: 2.75rem;
+            padding-right: 2.75rem;
         }
         #contentSub:not(:empty), #contentSub2 {
             font-size: 0.875rem;
