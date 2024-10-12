@@ -21,7 +21,6 @@ body, html {
 }
 
 body {
-    scroll-snap-type: y mandatory; /* บังคับการเลื่อนในแนว y (แนวตั้ง) */
     overflow-y: scroll; /* เปิดการเลื่อนในแนว y */
 }
 
