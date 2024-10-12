@@ -476,22 +476,18 @@ footer {
     font-size: 1em;
 }
 
-<style>
 .fill-white {
     fill: #fff;
 }
-<style>
 .cursor-pointer {
     cursor: pointer;
 }
-<style>
 .h-6 {
     height: 1.5rem;
 }
 .hero-arrow {
     animation: arrow 1s infinite;
 }
-<style>
 audio, canvas, embed, iframe, img, object, svg, video {
     display: block;
     vertical-align: middle;
