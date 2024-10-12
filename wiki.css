@@ -1,0 +1,171 @@
+        #bodyContent{
+            position: relative;
+            z-index: 0;
+        }
+        #contentSub:not(:empty), #contentSub2 {
+            font-size: 0.875rem;
+            color: var(#54595d, #54595d);
+            width: auto;
+            margin: 8px 0 0;
+        }
+
+        #mw-content-text {
+            margin-top: 16px;
+        }
+
+        .mw-hide-empty-elt .mw-parser-output:not(.mw-show-empty-elt) .mw-empty-elt {
+            display: none;
+        }
+        .mw-body p {
+            margin: 0.5em 0 1em 0;
+        }
+        p {
+            text-indent: 2.5em;
+        }
+p {
+    margin: 0.4em 0 0.5em 0;
+}
+
+
+.mw-body p + ul, .mw-body p + ol, .mw-body p + table, .mw-body p + dl, .mw-body p + blockquote {
+    margin-top: -0.5em;
+}
+.infobox {
+    border: 1px solid #aaa;
+    background-color: #f9f9f9;
+    color: black;
+    margin: 0.5em 0 0.5em 1em;
+    padding: 0.2em;
+    float: right;
+    clear: right;
+    text-align: left;
+    font-size: 88%;
+    line-height: 1.5em;
+}
+
+.mw-parser-output a {
+    word-wrap: break-word;
+}
+
+.infobox td, .infobox th {
+    vertical-align: top;
+}
+a{
+    color: #36c;
+    text-decoration: none;
+    border-radius: 0;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+.wiki-link {
+  position: relative;
+  text-decoration: none;
+}
+
+.wiki-link::after {
+  content: "";
+  position: absolute;
+  color: #000;
+  display: none;
+  width: 40px;
+  height: auto;
+  top: 100%;
+  left: 0;
+}
+
+.wiki-link:hover::after {
+  display: none;
+  content: "โรงเรียนดาราวิทยาลัย เคยเป็นโรงเรียนสตรีเอกชนประจำจังหวัดเชียงใหม่ อีกทั้งยังเป็นโรงเรียนสตรีแห่งที่ 2 ในประเทศไทยอีกด้วย";
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  width: 300px;
+}
+meta {
+    display: none;
+}
+
+.mw-body .mw-heading2, .mw-body h2, .mw-body .mw-heading3, .mw-body h3, .mw-body .mw-heading4, .mw-body h4, .mw-body .mw-heading5, .mw-body h5, .mw-body .mw-heading6, .mw-body h6 {
+    margin: 0.25em 0 0.25em 0;
+}
+
+.mw-body .mw-heading1 h1, .mw-body .mw-heading2 h2, .mw-body .mw-heading3 h3, .mw-body .mw-heading4 h4, .mw-body .mw-heading5 h5, .mw-body .mw-heading6 h6 {
+    margin-top: 0;
+    font-size: inherit;
+}
+.mw-body .mw-heading2, .mw-body h2, .mw-body .mw-heading3, .mw-body h3, .mw-body .mw-heading4, .mw-body h4, .mw-body .mw-heading5, .mw-body h5, .mw-body .mw-heading6, .mw-body h6 {
+    margin: 0.25em 0 0.25em 0;
+}
+
+.mw-heading1 h1, .mw-heading2 h2 {
+    margin-bottom: 0.6em;
+    border-bottom: 1px solid #a2a9b1;
+}
+
+table.wikitable, table.prettytable {
+    margin: 1em 1em 1em 0;
+    background: #f9f9f9;
+    border: 1px #aaaaaa solid;
+    border-collapse: collapse;
+}
+.wikitable {
+    background-color: #f8f9fa;
+    color: #202122;
+    margin: 1em 0;
+    border: 1px solid #a2a9b1;
+    border-collapse: collapse;
+}
+
+table.wikitable th, table.prettytable th {
+    background: #f2f2f2;
+    text-align: center;
+}
+table.wikitable th, table.wikitable td, table.prettytable th, table.prettytable td {
+    border: 1px #aaaaaa solid;
+    padding: 0.2em;
+}
+::selection{
+    background: transparent;
+    color: #ff0000;
+    text-decoration: underline rgb(255, 0, 0);
+}
+img.img-flex1{
+    min-width: 100px;
+    max-width: 300px;
+}
+img.img-flex2{
+    min-width: 100px;
+    max-width: 300px;
+}
+ul b{
+    display: flex;
+    background: #800;
+    color: #fff;
+    border-radius: 100%;
+    padding: 10px;
+    width: 20px;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+}
+ul b:hover{
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+.shadow ul{
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+@media screen and (max-width: 720px) {
+  img.img-flex1, img.img-flex2 {
+    width: 200px !important;
+    max-width: 200px !important;
+  }
+
+  .shadow ul {
+    font-size: 10px;
+  }
+}
