@@ -20,7 +20,7 @@
         box-shadow: 0px 1px 3px rgba(0, 0, 0, .15);
         padding: 20px;
         border-radius: 3px;
-        margin: 30px 2.75rem 30px 2.75rem;
+        margin: 30px 0 30px 2.75rem;
     }
     
     .n-box .title {
@@ -123,6 +123,24 @@
         --c-orange: #ff8a00;
         --c-green: #0B9C23;
     }
+        
+    .s-box {
+        width: auto;
+        background-color: #fff;
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, .15);
+        padding: 20px;
+        border-radius: 3px;
+        margin: 30px 2.75rem 30px 30px;
+    }
+    
+    .s-box .title {
+        background-color: var(--c-yellow);
+        color: #fff;
+        padding: 12px var(--n-box);
+        margin: calc(var(--n-box)* -1) calc(var(--n-box)* -1) var(--n-box);
+        position: relative;
+        border-radius: 3px 3px 0 0;
+    }
         </style>
 </head>
 <body>
@@ -190,28 +208,48 @@
     </section>
 
     <div id="bodyContent">
-    <div class="n-box">
-        <h2 class="title">DEK68
-        <a class="_border_0" href="/profile/applicant-info">รายละเอียด →</a>
+        <div class="n-box">
+            <h2 class="title">DEK68
+                <a class="_border_0" href="/profile/applicant-info">รายละเอียด →</a>
+            </h2>
+            <table>
+              <tbody>
+                <tr>
+                  <td class="align-middle" width="140">
+                    <img alt="Student" src="https://tcas68.s3.ap-southeast-1.amazonaws.com/exam/students/uploads/1509966576715_192d0dd2d03.jpg?AWSAccessKeyId=AKIAUD5IGFZRJAK4ENV3&amp;Expires=1730542390&amp;Signature=lSWGdqXjO8yJZoZaDIUOwqCYzGE%3D" width="120" class="img-rounded">
+                  </td>
+                  <td class="align-middle _heading">
+                    <ul class="list-none m-0">
+                      <li>ชื่อ <b>ณภัทร ปัญโญ</b></li>
+                      <li>โรงเรียน <b>ดาราวิทยาลัย</b></li>
+                      <li>จังหวัด <b>เชียงใหม่</b></li>
+                      <li>หลักสูตร <b>หลักสูตรแกนกลาง (สามัญ)</b></li>
+                      <li>ปีการศึกษา <b>2567</b></li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+           </table>
+      </div>
+      <div class="s-box">
+        <h2 class="title">T-Score TGAT/TPAT
         </h2>
-        <table>
-          <tbody>
-            <tr>
-              <td class="align-middle" width="140">
-                <img alt="Student" src="https://tcas68.s3.ap-southeast-1.amazonaws.com/exam/students/uploads/1509966576715_192d0dd2d03.jpg?AWSAccessKeyId=AKIAUD5IGFZRJAK4ENV3&amp;Expires=1730542390&amp;Signature=lSWGdqXjO8yJZoZaDIUOwqCYzGE%3D" width="120" class="img-rounded">
-              </td>
-              <td class="align-middle _heading">
-                <ul class="list-none m-0">
-                  <li>ชื่อ <b>ณภัทร ปัญโญ</b></li>
-                  <li>โรงเรียน <b>ดาราวิทยาลัย</b></li>
-                  <li>จังหวัด <b>เชียงใหม่</b></li>
-                  <li>หลักสูตร <b>หลักสูตรแกนกลาง (สามัญ)</b></li>
-                  <li>ปีการศึกษา <b>2567</b></li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+            <table>
+              <tbody>
+                <tr>
+                  <td class="align-middle _heading">
+                    <ul class="list-none m-0">
+                      <li>TGAT <b></b></li>
+                      <li>TGAT1 <b></b></li>
+                      <li>TGAT2 <b></b></li>
+                      <li>TGAT3 <b></b></li>
+                      <li>TPAT3<b></b></li>
+                      <li>TPAT5<b></b></li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+           </table>
       </div>
     </div>
 
