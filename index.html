@@ -12,6 +12,117 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="wiki.css">
+    
+    <style>
+    .n-box {
+        background-color: #fff;
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, .15);
+        padding: 20px;
+        border-radius: 3px;
+        margin: 0 auto 30px;
+    }
+    
+    .n-box .title {
+        background-color: var(--c-blue);
+        color: #fff;
+        padding: 12px var(--n-box);
+        margin: calc(var(--n-box)* -1) calc(var(--n-box)* -1) var(--n-box);
+        position: relative;
+        border-radius: 3px 3px 0 0;
+    }
+    
+    .n-box .title>a {
+        color: #fff;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        border: 1px solid #fff;
+        padding: 4px 6px 3px;
+        right: 12px;
+        font-size: 16px;
+        border-radius: 3px;
+        font-weight: normal;
+    }
+    
+    .n-box .title>a:hover {
+        background: var(--c-green);
+    }
+    ._border_0 {
+        border: none !important;
+    }
+    
+    
+    a {
+        color: #1a477f;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+    
+    a {
+        text-decoration: none;
+        transition: .3s;
+    }
+    
+    .n-box table {
+        margin-bottom: 0;
+        line-height: 1.5;
+    }
+    table {
+        margin: 0 -6px var(--s-space);
+        border-collapse: collapse;
+    }
+    
+    .align-middle {
+        vertical-align: middle;
+    }
+    th, td {
+        padding: 3px 6px;
+    }
+    
+    ._heading {
+        font-weight: 500;
+        font-size: 1.125em;
+    }
+    
+    .img-rounded {
+        border-radius: 5px;
+    }
+    img, video {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .list-none {
+        list-style-type: none;
+        padding-left: 0;
+    }
+    .m-0 {
+        margin: 0 !important;
+    }
+    
+    
+    
+    
+    @media (min-width: 768px) {
+        :root {
+            --n-space: 20px;
+            --n-box: 20px;
+            --n-gap: 20px;
+        }
+    }
+    :root {
+        --n-space: 16px;
+        --n-gap: 16px;
+        --n-box: 16px;
+        --c-blue: #01008d;
+        --c-salmon: #f26b55;
+        --c-yellow: #ffb600;
+        --c-pink: #FF7F7F;
+        --c-orange: #ff8a00;
+        --c-green: #0B9C23;
+    }
+        </style>
 </head>
 <body>
 
