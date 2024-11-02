@@ -144,7 +144,7 @@ img.img-flex2{
     min-width: 100px;
     max-width: 300px;
 }
-ul b{
+#mw-content-text ul b{
     display: flex;
     background: #800;
     color: #fff;
@@ -155,7 +155,7 @@ ul b{
     justify-content: center;
     align-items: center;
 }
-ul b:hover{
+#mw-content-text ul b:hover{
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 .shadow ul{
