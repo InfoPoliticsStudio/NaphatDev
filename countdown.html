@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="https://i.postimg.cc/7hWtmJLM/NS-TECH-logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Naphat Dev</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="wiki.css">
+    
+    <style>
+    .n-box {
+        max-width: 700px;
+        background-color: #fff;
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, .15);
+        padding: 20px;
+        border-radius: 3px;
+        margin: 30px 2.75rem 30px 2.75rem;
+    }
+    
+    .n-box .title {
+        background-color: var(--c-blue);
+        color: #fff;
+        padding: 12px var(--n-box);
+        margin: calc(var(--n-box)* -1) calc(var(--n-box)* -1) var(--n-box);
+        position: relative;
+        border-radius: 3px 3px 0 0;
+    }
+    
+    .n-box .title>a {
+        color: #fff;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        border: 1px solid #fff;
+        padding: 4px 6px 3px;
+        right: 12px;
+        font-size: 16px;
+        border-radius: 3px;
+        font-weight: normal;
+    }
+    
+    .n-box .title>a:hover {
+        background: var(--c-green);
+    }
+    ._border_0 {
+        border: none !important;
+    }
+    
+    
+    a {
+        color: #1a477f;
+        align-items: center;
+        gap: 6px;
+    }
+    
+    a {
+        text-decoration: none;
+        transition: .3s;
+    }
+    
+    .n-box table {
+        margin-bottom: 0;
+        line-height: 1.5;
+    }
+    table {
+        margin: 0 -6px var(--s-space);
+        border-collapse: collapse;
+    	width: 100%;
+    }
+    
+    .align-middle {
+        vertical-align: middle;
+    }
+    th, td {
+        padding: 3px 6px;
+    }
+    
+    ._heading {
+        font-weight: 500;
+        font-size: 1.125em;
+    }
+    
+    .img-rounded {
+        border-radius: 5px;
+    }
+    img, video {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .list-none {
+        list-style-type: none;
+        padding-left: 0;
+    }
+    .m-0 {
+        margin: 0 !important;
+    }
+    
+    
+    
+    
+    @media (min-width: 768px) {
+        :root {
+            --n-space: 20px;
+            --n-box: 20px;
+            --n-gap: 20px;
+        }
+    }
+    :root {
+        --n-space: 16px;
+        --n-gap: 16px;
+        --n-box: 16px;
+        --c-blue: #01008d;
+        --c-salmon: #f26b55;
+        --c-yellow: #ffb600;
+        --c-pink: #FF7F7F;
+        --c-orange: #ff8a00;
+        --c-green: #0B9C23;
+    }
+        
+    .s-box {
+        width: 20%;
+        background-color: #fff;
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, .15);
+        padding: 20px;
+        border-radius: 3px;
+        margin: 30px 2.75rem 30px 2.75rem;
+    }
+    
+    .s-box .title {
+        background-color: var(--c-yellow);
+        color: #fff;
+        padding: 12px var(--n-box);
+        margin: calc(var(--n-box)* -1) calc(var(--n-box)* -1) var(--n-box);
+        position: relative;
+        border-radius: 3px 3px 0 0;
+    }
+        </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="https://i.postimg.cc/7hWtmJLM/NS-TECH-logo.png" alt="โลโก้">
+            <div class="logo-text">NaphatDev</div>
+        </div>
+        <nav>
+            <a href="goal">เป้าหมาย</a>
+        </nav>
+    </header>
+
+    <!-- Countdown Banner -->
+    <section class="countdown-banner">
+        <h2 style=" color: unset; background: unset; padding: unset; ">นับถอยหลังสู่เหตุการณ์สำคัญ</h2>
+        <div class="countdown-wrapper">
+            <div class="countdown-group">
+                <div class="countdown-item">
+                    <b class="specifically">วันสอบ สวช. (16 พฤศจิกายน 2567)<span class="tooltip">*</span></b>
+                    <div class="countdown" id="nationalacademictest-countdown">
+                        <div><span id="nationalacademictest-days"></span>วัน</div>
+                        <div><span id="nationalacademictest-hours"></span>ชั่วโมง</div>
+                        <div><span id="nationalacademictest-minutes"></span>นาที</div>
+                        <div><span id="nationalacademictest-seconds"></span>วินาที</div>
+                    </div>
+                </div>
+                <div class="countdown-item">
+                    <b>วันสอบปลายภาค ภาคเรียนที่ 2 (จ. 13 มกราคม 2568)</b>
+                    <div class="countdown" id="exam2-countdown">
+                        <div><span id="exam2-days"></span>วัน</div>
+                        <div><span id="exam2-hours"></span>ชั่วโมง</div>
+                        <div><span id="exam2-minutes"></span>นาที</div>
+                        <div><span id="exam2-seconds"></span>วินาที</div>
+                    </div>
+                </div>
+            </div>
+            <div class="countdown-group">
+                <div class="countdown-item">
+                    <b>วันสอบ TGAT และ TPAT3 (อา. 8 ธันวาคม 2567)</b>
+                    <div class="countdown" id="tgat-tpat-countdown">
+                        <div><span id="tgat-tpat-days"></span>วัน</div>
+                        <div><span id="tgat-tpat-hours"></span>ชั่วโมง</div>
+                        <div><span id="tgat-tpat-minutes"></span>นาที</div>
+                        <div><span id="tgat-tpat-seconds"></span>วินาที</div>
+                    </div>
+                </div>
+                <div class="countdown-item">
+                    <b>วันพิธีจบหลักสูตร ม.6 รุ่น 138 (ส. 15 กุมภาพันธ์ 2568)</b>
+                    <div class="countdown" id="graduation-countdown">
+                        <div><span id="graduation-days"></span>วัน</div>
+                        <div><span id="graduation-hours"></span>ชั่วโมง</div>
+                        <div><span id="graduation-minutes"></span>นาที</div>
+                        <div><span id="graduation-seconds"></span>วินาที</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    
+    <script>
+        function countdown(targetDate, timerPrefix) {
+            var countDownDate = new Date(targetDate).getTime();
+
+            var x = setInterval(function() {
+                var now = new Date().getTime();
+                var distance = countDownDate - now;
+
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById(timerPrefix + '-days').innerHTML = days;
+                document.getElementById(timerPrefix + '-hours').innerHTML = hours;
+                document.getElementById(timerPrefix + '-minutes').innerHTML = minutes;
+                document.getElementById(timerPrefix + '-seconds').innerHTML = seconds;
+
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById(timerPrefix + '-days').innerHTML = "0";
+                    document.getElementById(timerPrefix + '-hours').innerHTML = "0";
+                    document.getElementById(timerPrefix + '-minutes').innerHTML = "0";
+                    document.getElementById(timerPrefix + '-seconds').innerHTML = "0";
+                }
+            }, 1000);
+        }
+
+        // เรียกใช้งานฟังก์ชัน countdown สำหรับแต่ละเหตุการณ์
+        countdown("Sep 25, 2024 00:00:00", "exam1");
+        countdown("Oct 28, 2024 09:00:00", "tcas");
+        countdown("Jan 13, 2025 00:00:00", "exam2");
+        countdown("Dec 8, 2024 00:00:00", "tgat-tpat");
+        countdown("Feb 15, 2025 00:00:00", "graduation");
+        countdown("Nov 16, 2024 00:00:00", "nationalacademictest");
+
+        function toggleMenu() {
+            const fullMenu = document.getElementById('fullMenu');
+            fullMenu.classList.toggle('show');
+        }
+
+        // Calculate age dynamically based on the birthdate
+        function calculateAge() {
+            const birthdate = new Date('2007-04-30'); // Set birthdate here
+            const today = new Date();
+            let age = today.getFullYear() - birthdate.getFullYear();
+            const monthDifference = today.getMonth() - birthdate.getMonth();
+            if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthdate.getDate())) {
+                age--;
+            }
+            document.getElementById('age').textContent = `${age} ปี`;
+        }
+
+        // Call the function to set the age when the page loads
+        window.onload = calculateAge;
+
+    </script>
+</body>
+</html>
