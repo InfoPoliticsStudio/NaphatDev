@@ -206,6 +206,38 @@
     height: auto;
     border-radius: 8px;
 }
+	    
+table.content-s {
+    display: inline-flex;
+    align-items: center;
+    padding: 20px;
+    font-weight: 500;
+    justify-content: center;
+}
+	    
+.content-s tbody {
+    width: 50%;
+}
+	    /* Styles for screens 1130px wide or less */
+@media (max-width: 1130px) {
+    .content {
+        display: grid;
+        justify-content: center;
+    }
+
+    p {
+        text-indent: 0 !important;
+    }
+
+    .info {
+        margin-top: 10px;
+    }
+
+    x {
+        justify-content: center;
+        display: flex;
+    }
+}
         </style>
 </head>
 <body>
@@ -253,10 +285,12 @@
      <div class="body" id="body">
       <div class="outer-container">
           <div class="t-container">
-              <div class="box">
+              <div class="box" style=" width: 100%; ">
                   <h2>TCAS68</h2>
                   <div class="content">
-                      <img src="https://naphatdev.pages.dev/naphat.jpg" alt="Profile Image">
+                      <x>
+			<img src="https://naphatdev.pages.dev/naphat.jpg" alt="Profile Image">
+		      </x>
                       <div class="info">
                           <p>ชื่อ: <b>ณภัทร ปัญโญ</b></p>
                           <p>โรงเรียน: <b>ดาราวิทยาลัย</b></p>
@@ -270,42 +304,42 @@
           <div class="t-container">
               <div class="box" style=" width: 100%; ">
                   <h2 style=" background: var(--c-yellow); ">TGAT/TPAT</h2>
-                  <table>
+                  <table class="content-s">
 	              <tbody>
 	                <tr style="border-bottom: 1px solid var(--c-yellow);">
 	                    <td class="align-middle _heading">Subject</td>
-	                    <td class="align-middle _heading">X<sub>i</sub></td>
-	                    <td class="align-middle _heading">T<sub>i</sub></td>
+	                    <td class="align-middle _heading" style=" width: 50%; "><center>X<sub>i</sub></center></td>
+	                    <td class="align-middle _heading" style=" width: 50%; "><center>T<sub>i</sub></center>center></td>
 	                </tr>
 	                <tr>
 	                    <td class="align-middle _heading"><b>TGAT</b></td>
-	                    <td class="align-middle _heading"></td>
-	                    <td class="align-middle _heading"></td>
+	                    <td class="align-middle _heading"><center></center></td>
+	                    <td class="align-middle _heading"><center></center></td>
 	                </tr>
 	                <tr>
 	                    <td class="align-middle _heading">TGAT1</td>
-	                    <td class="align-middle _heading"></td>
-	                    <td class="align-middle _heading"></td>
+	                    <td class="align-middle _heading"><center></center></td>
+	                    <td class="align-middle _heading"><center></center></td>
 	                </tr>
 	                <tr>
 	                    <td class="align-middle _heading">TGAT2</td>
-	                    <td class="align-middle _heading"></td>
-	                    <td class="align-middle _heading"></td>
+	                    <td class="align-middle _heading"><center></center></td>
+	                    <td class="align-middle _heading"><center></center></td>
 	                </tr>
 	                <tr style="border-bottom: 1px solid var(--c-yellow);">
 	                    <td class="align-middle _heading">TGAT3</td>
-	                    <td class="align-middle _heading"></td>
-	                    <td class="align-middle _heading"></td>
+	                    <td class="align-middle _heading"><center></center></td>
+	                    <td class="align-middle _heading"><center></center></td>
 	                </tr>
 	                <tr style="border-bottom: 1px solid var(--c-yellow);">
 	                    <td class="align-middle _heading"><b>TPAT3</b></td>
-	                    <td class="align-middle _heading"></td>
-	                    <td class="align-middle _heading"></td>
+	                    <td class="align-middle _heading"><center></center></td>
+	                    <td class="align-middle _heading"><center></center></td>
 	                </tr>
 	                <tr>
 	                    <td class="align-middle _heading"><b>TPAT5</b></td>
-	                    <td class="align-middle _heading"></td>
-	                    <td class="align-middle _heading"></td>
+	                    <td class="align-middle _heading"><center></center></td>
+	                    <td class="align-middle _heading"><center></center></td>
 	                </tr>
 	              </tbody>
 	           </table>
