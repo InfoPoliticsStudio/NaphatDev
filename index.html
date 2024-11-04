@@ -160,6 +160,52 @@
     margin-top: 10px;
     text-indent: 0;
 }
+	    
+.n-body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    padding: 50px;
+    background-color: #ffffff;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.text-content {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.title {
+    font-size: 2em;
+    font-weight: bold;
+    color: #000000;
+    margin: 0;
+}
+
+.description {
+    font-size: 1em;
+    color: #6c757d;
+    margin-top: 10px;
+}
+
+.image-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.image-content img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 8px;
+}
         </style>
 </head>
 <body>
@@ -191,7 +237,20 @@
 	    <p class="sub-heading">ความเพียรนำไปสู่ความก้าวหน้า</p>
 	</div>
     
-	<div class="body" id="body">
+	<div class="n-body">
+	  <div class="profile-section">
+	      <div class="text-content">
+	          <h1 class="title">ตัวตนของผม</h1>
+	          <p class="description">
+	              <b>ผมชื่อนายณภัทร ปัญโญ อายุ<span id="age">17 ปี</span> ปัจจุบันศึกษาอยู่ที่โรงเรียนดาราวิทยาลัย ผมมีความสนใจและความชำนาญในด้านเทคโนโลยีและวิศวกรรม ผมเคยเข้าร่วมการแข่งขันหุ่นยนต์ของ First Tech Challenge Thailand ในปี 2023 และปี 2024 ซึ่งเป็นประสบการณ์ที่สำคัญและช่วยพัฒนาทักษะ ทางด้านเทคนิคและการทำงานเป็นทีมของผม นอกจากนี้ ผมยังเคยผ่านการฝึกงานจากกองช่างในเทศบาลตำบลเวียงยอง อำเภอเมือง จังหวัดลำพูน ซึ่งทำให้ผมได้เรียนรู้และเข้าใจการทำงานในหน่วยงานภาครัฐ และการประยุกต์ใช้ทักษะวิศวกรรมในชีวิตจริง</b>
+	          </p>
+	      </div>
+	      <div class="image-content">
+	          <img src="banner.png" alt="Profile Banner">
+	      </div>
+	  </div>
+	</div>
+     <div class="body" id="body">
       <div class="outer-container">
           <div class="t-container">
               <div class="box">
