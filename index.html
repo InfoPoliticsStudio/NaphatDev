@@ -254,7 +254,7 @@ table.content-s {
     </header>
 
     <!-- Countdown Banner -->
-    <section class="countdown-banner">
+<!--     <section class="countdown-banner">
 	<img 
 		alt="Logo" 
 		src="https://i.postimg.cc/CMtbx8G0/1.png" 
@@ -263,7 +263,64 @@ table.content-s {
 		style="top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%;object-fit:cover" 
 		sizes="100vw" 
 		srcset="https://i.postimg.cc/CMtbx8G0/1.png">
-    </section>
+    </section> -->
+	
+<section class="countdown-banner">
+    <div class="slides">
+        <div class="slide">
+            <img src="https://i.postimg.cc/CMtbx8G0/1.png" alt="Slide 1">
+        </div>
+        <div class="slide">
+            <img src="https://i.postimg.cc/gjMyBpnp/3.png" alt="Slide 2">
+        </div>
+        <div class="slide">
+            <img src="https://i.postimg.cc/MGdGBp4z/4.png" alt="Slide 3">
+        </div>
+        <style>
+        /* สไตล์ของภาพสไลด์ */
+        .countdown-banner {
+            position: relative;
+            width: 100%;
+            max-width: auto; /* ความกว้างสูงสุดของสไลด์ */
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease; /* การเปลี่ยนภาพ */
+            width: 100%;
+            height: 100vh;
+        }
+
+        .slide {
+            height: 100vh;
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100vh;
+            display: block;
+            object-fit: cover;
+        }
+    </style>
+    </div>
+</section>
+
+<script>
+    const slides = document.querySelector('.slides');
+    const slideCount = document.querySelectorAll('.slide').length;
+    let currentIndex = 0;
+
+    function showNextSlide() {
+        currentIndex = (currentIndex + 1) % slideCount; // เปลี่ยนเป็นสไลด์ถัดไป วนกลับมาที่สไลด์แรกเมื่อถึงสไลด์สุดท้าย
+        slides.style.transform = `translateX(-${currentIndex * 100}%)`; // เลื่อนตำแหน่งของ slides
+    }
+
+    setInterval(showNextSlide, 2000); // เปลี่ยนภาพทุกๆ 2 วินาที (2000 มิลลิวินาที)
+</script>
 	<div class="n-section">
 	    <h1 class="main-heading">ความมุ่งมั่นสู่ความสำเร็จ</h1>
 	    <p class="sub-heading">ความเพียรนำไปสู่ความก้าวหน้า</p>
