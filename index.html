@@ -265,6 +265,7 @@ table.content-s {
 		srcset="https://i.postimg.cc/CMtbx8G0/1.png">
     </section> -->
 	
+
 <section class="countdown-banner">
     <div class="slides">
         <div class="slide">
@@ -276,19 +277,26 @@ table.content-s {
         <div class="slide">
             <img src="https://i.postimg.cc/MGdGBp4z/4.png" alt="Slide 3">
         </div>
-        <style>
+    </div>
+    
+    <div class="dots">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+    <style>
         /* สไตล์ของภาพสไลด์ */
         .countdown-banner {
             position: relative;
             width: 100%;
-            max-width: auto; /* ความกว้างสูงสุดของสไลด์ */
+            max-width: auto;
             margin: auto;
             overflow: hidden;
         }
 
         .slides {
             display: flex;
-            transition: transform 0.5s ease; /* การเปลี่ยนภาพ */
+            transition: transform 0.5s ease;
             width: 100%;
             height: 100vh;
         }
@@ -305,21 +313,76 @@ table.content-s {
             display: block;
             object-fit: cover;
         }
+        
+        /* สไตล์ของจุด (Indicators) */
+        .dots {
+            text-align: center;
+            position: fixed;
+            bottom: 10px;
+            width: 100%;
+        }
+
+        .dot {
+            height: 10px;
+            width: 10px;
+            margin: 0 5px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background-color: #ff0000;
+        }
     </style>
-    </div>
 </section>
 
 <script>
     const slides = document.querySelector('.slides');
+    const dots = document.querySelectorAll('.dot');
     const slideCount = document.querySelectorAll('.slide').length;
     let currentIndex = 0;
+    let slideInterval;
 
-    function showNextSlide() {
-        currentIndex = (currentIndex + 1) % slideCount; // เปลี่ยนเป็นสไลด์ถัดไป วนกลับมาที่สไลด์แรกเมื่อถึงสไลด์สุดท้าย
-        slides.style.transform = `translateX(-${currentIndex * 100}%)`; // เลื่อนตำแหน่งของ slides
+    function showSlide(index) {
+        currentIndex = index;
+        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        updateDots();
     }
 
-    setInterval(showNextSlide, 2000); // เปลี่ยนภาพทุกๆ 2 วินาที (2000 มิลลิวินาที)
+    function showNextSlide() {
+        currentIndex = (currentIndex + 1) % slideCount;
+        showSlide(currentIndex);
+    }
+
+    function updateDots() {
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+    }
+
+    function startSlideInterval() {
+        slideInterval = setInterval(showNextSlide, 5000);
+    }
+
+    function resetSlideInterval() {
+        clearInterval(slideInterval);
+        startSlideInterval();
+    }
+
+    // เพิ่ม eventListener ให้ dot คลิกเพื่อเลือกภาพ
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            showSlide(index);
+            resetSlideInterval(); // รีเซ็ตเวลาเมื่อคลิกที่จุด
+        });
+    });
+
+    // เริ่มการเลื่อนภาพ
+    startSlideInterval();
+    updateDots();
 </script>
 	<div class="n-section">
 	    <h1 class="main-heading">ความมุ่งมั่นสู่ความสำเร็จ</h1>
