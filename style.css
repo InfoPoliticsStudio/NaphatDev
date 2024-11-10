@@ -37,7 +37,7 @@ body {
 /* สไตล์ของ Header */
 header {
     position: fixed;
-    top: 20px;
+    top: 24px;
     width: -webkit-fill-available;
     width: -moz-available;
     background-color: var(--c-blue);
