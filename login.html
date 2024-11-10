@@ -159,21 +159,24 @@ function showRegister() {
   document.getElementById("login-toggle").classList.remove("active");
   document.getElementById("register-toggle").classList.add("active");
 }
-function handleLogin(event) {
+
+  function handleLogin(event) {
   event.preventDefault(); // ป้องกันการส่งฟอร์มแบบดั้งเดิม
 
-  // ตรวจสอบข้อมูลล็อกอิน (ตัวอย่างแบบง่าย)
   const username = document.querySelector("#login-form input[type='text']").value;
   const password = document.querySelector("#login-form input[type='password']").value;
 
-  // ตรวจสอบเงื่อนไขการล็อกอิน (คุณสามารถเพิ่มเงื่อนไขอื่น ๆ ได้ตามต้องการ)
+  // ตรวจสอบข้อมูลล็อกอิน (ตัวอย่างแบบง่าย)
   if (username === "testuser" && password === "123456") {
-    // หากล็อกอินสำเร็จ ให้พาไปหน้า m-max.html
+    // บันทึกชื่อผู้ใช้ใน Local Storage
+    localStorage.setItem("username", username);
+    // นำผู้ใช้ไปยังหน้า m-max.html
     window.location.href = "m-max.html";
   } else {
     alert("Invalid username or password.");
   }
 }
+
 
 </script>
 </body>
