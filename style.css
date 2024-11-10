@@ -34,6 +34,29 @@ body {
     overflow-y: scroll; /* เปิดการเลื่อนในแนว y */
 }
 
+
+.top {
+    position: fixed;
+    top: 0;
+    width: -webkit-fill-available;
+    z-index: 9999;
+    font-size: 16px;
+    background: var(--c-yellow);
+    justify-content: flex-end;
+    display: flex;
+    padding: 0 20px;
+}
+
+.top a {
+    padding: 0 10px;
+    color: var(--c-blue);
+}
+
+.top a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
 /* สไตล์ของ Header */
 header {
     position: fixed;
