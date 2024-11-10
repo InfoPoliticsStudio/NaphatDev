@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="th"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link rel="icon" href="https://i.postimg.cc/7hWtmJLM/NS-TECH-logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <title>About | Naphat Dev</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="wiki.css">
+    
+    <style>
+    .n-box {
+        max-width: 700px;
+        background-color: #fff;
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, .15);
+        padding: 20px;
+        border-radius: 3px;
+        margin: 30px 2.75rem 30px 2.75rem;
+    }
+    
+    .n-box .title {
+        background-color: var(--c-blue);
+        color: #fff;
+        padding: 12px var(--n-box);
+        margin: calc(var(--n-box)* -1) calc(var(--n-box)* -1) var(--n-box);
+        position: relative;
+        border-radius: 3px 3px 0 0;
+    }
+    
+    .n-box .title>a {
+        color: #fff;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        border: 1px solid #fff;
+        padding: 4px 6px 3px;
+        right: 12px;
+        font-size: 16px;
+        border-radius: 3px;
+        font-weight: normal;
+    }
+    
+    .n-box .title>a:hover {
+        background: var(--c-green);
+    }
+    ._border_0 {
+        border: none !important;
+    }
+    
+    
+    a {
+        color: #1a477f;
+        align-items: center;
+        gap: 6px;
+    }
+    
+    a {
+        text-decoration: none;
+        transition: .3s;
+    }
+    
+    .n-box table {
+        margin-bottom: 0;
+        line-height: 1.5;
+    }
+    table {
+        margin: 0 -6px var(--s-space);
+        border-collapse: collapse;
+    	width: 100%;
+    }
+    
+    .align-middle {
+        vertical-align: middle;
+    }
+    th, td {
+        padding: 3px 6px;
+    }
+    
+    ._heading {
+        font-weight: 500;
+        font-size: 1.125em;
+    }
+    
+    .img-rounded {
+        border-radius: 5px;
+    }
+    img, video {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .list-none {
+        list-style-type: none;
+        padding-left: 0;
+    }
+    .m-0 {
+        margin: 0 !important;
+    }
+    
+    
+    
+    
+    @media (min-width: 768px) {
+        :root {
+            --n-space: 20px;
+            --n-box: 20px;
+            --n-gap: 20px;
+        }
+    }
+    :root {
+        --n-space: 16px;
+        --n-gap: 16px;
+        --n-box: 16px;
+        --c-blue: #01008d;
+        --c-salmon: #f26b55;
+        --c-yellow: #ffb600;
+        --c-pink: #FF7F7F;
+        --c-orange: #ff8a00;
+        --c-green: #0B9C23;
+    }
+        
+    .s-box {
+        width: 20%;
+        background-color: #fff;
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, .15);
+        padding: 20px;
+        border-radius: 3px;
+        margin: 30px 2.75rem 30px 2.75rem;
+    }
+    
+    .s-box .title {
+        background-color: var(--c-yellow);
+        color: #fff;
+        padding: 12px var(--n-box);
+        margin: calc(var(--n-box)* -1) calc(var(--n-box)* -1) var(--n-box);
+        position: relative;
+        border-radius: 3px 3px 0 0;
+    }
+.n-section {
+    text-align: center;
+    padding: 50px;
+    background-color: #ffffff;
+}
+
+.main-heading {
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--c-blue);
+    margin:0;
+}
+
+.sub-heading {
+    font-size: 1.5em;
+    color: var(--c-orange);
+    margin-top: 10px;
+    text-indent: 0;
+}
+	    
+.n-body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    padding: 0 50px 50px 50px;
+    background-color: #ffffff;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.text-content {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.title {
+    font-size: 2em;
+    font-weight: bold;
+    color: #000000;
+    margin: 0;
+}
+
+.description {
+    font-size: 1em;
+    color: #6c757d;
+    margin-top: 10px;
+}
+
+.image-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.image-content img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 8px;
+}
+	    
+table.content-s {
+    display: inline-flex;
+    align-items: center;
+    padding: 20px;
+    font-weight: 500;
+    justify-content: center;
+}
+	    
+.content-s tbody {
+    width: 50%;
+}
+	    /* Styles for screens 1130px wide or less */
+@media (max-width: 1130px) {
+    .content {
+        display: grid!important;
+        justify-content: center;
+    }
+
+    p {
+        text-indent: 0 !important;
+    }
+
+    .info {
+        margin-top: 10px;
+    }
+
+    x {
+        justify-content: center;
+        display: flex;
+    }
+}
+        </style>
+</head>
+<body>
+
+    <!-- Header -->
+	
+    <header>
+        <div class="logo">
+            <img src="https://i.postimg.cc/7hWtmJLM/NS-TECH-logo.png" alt="โลโก้">
+            <div class="logo-text">NaphatDev</div>
+        </div>
+        <nav>
+            <a href="countdown">นับถอยหลัง</a>
+        </nav>
+    </header>
+<section class="countdown-banner">
+    <div class="slides" style="transform: translateX(-200%);">
+        <div class="slide">
+            <img src="https://i.postimg.cc/CMtbx8G0/1.png" alt="Slide 1">
+        </div>
+        <div class="slide">
+            <img src="https://i.postimg.cc/gjMyBpnp/3.png" alt="Slide 2">
+        </div>
+        <div class="slide">
+            <img src="https://i.postimg.cc/MGdGBp4z/4.png" alt="Slide 3">
+        </div>
+    </div>
+    
+    <div class="dots">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot active"></span>
+    </div>
+    <style>
+        /* สไตล์ของภาพสไลด์ */
+        .countdown-banner {
+            position: relative;
+            width: 100%;
+            max-width: auto;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .slide {
+            height: 100vh;
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100vh;
+            display: block;
+            object-fit: cover;
+        }
+        
+        /* สไตล์ของจุด (Indicators) */
+        .dots {
+            text-align: center;
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+        }
+
+        .dot {
+            height: 10px;
+            width: 10px;
+            margin: 0 5px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background-color: #ff0000;
+        }
+    </style>
+</section>
+
+<script>
+    const slides = document.querySelector('.slides');
+    const dots = document.querySelectorAll('.dot');
+    const slideCount = document.querySelectorAll('.slide').length;
+    let currentIndex = 0;
+    let slideInterval;
+
+    function showSlide(index) {
+        currentIndex = index;
+        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        updateDots();
+    }
+
+    function showNextSlide() {
+        currentIndex = (currentIndex + 1) % slideCount;
+        showSlide(currentIndex);
+    }
+
+    function updateDots() {
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+    }
+
+    function startSlideInterval() {
+        slideInterval = setInterval(showNextSlide, 5000);
+    }
+
+    function resetSlideInterval() {
+        clearInterval(slideInterval);
+        startSlideInterval();
+    }
+
+    // เพิ่ม eventListener ให้ dot คลิกเพื่อเลือกภาพ
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            showSlide(index);
+            resetSlideInterval(); // รีเซ็ตเวลาเมื่อคลิกที่จุด
+        });
+    });
+
+    // เริ่มการเลื่อนภาพ
+    startSlideInterval();
+    updateDots();
+</script>
+    <script>
+        function countdown(targetDate, timerPrefix) {
+            var countDownDate = new Date(targetDate).getTime();
+
+            var x = setInterval(function() {
+                var now = new Date().getTime();
+                var distance = countDownDate - now;
+
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById(timerPrefix + '-days').innerHTML = days;
+                document.getElementById(timerPrefix + '-hours').innerHTML = hours;
+                document.getElementById(timerPrefix + '-minutes').innerHTML = minutes;
+                document.getElementById(timerPrefix + '-seconds').innerHTML = seconds;
+
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById(timerPrefix + '-days').innerHTML = "0";
+                    document.getElementById(timerPrefix + '-hours').innerHTML = "0";
+                    document.getElementById(timerPrefix + '-minutes').innerHTML = "0";
+                    document.getElementById(timerPrefix + '-seconds').innerHTML = "0";
+                }
+            }, 1000);
+        }
+
+        // เรียกใช้งานฟังก์ชัน countdown สำหรับแต่ละเหตุการณ์
+        countdown("Sep 25, 2024 00:00:00", "exam1");
+        countdown("Oct 28, 2024 09:00:00", "tcas");
+        countdown("Jan 13, 2025 00:00:00", "exam2");
+        countdown("Dec 8, 2024 00:00:00", "tgat-tpat");
+        countdown("Feb 15, 2025 00:00:00", "graduation");
+        countdown("Nov 16, 2024 00:00:00", "nationalacademictest");
+
+        function toggleMenu() {
+            const fullMenu = document.getElementById('fullMenu');
+            fullMenu.classList.toggle('show');
+        }
+
+        // Calculate age dynamically based on the birthdate
+        function calculateAge() {
+            const birthdate = new Date('2007-04-30'); // Set birthdate here
+            const today = new Date();
+            let age = today.getFullYear() - birthdate.getFullYear();
+            const monthDifference = today.getMonth() - birthdate.getMonth();
+            if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthdate.getDate())) {
+                age--;
+            }
+            document.getElementById('age').textContent = `${age} ปี`;
+        }
+
+        // Call the function to set the age when the page loads
+        window.onload = calculateAge;
+
+    </script>            
+</body>
+</html>
