@@ -132,7 +132,7 @@
       <p class="text">Don’t have an account? <span onclick="showRegister()">Register</span></p>
     </form>
 
-    <form id="register-form" class="form" style="display: none;">
+    <form id="register-form" class="form" style="display: none;" onsubmit="handleRegister(event)">
       <h2>Register</h2>
       <input type="text" placeholder="Username" required>
       <input type="email" placeholder="Email" required>
@@ -160,22 +160,41 @@ function showRegister() {
   document.getElementById("register-toggle").classList.add("active");
 }
 
-  function handleLogin(event) {
+function handleRegister(event) {
+  event.preventDefault(); // ป้องกันการส่งฟอร์มแบบดั้งเดิม
+
+  const username = document.getElementById("reg-username").value;
+  const email = document.getElementById("reg-email").value;
+  const password = document.getElementById("reg-password").value;
+
+  // เก็บข้อมูลผู้ใช้ใน Local Storage
+  const userData = { username, email, password };
+  localStorage.setItem("userData", JSON.stringify(userData)); // แปลงข้อมูลเป็น JSON
+
+  alert("Registration successful! You can now login.");
+  showLogin(); // แสดงฟอร์มล็อกอิน
+}
+
+function handleLogin(event) {
   event.preventDefault(); // ป้องกันการส่งฟอร์มแบบดั้งเดิม
 
   const username = document.querySelector("#login-form input[type='text']").value;
   const password = document.querySelector("#login-form input[type='password']").value;
 
-  // ตรวจสอบข้อมูลล็อกอิน (ตัวอย่างแบบง่าย)
-  if (username === "testuser" && password === "123456") {
-    // บันทึกชื่อผู้ใช้ใน Local Storage
+  // ดึงข้อมูลผู้ใช้จาก Local Storage
+  const storedUserData = JSON.parse(localStorage.getItem("userData"));
+
+  // ตรวจสอบข้อมูลล็อกอิน
+  if (storedUserData && storedUserData.username === username && storedUserData.password === password) {
+    // บันทึกชื่อผู้ใช้ใน Local Storage เพื่อใช้ในหน้า m-max.html
     localStorage.setItem("username", username);
-    // นำผู้ใช้ไปยังหน้า m-max.html
-    window.location.href = "m-max.html";
+    window.location.href = "m-max.html"; // นำผู้ใช้ไปยังหน้า m-max.html
   } else {
     alert("Invalid username or password.");
   }
 }
+
+  
 
 
 </script>
