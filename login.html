@@ -124,7 +124,7 @@
       <button id="register-toggle" onclick="showRegister()">Register</button>
     </div>
 
-    <form id="login-form" class="form">
+    <form id="login-form" class="form" onsubmit="handleLogin(event)">
       <h2>Login</h2>
       <input type="text" placeholder="Username" required>
       <input type="password" placeholder="Password" required>
@@ -158,6 +158,21 @@ function showRegister() {
   document.getElementById("register-form").style.display = "block";
   document.getElementById("login-toggle").classList.remove("active");
   document.getElementById("register-toggle").classList.add("active");
+}
+function handleLogin(event) {
+  event.preventDefault(); // ป้องกันการส่งฟอร์มแบบดั้งเดิม
+
+  // ตรวจสอบข้อมูลล็อกอิน (ตัวอย่างแบบง่าย)
+  const username = document.querySelector("#login-form input[type='text']").value;
+  const password = document.querySelector("#login-form input[type='password']").value;
+
+  // ตรวจสอบเงื่อนไขการล็อกอิน (คุณสามารถเพิ่มเงื่อนไขอื่น ๆ ได้ตามต้องการ)
+  if (username === "testuser" && password === "123456") {
+    // หากล็อกอินสำเร็จ ให้พาไปหน้า m-max.html
+    window.location.href = "m-max.html";
+  } else {
+    alert("Invalid username or password.");
+  }
 }
 
 </script>
