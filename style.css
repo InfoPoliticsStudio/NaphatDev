@@ -60,7 +60,7 @@ body {
 /* สไตล์ของ Header */
 header {
     position: fixed;
-    top: 24px;
+    top: 0;
     width: -webkit-fill-available;
     width: -moz-available;
     background-color: var(--c-blue);
