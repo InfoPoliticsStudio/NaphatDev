@@ -64,7 +64,8 @@ body{
     }
     /* sdide */
     .sdide{
-      width: 270px;
+      width: 0;  
+      display: none;
       background: var(--bg-bk-100);
       position:fixed;
       padding: 30px;
@@ -74,7 +75,6 @@ body{
       height: 100%;
       display: flex;
       justify-content: center;
-      align-items: center;
       z-index:10;
     }
     
