@@ -20,7 +20,7 @@
 }
 /* ลบ padding และ margin ของ body */
 body {
-    font-family: "Prompt", sans-serif;
+    font-family: "Prompt", sans-serif!important;
 }
 
 body, html {
