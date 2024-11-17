@@ -14,7 +14,27 @@
     <link rel="stylesheet" href="wiki.css">
     <link rel="stylesheet" href="https://nsgroup.pages.dev/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <script src="https://nsgroup.pages.dev/js/script.js"></script>
+	<script>
+	document.addEventListener('DOMContentLoaded', () => {
+	    const menuToggle = document.getElementById('menuToggle');
+	    const navMenu = document.getElementById('navMenu');
+	    const menuIcon = menuToggle.querySelector('i');
+	
+	    menuToggle.addEventListener('click', () => {
+	        // Toggle the 'active' class on the nav menu
+	        navMenu.classList.toggle('active');
+	
+	        // Change the icon class
+	        if (menuIcon.classList.contains('fa-bars')) {
+	            menuIcon.classList.remove('fa-bars');
+	            menuIcon.classList.add('fa-times');
+	        } else {
+	            menuIcon.classList.remove('fa-times');
+	            menuIcon.classList.add('fa-bars');
+	        }
+	    });
+	});
+	</script>
 	<style>
     .n-box {
         max-width: 700px;
