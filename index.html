@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="wiki.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <style>
     .n-box {
         max-width: 700px;
@@ -238,6 +238,7 @@ table.content-s {
         display: flex;
     }
 }
+	    
         </style>
 </head>
 <body>
@@ -246,17 +247,27 @@ table.content-s {
 	<div class="top">
 	    <a href="countdown">นับถอยหลัง</a>
 	</div>
-    <header>
+	<header class="header">
         <div class="logo">
             <img src="https://i.postimg.cc/7hWtmJLM/NS-TECH-logo.png" alt="โลโก้">
             <div class="logo-text">NaphatDev</div>
-        </div>
-        <nav>
-            <a href="ap">บทความวิชาการ</a>
-            <a href="about">เกี่ยวกับเรา</a>
+	</div>
+        <nav class="nav-menu active" id="navMenu">
+          <ul class="menu-list">
+            <li class="TH Anuphan"><a href="#">หน้าหลัก</a></li>
+            <li class="EN"><a href="#">Home</a></li>
+            <li class="TH Anuphan"><a href="#">เกี่ยวกับ</a></li>
+            <li class="EN"><a href="#">About</a></li>
+            <li class="TH Anuphan"><a href="https://www.youtube.com/@NPGMSTUDIO/featured" target="_blank">วิดีโอ</a></li>
+            <li class="EN"><a href="https://www.youtube.com/@NPGMSTUDIO/featured" target="_blank">Videos</a></li>
+            <li class="TH Anuphan"><a href="#">ติดต่อ</a></li>
+            <li class="EN"><a href="#">Contact</a></li>
+          </ul>
         </nav>
-    </header>
-
+        <div class="menu-toggle" id="menuToggle">
+          <i class="fas fa-times"></i>
+        </div>
+      </header>
     <!-- Countdown Banner -->
 <!--     <section class="countdown-banner">
 	<img 
