@@ -37,9 +37,22 @@
   .menu-list a:hover{
     border-bottom: 2px solid #ffb600;
   }
+        
+.log {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+}
+.log img {
+    border-radius: 100px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* เงา */
+}
     </style>
 </head>
 <body>
+    <div class="log">
+        <img width="75px" src="https://scontent.fcnx4-1.fna.fbcdn.net/v/t39.30808-6/465918041_1092624888911898_4481075803387255520_n.jpg?_nc_cat=105&amp;ccb=1-7&amp;_nc_sid=6ee11a&amp;_nc_ohc=Q2tugSbhF0IQ7kNvgG2_MvC&amp;_nc_zt=23&amp;_nc_ht=scontent.fcnx4-1.fna&amp;_nc_gid=AA-EJkSPTAA1GItOOn57zYN&amp;oh=00_AYDRCOqH2GxqWoa6qnt1tkFw6zawxVt28L0vP2fWAJDS5g&amp;oe=67427A7F">
+    </div>
     <a href="/" style=" color: #023399; text-decoration: none; ">&lt; หน้าหลัก</a>
     <h1>บทความวิชาการของณภัทร</h1>
     <h2>ความสัมพันธ์กำลังสองในห้าตัวแปรของณภัทร <br><small>(Naphat's Quadratic Relation in Five Variables)</small></h2>
@@ -47,66 +60,9 @@
         <b>ความสัมพันธ์กำลังสองในห้าตัวแปรของณภัทร</b> หมายถึงชุดของจำนวนเต็มบวก <em>a</em>, <em>b</em>, <em>c</em>, <em>d</em>, <em>e</em> 
         ที่สอดคล้องกับสมการกำลังสอง:
     </p>
-    <div class="highlight">
-        <p>
-            <span style="font-size: 1.2em;">a<sup><small> 2</small></sup> + b<sup><small> 2</small></sup> + c<sup><small> 2</small></sup> + d<sup><small> 2</small></sup> = e<sup><small> 2</small></sup></span>
-        </p>
-    </div>
-    <p>
-        ซึ่งสามารถมองได้ว่าเป็นคำตอบของ สมการไดโอแฟนไทน์ (Diophantine Equation) ที่ศึกษาผลรวมของกำลังสองของตัวเลขสี่ตัวแปรเท่ากับกำลังสองของอีกตัวแปรหนึ่ง
-ในทางเรขาคณิต ความสัมพันธ์นี้สามารถตีความได้ว่า  a, b, c, d กำหนดมิติของทรงสี่เหลี่ยมมุมฉากใน 4 มิติที่มีความยาวเส้นทแยงมุม e โดยค่าของตัวแปรทั้งหมดต้องเป็นจำนวนเต็มบวกหรือศูนย์เท่านั้น เพื่อให้ความหมายทางเรขาคณิตสมบูรณ์
-
-    </p>
-    <h3>กำหนดให้
-</h3>
-    <p>
-        <strong>ตัวแปรกำลังสอง (Squared Variables):</strong> แต่ละตัวแปร <em>a</em>, <em>b</em>, <em>c</em>, <em>d</em> แทนความยาวของแกนใน 4 มิติ<br>
-        <strong>ผลลัพธ์กำลังสอง (Squared Result):</strong> <em>e</em> แทนความยาวของเส้นทแยงมุมในระบบที่สอดคล้องกับสมการ
-    </p>
-    <p>
-        โดยกำหนดให้พิจารณาค่าจำนวนเต็มบวกเป็นหลัก และวิเคราะห์คุณสมบัติของความสัมพันธ์ รวมถึงเงื่อนไขที่ตัวแปรเหล่านี้สอดคล้องกับสมการที่กำหนด
-    </p>
-    <p>
-        หมายเหตุ: ความสัมพันธ์นี้สามารถขยายการศึกษาไปสู่ค่าจำนวนเต็มที่เป็นศูนย์หรือลบได้ เพื่อความสมบูรณ์ในทางคณิตศาสตร์ แต่ในกรณีที่ไม่มีการระบุไว้ จะถือว่าตัวแปรทั้งหมดเป็นจำนวนเต็มบวกเท่านั้น
-    </p>
-    <h3><center><b><u>บทนิยาม<br>นิยามที่ 1 ห้าเท่ากำลังสอง (Penta-Pythagorean Quintuple)</u></b></center></h3>
-    <p><center>ห้าเท่ากำลังสองคือชุดของจำนวนเต็มบวก 5 ตัว  <em>a</em>, <em>b</em>, <em>c</em>, <em>d</em>, <em>e</em> ที่ทำให้สมการ</center></p>
-    <div class="highlight">
-        <p>
-            <span style="font-size: 1.2em;">a<sup><small> 2</small></sup> + b<sup><small> 2</small></sup> + c<sup><small> 2</small></sup> + d<sup><small> 2</small></sup> = e<sup><small> 2</small></sup></span>
-        </p>
-    </div>
-    <p>
-        ซึ่งในที่นี้ e จะเรียกว่า <b>บรรทัดฐาน (Norm)</b> ของห้าเท่า โดยมีการกำหนดค่าของแต่ละตัวแปร <em>a</em>, <em>b</em>, <em>c</em>, <em>d</em> เป็นจำนวนเต็มบวกที่สามารถเป็นคำตอบของสมการนี้
-    </p>
-    <h3><center><b><u>นิยามที่ 2 บรรทัดฐานของห้าเท่า (Norm of Penta-Pythagorean Quintuple)</u></b></center></h3>
-    <p><center>บรรทัดฐานของห้าเท่า (<em>a</em>, <em>b</em>, <em>c</em>, <em>d</em>, <em>e</em>)  คือจำนวน <em>e</em> ที่สามารถคำนวณได้จากสมการ</center></p>
-    <div class="highlight">
-        <p>
-            <math xmlns="http://www.w3.org/1998/Math/MathML" style=" font-size: 1.2em; ">
-                <mi>e</mi>
-                <mo>=</mo>
-                <msqrt>
-                    <mrow>
-                        <msup><mi>a</mi><mn>2</mn></msup>
-                        <mo>+</mo>
-                        <msup><mi>b</mi><mn>2</mn></msup>
-                        <mo>+</mo>
-                        <msup><mi>c</mi><mn>2</mn></msup>
-                        <mo>+</mo>
-                        <msup><mi>d</mi><mn>2</mn></msup>
-                    </mrow>
-               </msqrt>
-            </math>
-        </p>
-    </div>
-    <p><center>ซึ่งแสดงถึงความยาวของเส้นทแยงมุมของไฮเปอร์ลูกบาศก์ใน 4 มิติที่มีความยาวด้าน <em>a</em>, <em>b</em>, <em>c</em>, <em>d</em></center></p>
-    <h3><center><b><u>นิยามที่ 3 วงกลมสมมาตรของณภัทร (Naphat's Symmetrical Circle)</u></b></center></h3>
-    <p><center>เมื่อแทนค่า <em>e = {1,2,3,4,5,...} </em> และ a<sup><small> 2</small></sup> + b<sup><small> 2</small></sup> + c<sup><small> 2</small></sup> + d<sup><small> 2</small></sup> = e<sup><small> 2</small></sup> จะได้ว่า n<sup><small> 2</small></sup> + n<sup><small> 2</small></sup> + n<sup><small> 2</small></sup> + n<sup><small> 2</small></sup> = (2n)<sup><small> 2</small></sup> เป็นจริงทุกจำนวน</center></p>
     <center>
-        <img src="nsc.png" style="width:200px;">
+        <h1>บทความยังไม่เผยแพร่ กำลังอยู่ในขั้นพิสูจน์</h1>
+        <p>สปอยล์บทความ : เป็บบทความที่เกี่ยวข้องกับ <b>ทฤษฎีจำนวน, สมการไดโอแฟนไทน์</b> และได้สร้าง<u>วงกลมสมมาตรของณภัทร</u> จากสมการ<b>ความสัมพันธ์กำลังสองในห้าตัวแปรของณภัทร</b></p>
     </center>
-    <p><center>จะได้<b>วงกลมสมมาตรของณภัทร (Naphat's Symmetrical Circle)</b></center></p>
-
 </body>
 </html>
