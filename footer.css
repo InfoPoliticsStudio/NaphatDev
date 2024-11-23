@@ -88,6 +88,9 @@ footer h1,footer h2, footer h3, footer h4, footer h5, footer .h1, footer .h2, fo
     line-height: 1.5;
     font-weight: 400;
     font-family: "Nunito Sans", Arial, sans-serif;
+    background: unset;
+    margin: unset; 
+    padding: unset;
 }
 footer h2, footer .h2 {
     font-size: 2rem;
