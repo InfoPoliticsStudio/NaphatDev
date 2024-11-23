@@ -1,7 +1,7 @@
 /* Footer Styles */
 footer {
-    background-color: #222;
-    color: #aaa;
+    background: linear-gradient( #d10000, #5c0000);
+    color: #fff;
     padding: 40px 0;
     font-family: Arial, sans-serif;
 }
