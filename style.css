@@ -442,35 +442,6 @@ none{
 }
 
 
-footer {
-
-    display: flex;
-    justify-content: center;
-    font-size: 2em;
-    scroll-snap-align: start; /* จัดให้ footer align ที่จุดเริ่มต้น */
-    
-    background-color: #01008d; /* สีหลักของ footer */
-    color: white; /* สีข้อความ */
-    padding: 20px 0;
-    text-align: center;
-}
-
-.footer-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.footer-logo img {
-    max-width: 150px;
-    margin-bottom: 15px;
-}
-
-.footer-text p {
-    margin: 0;
-    font-size: 1em;
-}
 
 .fill-white {
     fill: #fff;
