@@ -11,18 +11,5 @@
         <h1>Welcome, <span id="username"></span></h1>
         <p>Email: <span id="email"></span></p>
     </div>
-
-    <script>
-        // ดึงข้อมูลผู้ใช้จาก Local Storage
-        const user = JSON.parse(localStorage.getItem('user'));
-
-        if (user) {
-            document.getElementById('username').textContent = user.username;
-            document.getElementById('email').textContent = user.email;
-        } else {
-            // ถ้าไม่มีข้อมูลผู้ใช้ ส่งกลับไปหน้า login
-            window.location.href = 'login.html';
-        }
-    </script>
 </body>
 </html>
