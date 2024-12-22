@@ -10,9 +10,6 @@
             text-align: center;
             margin: 50px;
         }
-        .user-info {
-            margin: 20px 0;
-        }
         .logout-btn {
             background-color: #ff4d4d;
             color: white;
@@ -28,29 +25,12 @@
     </style>
 </head>
 <body>
-    <h1>Welcome, <span id="username">User</span>!</h1>
-    <div class="user-info">
-        <p><strong>Email:</strong> <span id="email"></span></p>
-        <p><strong>GitHub ID:</strong> <span id="github-id"></span></p>
-    </div>
+    <h1>Welcome to the User Dashboard!</h1>
     <button class="logout-btn" id="logout">Log Out</button>
 
     <script>
-        // ดึงข้อมูลผู้ใช้จาก localStorage
-        const username = localStorage.getItem('username');
-        const email = localStorage.getItem('email');
-        const githubId = localStorage.getItem('githubId');
-
-        // แสดงข้อมูลผู้ใช้บนหน้า
-        document.getElementById('username').textContent = username || 'User';
-        document.getElementById('email').textContent = email || 'example@example.com';
-        document.getElementById('github-id').textContent = githubId || '123456';
-
         // Log Out
         document.getElementById('logout').onclick = () => {
-            // ลบข้อมูลใน localStorage
-            localStorage.clear();
-
             // เปลี่ยนเส้นทางกลับไปที่หน้า login
             window.location.href = 'login.html';
         };
