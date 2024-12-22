@@ -45,7 +45,7 @@
         const user = users.find(u => u.Username === username && u.Password === password);
         if (user) {
           // หากล็อกอินสำเร็จ เปลี่ยนไปที่หน้า m-max.html พร้อมพารามิเตอร์ข้อมูลผู้ใช้
-          const mMaxPageUrl = `m-max.html?username=${encodeURIComponent(user.Username)}&name=${encodeURIComponent(user['Full Name'])}&profile=${encodeURIComponent(user['Profile Picture URL'])}`;
+          const mMaxPageUrl = `m-max.html`;
           window.location.href = mMaxPageUrl;
         } else {
           errorMessage.textContent = "Invalid username or password.";
