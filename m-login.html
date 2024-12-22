@@ -44,9 +44,9 @@
         // ตรวจสอบชื่อผู้ใช้และรหัสผ่าน
         const user = users.find(u => u.Username === username && u.Password === password);
         if (user) {
-          // หากล็อกอินสำเร็จ เปลี่ยนไปที่หน้า user.html พร้อมพารามิเตอร์ข้อมูลผู้ใช้
-          const userPageUrl = `user.html?username=${encodeURIComponent(user.Username)}&name=${encodeURIComponent(user['Full Name'])}&profile=${encodeURIComponent(user['Profile Picture URL'])}`;
-          window.location.href = userPageUrl;
+          // หากล็อกอินสำเร็จ เปลี่ยนไปที่หน้า m-max.html พร้อมพารามิเตอร์ข้อมูลผู้ใช้
+          const mMaxPageUrl = `m-max.html?username=${encodeURIComponent(user.Username)}&name=${encodeURIComponent(user['Full Name'])}&profile=${encodeURIComponent(user['Profile Picture URL'])}`;
+          window.location.href = mMaxPageUrl;
         } else {
           errorMessage.textContent = "Invalid username or password.";
         }
@@ -55,6 +55,7 @@
         errorMessage.textContent = "An error occurred. Please try again later.";
       }
     });
-  </script>
+</script>
+
 </body>
 </html>
