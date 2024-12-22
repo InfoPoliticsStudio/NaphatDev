@@ -66,7 +66,7 @@
 	    const responseType = 'code';
 	    const scope = 'profile email'; // Scope สำหรับดึงข้อมูล Profile และ Email
 	    const url = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=${responseType}&scope=${scope}`;
-	    window.location.href = 'user.html';
+	    window.location.href = url;
 	};
 	
 	// M-MAX Login
