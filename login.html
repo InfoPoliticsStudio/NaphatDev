@@ -62,6 +62,12 @@
             const url = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code&scope=profile email`;
             window.location.href = url;
         };
+
+        // M-MAX Login
+        document.getElementById('login-mmax').onclick = () => {
+            const customLoginUrl = 'https://naphatdev.pages.dev/m-login'; // แก้ URL ให้ตรงกับหน้าล็อกอินของคุณ
+            window.location.href = customLoginUrl;
+        };
     </script>
 </body>
 </html>
