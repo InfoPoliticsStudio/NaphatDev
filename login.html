@@ -49,27 +49,31 @@
 </div>
     
     <script>
-        // GitHub Login
-        document.getElementById('login-github').onclick = () => {
-            const clientId = 'Ov23liR1Bz51LhtxJbBn';
-            const redirectUri = 'https://naphatdev.pages.dev';
-            const url = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=user`;
-            window.location.href = url;
-        };
+	// GitHub Login
+	document.getElementById('login-github').onclick = () => {
+	    const clientId = 'Ov23liR1Bz51LhtxJbBn';
+	    const redirectUri = 'https://naphatdev.pages.dev/user.html'; // แก้ redirect ให้ตรงกับหน้าที่ต้องการ
+	    const scope = 'user'; // Scope ที่ใช้ในการขอข้อมูลจาก GitHub
+	    const url = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}`;
+	    window.location.href = url;
+	};
+	
+	// Google Login
+	document.getElementById('login-google').onclick = () => {
+	    const clientId = '508727975662-tls6hpb13m15mj1b0obihtb69bav0ftn.apps.googleusercontent.com';
+	    const redirectUri = 'https://naphatdev.pages.dev/user.html'; // แก้ redirect ให้ตรงกับหน้าที่ต้องการ
+	    const responseType = 'code';
+	    const scope = 'profile email'; // Scope สำหรับดึงข้อมูล Profile และ Email
+	    const url = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=${responseType}&scope=${scope}`;
+	    window.location.href = url;
+	};
+	
+	// M-MAX Login
+	document.getElementById('login-mmax').onclick = () => {
+	    const customLoginUrl = 'https://naphatdev.pages.dev/m-login'; // URL สำหรับหน้าล็อกอินของ M-MAX
+	    window.location.href = customLoginUrl;
+	};
 
-        // Google Login
-        document.getElementById('login-google').onclick = () => {
-            const clientId = '508727975662-tls6hpb13m15mj1b0obihtb69bav0ftn.apps.googleusercontent.com';
-            const redirectUri = 'https://naphatdev.pages.dev';
-            const url = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code&scope=profile email`;
-            window.location.href = url;
-        };
-
-        // M-MAX Login
-        document.getElementById('login-mmax').onclick = () => {
-            const customLoginUrl = 'https://naphatdev.pages.dev/m-login'; // แก้ URL ให้ตรงกับหน้าล็อกอินของคุณ
-            window.location.href = customLoginUrl;
-        };
     </script>
 </body>
 </html>
