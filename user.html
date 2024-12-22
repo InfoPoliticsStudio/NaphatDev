@@ -3,13 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Page</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>User Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .user-info {
+            margin: 20px 0;
+        }
+        .logout-btn {
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .logout-btn:hover {
+            background-color: #ff1a1a;
+        }
+    </style>
 </head>
 <body>
+    <h1>Welcome, <span id="username">User</span>!</h1>
     <div class="user-info">
-        <h1>Welcome, <span id="username"></span></h1>
-        <p>Email: <span id="email"></span></p>
+        <p><strong>Email:</strong> <span id="email">example@example.com</span></p>
+        <p><strong>GitHub ID:</strong> <span id="github-id">123456</span></p>
     </div>
+    <button class="logout-btn" id="logout">Log Out</button>
+
+    <script>
+        // ดึงข้อมูลผู้ใช้จาก localStorage
+        const username = localStorage.getItem('username');
+        const email = localStorage.getItem('email');
+        const githubId = localStorage.getItem('githubId');
+
+        // แสดงข้อมูลผู้ใช้บนหน้า
+        document.getElementById('username').textContent = username || 'User';
+        document.getElementById('email').textContent = email || 'example@example.com';
+        document.getElementById('github-id').textContent = githubId || '123456';
+
+        // Log Out
+        document.getElementById('logout').onclick = () => {
+            // ลบข้อมูลใน localStorage
+            localStorage.clear();
+
+            // เปลี่ยนเส้นทางกลับไปที่หน้า login
+            window.location.href = 'login.html';
+        };
+    </script>
 </body>
 </html>
