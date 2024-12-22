@@ -52,7 +52,7 @@
 	// GitHub Login
 	document.getElementById('login-github').onclick = () => {
 	    const clientId = 'Ov23liR1Bz51LhtxJbBn';
-	    const redirectUri = 'https://naphatdev.pages.dev/user.html'; // แก้ redirect ให้ตรงกับหน้าที่ต้องการ
+	    const redirectUri = 'https://naphatdev.pages.dev/user'; // แก้ redirect ให้ตรงกับหน้าที่ต้องการ
 	    const scope = 'user'; // Scope ที่ใช้ในการขอข้อมูลจาก GitHub
 	    const url = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}`;
 	    window.location.href = url;
