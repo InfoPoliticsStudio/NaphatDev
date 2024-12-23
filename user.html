@@ -27,6 +27,8 @@
         document.getElementById('logout-button').addEventListener('click', () => {
             // 1. ล้างข้อมูล Local Storage หรือ Session Storage
             localStorage.clear();
+            localStorage.removeItem('github_token');
+            localStorage.removeItem('github_user');
 
             // 2. สำหรับ Google Logout
             const googleLogoutScript = document.createElement('script');
@@ -41,9 +43,11 @@
 
             // 3. สำหรับ GitHub Logout (Redirect)
             const githubLogoutUrl = 'https://github.com/logout';
-            fetch(githubLogoutUrl, { method: 'GET', mode: 'no-cors' }).then(() => {
-                console.log('GitHub logged out.');
-            }).catch(err => console.error('GitHub logout error:', err));
+            fetch('https://github.com/logout', { method: 'GET', mode: 'no-cors' })
+            .then(() => {
+                console.log('GitHub logout attempt completed.');
+            })
+            .catch(err => console.error('GitHub logout error:', err));
 
             // 4. เปลี่ยนเส้นทางกลับไปหน้า login
             window.location.href = "login.html";
