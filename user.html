@@ -29,11 +29,41 @@
     <button class="logout-btn" id="logout">Log Out</button>
 
     <script>
-        // Log Out
-        document.getElementById('logout').onclick = () => {
-            // เปลี่ยนเส้นทางกลับไปที่หน้า login
-            window.location.href = 'login.html';
-        };
+        // ดึงข้อมูลผู้ใช้จาก query parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const username = urlParams.get('username');
+        const fullName = urlParams.get('name');
+        const profilePic = urlParams.get('profile');
+
+        // แสดงข้อมูลผู้ใช้
+        document.getElementById('user-name').textContent = fullName || username;
+        document.getElementById('user-profile-pic').src = profilePic || 'https://via.placeholder.com/150';
+
+        // การจัดการ Logout
+        document.getElementById('logout-button').addEventListener('click', () => {
+            // 1. ล้างข้อมูล Local Storage หรือ Session Storage
+            localStorage.clear();
+
+            // 2. สำหรับ Google Logout
+            const googleLogoutScript = document.createElement('script');
+            googleLogoutScript.src = "https://accounts.google.com/gsi/client";
+            googleLogoutScript.onload = () => {
+                google.accounts.id.disableAutoSelect(); // ปิด auto login
+                google.accounts.id.revoke(localStorage.getItem('google_token'), () => {
+                    console.log('Google account disconnected.');
+                });
+            };
+            document.body.appendChild(googleLogoutScript);
+
+            // 3. สำหรับ GitHub Logout (Redirect)
+            const githubLogoutUrl = 'https://github.com/logout';
+            fetch(githubLogoutUrl, { method: 'GET', mode: 'no-cors' }).then(() => {
+                console.log('GitHub logged out.');
+            }).catch(err => console.error('GitHub logout error:', err));
+
+            // 4. เปลี่ยนเส้นทางกลับไปหน้า login
+            window.location.href = "login.html";
+        });
     </script>
 </body>
 </html>
