@@ -2,7 +2,7 @@
 
 async function fetchUsers() {
     try {
-        const response = await fetch('users.json'); // Fetch the JSON file
+        const response = await fetch('/login/users.json'); // Fetch the JSON file
         if (!response.ok) {
             throw new Error(`Error fetching users.json: ${response.statusText}`);
         }
@@ -57,7 +57,7 @@ async function login() {
             imageAlt: 'User Picture',
         }).then(() => {
             // Redirect to another page or perform other actions
-            window.location.href = "dashboard.html";
+            window.location.href = "/login/dashboard.html";
         });
     } else {
         Swal.fire({
@@ -68,4 +68,14 @@ async function login() {
     }
 
     return false; // Prevent default form submission behavior
+}
+if (user) {
+    localStorage.setItem('loggedInUser', JSON.stringify(user)); // Store user data
+    Swal.fire({
+        icon: 'success',
+        title: 'Login Successful',
+        text: `Welcome, ${user.name_th}!`,
+    }).then(() => {
+        window.location.href = "/login/dashboard.html"; // Redirect to dashboard
+    });
 }
