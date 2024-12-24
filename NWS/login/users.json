@@ -2,11 +2,13 @@
     {
         "username": "admin",
         "password": "37698",
-        "name": "User One"
+        "name": "User One",
+        "img": "/naphat.jpg"
     },
     {
         "username": "user2",
         "password": "password2",
-        "name": "User Two"
+        "name": "User Two",
+        "img": "https://via.placeholder.com/100"
     }
 ]
