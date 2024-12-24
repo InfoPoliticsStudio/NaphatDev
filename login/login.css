@@ -76,6 +76,7 @@ h1 {
 .t-form label {
     display: flex;
     width: 100%;
+    margin-bottom: 5px;
 }
 nav, button, ._heading, blockquote, label, legend {
     font-size: 1.125em;
@@ -119,7 +120,7 @@ button, select, input, textarea {
     }
 }
 .t-form .action .btn-main {
-    width: 100%;
+    width: -webkit-fill-available;
     max-width: 350px;
 }
 .btn-main.disabled {
@@ -133,12 +134,10 @@ button, select, input, textarea {
     color: #fff;
     border: none;
     border-radius: 3px;
-    display: inline-flex
-;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: .5em .9em .4em;
-    font-family: "kvl", sans-serif;
+/*     padding: .5em .9em .4em; */
     min-height: 44px;
     font-size: 1.125em;
     font-weight: bold;
@@ -149,8 +148,7 @@ button, select, input, textarea {
 }
 a {
     color: #1a477f;
-    display: inline-flex
-;
+    display: inline-flex;
     align-items: center;
     gap: 6px;
 }
