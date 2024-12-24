@@ -13,12 +13,12 @@ body {
     padding-top: 5em;
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
     .t-form .action {
         padding-left: 10px;
         padding-right: 10px;
     }
-}
+} */
 .t-form .action {
     text-align: center;
     margin-bottom: 20px;
@@ -96,7 +96,6 @@ nav, button, ._heading, blockquote, label, legend {
     width: -webkit-fill-available;
 }
 input[type=text], input[type=date], input[type=number], input[type=tel], input[type=email], input[type=file], input[type=password], textarea {
-    font-family: "kvl", sans-serif;
     border: 2px solid #d5d5d7;
     transition: .3s ease;
     background-size: 30px 20px;
