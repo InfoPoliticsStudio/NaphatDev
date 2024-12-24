@@ -21,10 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ตรวจจับการคลิกหรือการเคลื่อนไหว
-    ['click', 'mousemove', 'keydown', 'scroll', 'touchstart'].forEach((event) => {
-        document.addEventListener(event, resetTimer);
-    });
 
     // เริ่มต้นการจับเวลา
     resetTimer();
