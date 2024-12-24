@@ -105,7 +105,7 @@ loginButton.addEventListener('click', async (event) => {
         `;
     } else {
         // If valid password
-        window.location.href = '/profile/'; // Redirect to profile
+        window.location.href = '/login/dashboard'; // Redirect to profile
         localStorage.setItem('userProfile', JSON.stringify(student)); // Save user profile in localStorage
     }
 });
