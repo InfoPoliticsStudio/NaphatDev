@@ -11,16 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // ฟังก์ชันรีเซ็ตตัวจับเวลา
     const resetTimer = () => {
         clearTimeout(logoutTimer); // เคลียร์ timer เก่า
-        logoutTimer = setTimeout(logout, 5 * 60 * 1000); // ตั้งค่า timeout (5 นาที)
+        logoutTimer = setTimeout(logout, 5 * 60 * 1000); // ตั้ง timeout (5 นาที)
     };
 
-    // ตรวจจับการเปลี่ยนสถานะของหน้าเว็บ
-    document.addEventListener('visibilitychange', () => {
-        if (document.visibilityState === 'hidden') {
-            logout(); // Logout หากหน้าเว็บถูกซ่อนไป (ออกจากแอป)
-        }
+    // ตรวจจับการคลิกหรือการเคลื่อนไหว
+    ['click', 'mousemove', 'keydown', 'scroll', 'touchstart'].forEach((event) => {
+        document.addEventListener(event, resetTimer);
     });
-
 
     // เริ่มต้นการจับเวลา
     resetTimer();
