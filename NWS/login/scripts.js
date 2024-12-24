@@ -8,22 +8,28 @@ if (loginForm) {
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
 
-        const response = await fetch('users.json');
-        const users = await response.json();
+        try {
+            const response = await fetch('users.json');
+            const users = await response.json();
 
-        const user = users.find(u => u.username === username && u.password === password);
+            const user = users.find(u => u.username === username && u.password === password);
 
-        if (user) {
-            localStorage.setItem('loggedInUser', JSON.stringify(user));
-            window.location.href = 'dashboard.html';
-        } else {
-            errorMessage.textContent = 'Invalid username or password';
+            if (user) {
+                localStorage.setItem('loggedInUser', JSON.stringify(user));
+                window.location.href = 'dashboard.html';
+            } else {
+                errorMessage.textContent = 'Invalid username or password';
+            }
+        } catch (error) {
+            console.error('Error fetching users:', error);
+            errorMessage.textContent = 'An error occurred. Please try again later.';
         }
     });
 }
 
 if (window.location.pathname.includes('dashboard.html')) {
     const userNameElement = document.getElementById('user-name');
+    const userImgElement = document.getElementById('user-img');
     const logoutButton = document.getElementById('logout-button');
 
     try {
@@ -33,8 +39,8 @@ if (window.location.pathname.includes('dashboard.html')) {
             console.error('User data not found in localStorage or user is invalid.');
             window.location.href = 'index.html';
         } else {
-            console.log('User logged in:', user);
             userNameElement.textContent = user.name;
+            userImgElement.src = user.img || '';
         }
     } catch (error) {
         console.error('Error parsing user data:', error);
@@ -43,20 +49,6 @@ if (window.location.pathname.includes('dashboard.html')) {
 
     logoutButton.addEventListener('click', () => {
         localStorage.removeItem('loggedInUser');
-        window.location.href = 'index.html';
-    });
-}
-
-// ------------------------------------------------
-
-if (window.location.pathname.includes('dashboard.html')) {
-    const logoutButton = document.getElementById('logout-button');
-
-    logoutButton.addEventListener('click', () => {
-        // ลบข้อมูลผู้ใช้ที่เก็บใน localStorage
-        localStorage.removeItem('loggedInUser');
-        
-        // เปลี่ยนเส้นทางกลับไปที่หน้า login
         window.location.href = 'index.html';
     });
 }
