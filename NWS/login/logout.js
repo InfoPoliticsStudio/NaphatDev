@@ -1,17 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const checkLoginStatus = () => {
-        // ตรวจสอบสถานะการล็อกอินใน sessionStorage
-        const isLoggedIn = sessionStorage.getItem('isLoggedIn');
-        if (!isLoggedIn) {
-            alert('Your session has expired. Please login again.');
-            window.location.href = 'index.html'; // เปลี่ยนกลับไปหน้า login
-        }
-    };
-
     const redirectToLogin = () => {
-        alert('Session expired! Redirecting to login page.');
-        sessionStorage.removeItem('isLoggedIn'); // ลบเฉพาะสถานะการล็อกอินใน sessionStorage
-        window.location.href = 'index.html'; // เปลี่ยนกลับไปหน้า login
+        alert('Your session has expired. Please login again.');
+        // ลบข้อมูลใน localStorage
+        localStorage.clear();
+        // ลบสถานะการล็อกอินใน sessionStorage
+        sessionStorage.removeItem('isLoggedIn');
+        // พาไปหน้า login
+        window.location.href = 'index.html';
     };
 
     const resetTimer = () => {
@@ -22,14 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let logoutTimer;
 
     // ตรวจสอบสถานะการเข้าสู่ระบบเมื่อโหลดหน้า
-    checkLoginStatus();
-
-    // ตรวจจับการเปลี่ยนสถานะของหน้าเว็บ
-    document.addEventListener('visibilitychange', () => {
-        if (document.visibilityState === 'hidden') {
-            redirectToLogin(); // Logout หากหน้าเว็บถูกซ่อนไป
-        }
-    });
+    const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+    if (!isLoggedIn) {
+        // ถ้ายังไม่ได้ล็อกอินให้พาไปหน้า login ทันที
+        window.location.href = 'index.html';
+    }
 
     // ตรวจจับการกระทำต่างๆ เพื่อรีเซ็ตตัวจับเวลา
     ['click', 'mousemove', 'keydown', 'scroll', 'touchstart'].forEach((event) => {
@@ -42,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // บล็อกการใช้ปุ่มย้อนกลับ
     window.addEventListener('popstate', () => {
         history.pushState(null, null, location.href);
-        alert('Please login again to access this page.');
+        alert('Session expired! Redirecting to login page.');
         redirectToLogin(); // บังคับให้ไปหน้า login หากพยายามย้อนกลับ
     });
 
