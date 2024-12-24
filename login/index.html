@@ -1,29 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link href="login.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Login System</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
 </head>
-<body class="text-center">
-    <main class="form-signin">
-        <form onsubmit="return login()">
-            <img class="mb-4" src="/NaphatDev.png" alt="" width="300">
-            <h1 class="h3 mb-3 fw-normal"><b>My App</b> - Login</h1>
-            <div class="form-floating">
-                <input class="form-control" type="text" class="" required="" value="">
-                <label for="username">Username</label>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <h2 class="text-center _heading">เข้าสู่ระบบ</h2>
+
+            <!-- Student ID Input -->
+            <div class="t-row">
+                <label for="student-id">เลขประจำตัวประชาชน</label>
+                <input type="text" id="student-id" placeholder="กรุณากรอกเลขประจำตัวประชาชน">
+                <span class="has-meta">
+                    <span class="meta"></span>
+                </span>
             </div>
-            <div class="form-floating">
-                <input class="form-control"type="password" id="password" placeholder="Password">
-                <label for="password">Password</label>
+
+            <!-- Button to Verify Student ID -->
+            <button class="btn-main cursor-pointer disabled" disabled>ตรวจสอบ</button>
+
+            <!-- Error Message Box -->
+            <div class="t-box"></div>
+
+            <!-- Action to login with password -->
+            <div class="action aa"></div>
+
+            <!-- Password Input (Hidden initially) -->
+            <div class="t-row" style="display: none;">
+                <label for="password">รหัสผ่าน</label>
+                <input type="password" id="password" placeholder="กรุณากรอกรหัสผ่าน">
             </div>
-            <button class="w-100 btn btn-lg btn-primary mt-3" type="submit">Login</button>
-        </form>
-    </main>
-    <script src="login.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
+
+            <!-- Button to submit password -->
+            <div class="action ab" style="display: none;">
+                <button class="btn-main cursor-pointer">เข้าสู่ระบบ</button>
+            </div>
+
+            <!-- Text center heading -->
+            <div class="text-center _heading" style="display: none;">
+                <p>เข้าสู่ระบบด้วยรหัสผ่าน</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="login.js"></script> <!-- Link to your JavaScript file -->
 </body>
 </html>
