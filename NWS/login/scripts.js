@@ -47,3 +47,16 @@ if (window.location.pathname.includes('dashboard.html')) {
     });
 }
 
+// ------------------------------------------------
+
+if (window.location.pathname.includes('dashboard.html')) {
+    const logoutButton = document.getElementById('logout-button');
+
+    logoutButton.addEventListener('click', () => {
+        // ลบข้อมูลผู้ใช้ที่เก็บใน localStorage
+        localStorage.removeItem('loggedInUser');
+        
+        // เปลี่ยนเส้นทางกลับไปที่หน้า login
+        window.location.href = 'index.html';
+    });
+}
