@@ -1,9 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     const redirectToLogin = () => {
-        alert('Your session has expired. Please login again.');
-        // ลบข้อมูลใน localStorage
-        localStorage.clear();
-        // ลบสถานะการล็อกอินใน sessionStorage
         sessionStorage.removeItem('isLoggedIn');
         // พาไปหน้า login
         window.location.href = 'index.html';
@@ -12,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const resetTimer = () => {
         clearTimeout(logoutTimer); // เคลียร์ timer เก่า
         logoutTimer = setTimeout(redirectToLogin, 5 * 60 * 1000); // ตั้งค่า timeout (5 นาที)
+        alert('Your session has expired. Please login again.');
+        localStorage.clear();
     };
 
     let logoutTimer;
