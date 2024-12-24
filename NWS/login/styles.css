@@ -19,6 +19,7 @@ body {
 input {
     display: block;
     max-width: -webkit-fill-available;
+    width: -webkit-fill-available;
     margin: 10px 0;
     padding: 10px;
     border: 1px solid #ddd;
