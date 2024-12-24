@@ -93,7 +93,7 @@ nav, button, ._heading, blockquote, label, legend {
 }
 
 .t-row select, .t-row input:not([type=checkbox]):not([type=radio]) {
-    width: ;
+    width: -webkit-fill-available;
 }
 input[type=text], input[type=date], input[type=number], input[type=tel], input[type=email], input[type=file], input[type=password], textarea {
     font-family: "kvl", sans-serif;
