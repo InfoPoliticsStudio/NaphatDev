@@ -26,12 +26,19 @@ if (window.location.pathname.includes('dashboard.html')) {
     const userNameElement = document.getElementById('user-name');
     const logoutButton = document.getElementById('logout-button');
 
-    const user = JSON.parse(localStorage.getItem('loggedInUser'));
+    try {
+        const user = JSON.parse(localStorage.getItem('loggedInUser'));
 
-    if (!user) {
+        if (!user || !user.name) {
+            console.error('User data not found in localStorage or user is invalid.');
+            window.location.href = 'index.html';
+        } else {
+            console.log('User logged in:', user);
+            userNameElement.textContent = user.name;
+        }
+    } catch (error) {
+        console.error('Error parsing user data:', error);
         window.location.href = 'index.html';
-    } else {
-        userNameElement.textContent = user.name;
     }
 
     logoutButton.addEventListener('click', () => {
@@ -39,3 +46,4 @@ if (window.location.pathname.includes('dashboard.html')) {
         window.location.href = 'index.html';
     });
 }
+
