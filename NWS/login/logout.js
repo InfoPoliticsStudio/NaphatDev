@@ -1,34 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
     const checkLoginStatus = () => {
-        // ตรวจสอบสถานะการล็อกอินใน localStorage หรือ sessionStorage
-        const isLoggedIn = sessionStorage.getItem('isLoggedIn') || localStorage.getItem('isLoggedIn');
+        // ตรวจสอบสถานะการล็อกอินใน sessionStorage
+        const isLoggedIn = sessionStorage.getItem('isLoggedIn');
         if (!isLoggedIn) {
-            alert('Please login first.');
-            window.location.href = 'index.html'; // หากไม่ได้ล็อกอิน ให้กลับไปหน้า index.html
+            alert('Your session has expired. Please login again.');
+            window.location.href = 'index.html'; // เปลี่ยนกลับไปหน้า login
         }
     };
 
-    const logout = () => {
-        alert('Session expired! You have been logged out.');
-        sessionStorage.clear(); // รีเซ็ต sessionStorage
-        localStorage.clear();   // รีเซ็ต localStorage
+    const redirectToLogin = () => {
+        alert('Session expired! Redirecting to login page.');
+        sessionStorage.removeItem('isLoggedIn'); // ลบเฉพาะสถานะการล็อกอินใน sessionStorage
         window.location.href = 'index.html'; // เปลี่ยนกลับไปหน้า login
     };
 
     const resetTimer = () => {
         clearTimeout(logoutTimer); // เคลียร์ timer เก่า
-        logoutTimer = setTimeout(logout, 5 * 60 * 1000); // ตั้งค่า timeout (5 นาที)
+        logoutTimer = setTimeout(redirectToLogin, 5 * 60 * 1000); // ตั้งค่า timeout (5 นาที)
     };
 
     let logoutTimer;
 
-    // ตรวจจับสถานะการเข้าสู่ระบบ
+    // ตรวจสอบสถานะการเข้าสู่ระบบเมื่อโหลดหน้า
     checkLoginStatus();
 
     // ตรวจจับการเปลี่ยนสถานะของหน้าเว็บ
     document.addEventListener('visibilitychange', () => {
         if (document.visibilityState === 'hidden') {
-            logout(); // Logout หากหน้าเว็บถูกซ่อนไป (เช่น สลับแอปหรือปิดหน้าจอ)
+            redirectToLogin(); // Logout หากหน้าเว็บถูกซ่อนไป
         }
     });
 
@@ -44,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('popstate', () => {
         history.pushState(null, null, location.href);
         alert('Please login again to access this page.');
-        logout(); // บังคับ logout หากพยายามย้อนกลับ
+        redirectToLogin(); // บังคับให้ไปหน้า login หากพยายามย้อนกลับ
     });
 
     // ตั้งค่าหน้าแรกเมื่อโหลดหน้าเว็บ
