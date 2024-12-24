@@ -11,15 +11,39 @@
         <h1>Welcome, <span id="user-name"></span>!</h1>
         <img id="user-img" src="" alt="User Image" style="width: 100px; height: 100px; border-radius: 50%;">
         <p>This is your dashboard.</p>
-
+    
         <div class="menu">
             <a href="#">Menu Item 1</a>
             <a href="#">Menu Item 2</a>
             <a href="#">Menu Item 3</a>
         </div>
-
+    
         <button id="logout-button">Logout</button>
     </div>
     <script src="scripts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        // ดึงข้อมูลจาก localStorage
+        const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+    
+        if (loggedInUser) {
+            // แสดงข้อมูลในหน้า
+            document.getElementById('user-name').textContent = loggedInUser.name || 'Guest';
+            const userImage = document.getElementById('user-img');
+            userImage.src = loggedInUser.img || 'https://via.placeholder.com/100'; // Placeholder รูปภาพ
+            userImage.alt = `รูปโปรไฟล์ของ ${loggedInUser.name || 'ผู้ใช้งาน'}`;
+        } else {
+            // หากไม่มีข้อมูลผู้ใช้ ให้เปลี่ยนหน้าไปยังหน้า login
+            window.location.href = 'index.html';
+        }
+    
+        // ตั้งค่า Logout
+        const logoutButton = document.getElementById('logout-button');
+        logoutButton.addEventListener('click', () => {
+            localStorage.removeItem('loggedInUser');
+            window.location.href = 'index.html';
+        });
+    });
+    </script>
 </body>
 </html>
