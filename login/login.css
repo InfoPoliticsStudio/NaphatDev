@@ -1,15 +1,18 @@
 body {
     margin: 0;
     padding: 0;
-  font-family: "Anuphan", serif;
+    font-family: "Anuphan", serif;
     display: flex;
     justify-content: center;
+    height: 100vh;
 }
 
 .site-body {
     min-height: 140px;
     position: relative;
+    padding-top: 5em;
 }
+
 @media (min-width: 800px) {
     .t-form {
         padding: 20px;
