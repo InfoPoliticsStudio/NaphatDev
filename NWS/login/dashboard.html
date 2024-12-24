@@ -60,30 +60,31 @@
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            const userContainer = document.getElementById('user-container');
             const userImg = document.getElementById('user-img');
-            const userName = document.getElementById('user-name');
-    
-            // เมื่อคลิกที่รูปภาพจะแสดงชื่อ
+        
+            // แสดงหรือซ่อนทั้ง container เมื่อคลิกที่รูปภาพ
             userImg.addEventListener('click', (event) => {
-                event.stopPropagation(); // หยุดไม่ให้ Event นี้ถูกจับโดย document
-                userName.style.display = userName.style.display === 'flex' ? 'none' : 'flex';
+                event.stopPropagation(); // หยุด Event ไหลไปยัง document
+                userContainer.style.display = userContainer.style.display === 'block' ? 'none' : 'block';
             });
-    
-            // ซ่อนชื่อเมื่อคลิกที่พื้นที่อื่น
+        
+            // ซ่อน container เมื่อคลิกพื้นที่อื่น
             document.addEventListener('click', () => {
-                userName.style.display = 'none';
+                userContainer.style.display = 'none';
             });
-    
-            // หยุดการซ่อนชื่อหากคลิกภายในชื่อ
-            userName.addEventListener('click', (event) => {
-                event.stopPropagation();
+        
+            // หยุดการซ่อน container เมื่อคลิกภายใน container
+            userContainer.addEventListener('click', (event) => {
+                event.stopPropagation(); // หยุด Event ไหลไปยัง document
             });
-    
-            // ซ่อนชื่อเมื่อสูญเสียโฟกัสจากหน้าต่างเบราว์เซอร์
+        
+            // ซ่อน container เมื่อหน้าต่างเบราว์เซอร์สูญเสียโฟกัส
             window.addEventListener('blur', () => {
-                userName.style.display = 'none';
+                userContainer.style.display = 'none';
             });
         });
+
     </script>
 
 </body>
