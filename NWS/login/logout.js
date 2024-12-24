@@ -4,25 +4,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // ฟังก์ชันออกจากระบบ
     const logout = () => {
         alert('Session expired! Please login again.');
-        sessionStorage.clear(); // ลบข้อมูล session
-        localStorage.clear(); // ลบข้อมูล localStorage
+        sessionStorage.clear(); // ลบ session
         window.location.href = 'index.html'; // เปลี่ยนกลับไปหน้า login
     };
 
     // ฟังก์ชันรีเซ็ตตัวจับเวลา
     const resetTimer = () => {
         clearTimeout(logoutTimer); // เคลียร์ timer เก่า
-        logoutTimer = setTimeout(logout, 5 * 60 * 1000); // ตั้ง timeout (5 นาที)
+        logoutTimer = setTimeout(logout, 5 * 60 * 1000); // ตั้งค่า timeout (5 นาที)
     };
 
     // ตรวจจับการเปลี่ยนสถานะของหน้าเว็บ
     document.addEventListener('visibilitychange', () => {
         if (document.visibilityState === 'hidden') {
-            logout(); // Logout หากหน้าเว็บถูกซ่อนไป
+            logout(); // Logout หากหน้าเว็บถูกซ่อนไป (ออกจากแอป)
         }
     });
 
-    // ตรวจจับการกระทำของผู้ใช้
+    // ตรวจจับการคลิกหรือการเคลื่อนไหว
     ['click', 'mousemove', 'keydown', 'scroll', 'touchstart'].forEach((event) => {
         document.addEventListener(event, resetTimer);
     });
