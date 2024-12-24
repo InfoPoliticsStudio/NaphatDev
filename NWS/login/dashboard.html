@@ -55,5 +55,27 @@
             });
         });
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const userImg = document.getElementById('user-img');
+            const userName = document.getElementById('user-name');
+    
+            // เมื่อคลิกที่รูปภาพจะแสดงชื่อ
+            userImg.addEventListener('click', (event) => {
+                event.stopPropagation(); // หยุดไม่ให้ Event นี้ถูกจับโดย document
+                userName.style.display = userName.style.display === 'flex' ? 'none' : 'flex';
+            });
+    
+            // ซ่อนชื่อเมื่อคลิกที่พื้นที่อื่น
+            document.addEventListener('click', () => {
+                userName.style.display = 'none';
+            });
+    
+            // หยุดการซ่อนชื่อหากคลิกภายในชื่อ
+            userName.addEventListener('click', (event) => {
+                event.stopPropagation();
+            });
+        });
+    </script>
 </body>
 </html>
