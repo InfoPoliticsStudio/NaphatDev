@@ -66,7 +66,7 @@
             // แสดงหรือซ่อนทั้ง container เมื่อคลิกที่รูปภาพ
             userImg.addEventListener('click', (event) => {
                 event.stopPropagation(); // หยุด Event ไหลไปยัง document
-                userContainer.style.display = userContainer.style.display === 'block' ? 'none' : 'block';
+                userContainer.style.display = userContainer.style.display === 'flex' ? 'none' : 'flex';
             });
         
             // ซ่อน container เมื่อคลิกพื้นที่อื่น
