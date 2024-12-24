@@ -3,49 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login System</title>
+    <title>ลงทะเบียน • เข้าสู่ระบบ</title>
     <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
 </head>
 <body>
-    <div class="container">
-        <div class="login-box">
-            <h2 class="text-center _heading">เข้าสู่ระบบ</h2>
-
-            <!-- Student ID Input -->
-            <div class="t-row">
-                <label for="student-id">เลขประจำตัวประชาชน</label>
-                <input type="text" id="student-id" placeholder="กรุณากรอกเลขประจำตัวประชาชน">
-                <span class="has-meta">
-                    <span class="meta"></span>
-                </span>
+    <main class="site-body">
+        <div class="t-form">
+            <h1>ลงทะเบียน • เข้าสู่ระบบ</h1>
+            <p class="text-center">
+                <img src="https://student.mytcas.com/assets/img/thai_id.svg" width="213" height="122" alt="Thai ID Card">
+            </p>
+            <div class="t-box -info -half">
+                เข้าระบบลงทะเบียนด้วย <b>เลขประจำตัวประชาชน 13 หลัก</b> หากไม่มี ให้ใช้ <b>G Number</b> หรือ<b> Passport Number</b>
             </div>
-
-            <!-- Button to Verify Student ID -->
-            <button class="btn-main cursor-pointer disabled" disabled>ตรวจสอบ</button>
-
-            <!-- Error Message Box -->
-            <div class="t-box"></div>
-
-            <!-- Action to login with password -->
-            <div class="action aa"></div>
+            
+            <!-- ID Number Input -->
+            <div class="t-row">
+                <div class="col required">
+                    <label class="has-meta">
+                        <span>เลขประจำตัว</span>
+                        <span class="meta"></span>
+                    </label>
+                    <input type="text" id="student-id" required value="">
+                </div>
+            </div>
 
             <!-- Password Input (Hidden initially) -->
-            <div class="t-row" style="display: none;">
-                <label for="password">รหัสผ่าน</label>
-                <input type="password" id="password" placeholder="กรุณากรอกรหัสผ่าน">
+            <div class="t-row" style="display:none;" id="password-row">
+                <div class="col required">
+                    <label>รหัสผ่าน</label>
+                    <input type="password" id="password" placeholder="กรอกรหัสผ่าน" value="">
+                    <i class="i-viewpass cursor-pointer" id="view-password-toggle"></i>
+                </div>
             </div>
 
-            <!-- Button to submit password -->
-            <div class="action ab" style="display: none;">
-                <button class="btn-main cursor-pointer">เข้าสู่ระบบ</button>
+            <!-- Verify Button -->
+            <div class="action aa">
+                <p>
+                    <a class="btn-main cursor-pointer disabled" id="verify-btn">เข้าสู่ระบบ</a>
+                </p>
             </div>
 
-            <!-- Text center heading -->
-            <div class="text-center _heading" style="display: none;">
-                <p>เข้าสู่ระบบด้วยรหัสผ่าน</p>
+            <!-- Password Submit Button (Hidden initially) -->
+            <div class="action ab" style="display:none;">
+                <p><a class="btn-main cursor-pointer" id="submit-password-btn">เข้าสู่ระบบ</a></p>
+            </div>
+
+            <!-- Forgot Password Link (Hidden initially) -->
+            <div class="text-center _heading" style="display:none;">
+                <a href="/registered/forgot-password">ลืมรหัสผ่าน?</a>
             </div>
         </div>
-    </div>
+    </main>
 
     <script src="login.js"></script> <!-- Link to your JavaScript file -->
 </body>
