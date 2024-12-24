@@ -60,3 +60,19 @@ button:hover {
 #error-message {
     color: red;
 }
+
+header {
+    width: -webkit-fill-available;
+    background: #d70000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15%;
+}
+
+ul.user-info {
+    list-style: none;
+    padding: 0;
+}
