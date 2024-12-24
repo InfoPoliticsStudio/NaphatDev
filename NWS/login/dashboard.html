@@ -9,9 +9,14 @@
 <body>
     <header>
         <div class="header-container">
-            <img src="logo.png" alt="Website Logo" class="logo" style="height: 40px;margin: 1em;">
+            <img src="logo.png" alt="Website Logo" class="logo" style="height: 40px; margin: 1em;">
             <ul class="user-info">
-                <img id="user-img" src="" alt="User Image" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;">
+                <li>
+                    <span id="user-name" style="margin-right: 10px;">Guest</span>
+                </li>
+                <li>
+                    <img id="user-img" src="https://via.placeholder.com/40" alt="User Image" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;">
+                </li>
             </ul>
         </div>
     </header>
@@ -37,7 +42,7 @@
                 // แสดงข้อมูลใน header
                 document.getElementById('user-name').textContent = loggedInUser.name || 'Guest';
                 const userImage = document.getElementById('user-img');
-                userImage.src = loggedInUser.img || 'https://via.placeholder.com/100'; // Placeholder รูปภาพ
+                userImage.src = loggedInUser.img || 'https://via.placeholder.com/40'; // Placeholder รูปภาพ
                 userImage.alt = `รูปโปรไฟล์ของ ${loggedInUser.name || 'ผู้ใช้งาน'}`;
             } else {
                 // หากไม่มีข้อมูลผู้ใช้ ให้เปลี่ยนหน้าไปยังหน้า login
