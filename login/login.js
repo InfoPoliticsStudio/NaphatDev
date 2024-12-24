@@ -40,7 +40,7 @@ input.addEventListener('input', async () => {
 
     // Update meta span based on student data
     if (student) {
-        metaSpan.textContent = "(เลขประจำตัวประชาชน)";
+        metaSpan.textContent = "(Username)";
         metaSpan.style.color = "#0b9c23"; // Change text color
     } else {
         metaSpan.textContent = "";
