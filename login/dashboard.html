@@ -1,24 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-
     <title>Dashboard</title>
-    <link href="dashboard.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
-            <span class="navbar-brand mb-0 h1">Welcome to My App Dashboard</span>
+            <span class="navbar-brand mb-0 h1">User Dashboard</span>
             <button id="logout" class="btn btn-danger">Logout</button>
         </div>
     </nav>
-
     <div class="container my-5">
         <div class="row">
             <div class="col-md-4 text-center">
@@ -31,30 +25,20 @@
             </div>
         </div>
     </div>
-
-    <!-- JavaScript -->
     <script>
-        // Check if user data is stored in localStorage
-        const userData = JSON.parse(localStorage.getItem('loggedInUser'));
-
-        if (!userData) {
-            // Redirect to login if no user data
-            window.location.href = '/login/index.html';
+        const user = JSON.parse(localStorage.getItem('loggedInUser'));
+        if (!user) {
+            window.location.href = 'index.html';
         } else {
-            // Populate dashboard with user data
-            document.getElementById('user-pic').src = userData.pic_url;
-            document.getElementById('user-name-th').textContent = userData.name_th;
-            document.getElementById('user-email').textContent = userData.email;
-            document.getElementById('user-joined').textContent = userData.joined_on;
+            document.getElementById('user-pic').src = user.pic_url;
+            document.getElementById('user-name-th').textContent = user.name_th;
+            document.getElementById('user-email').textContent = user.email;
+            document.getElementById('user-joined').textContent = user.joined_on;
         }
-
-        // Logout button
         document.getElementById('logout').addEventListener('click', () => {
-            localStorage.removeItem('loggedInUser'); // Clear stored user data
-            window.location.href = '/login/index.html'; // Redirect to login page
+            localStorage.removeItem('loggedInUser');
+            window.location.href = 'index.html';
         });
     </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
 </html>
