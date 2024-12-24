@@ -1,39 +1,40 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const redirectToLogin = () => {
-        sessionStorage.removeItem('isLoggedIn');
-        // พาไปหน้า login
-        window.location.href = 'index.html';
-    };
-
-    const resetTimer = () => {
-        clearTimeout(logoutTimer); // เคลียร์ timer เก่า
-        logoutTimer = setTimeout(redirectToLogin, 5 * 60 * 1000); // ตั้งค่า timeout (5 นาที)
-        alert('Your session has expired. Please login again.');
-        localStorage.clear();
-    };
-
     let logoutTimer;
 
-    // ตรวจสอบสถานะการเข้าสู่ระบบเมื่อโหลดหน้า
-    const isLoggedIn = sessionStorage.getItem('isLoggedIn');
-    if (!isLoggedIn) {
-        // ถ้ายังไม่ได้ล็อกอินให้พาไปหน้า login ทันที
-        window.location.href = 'index.html';
-    }
+    // ฟังก์ชันออกจากระบบ
+    const logout = () => {
+        alert('Session expired! Please login again.');
+        sessionStorage.clear(); // ลบข้อมูล session
+        localStorage.clear(); // ลบข้อมูล localStorage
+        window.location.href = 'index.html'; // เปลี่ยนกลับไปหน้า login
+    };
 
-    // ตรวจจับการกระทำต่างๆ เพื่อรีเซ็ตตัวจับเวลา
+    // ฟังก์ชันรีเซ็ตตัวจับเวลา
+    const resetTimer = () => {
+        clearTimeout(logoutTimer); // เคลียร์ timer เก่า
+        logoutTimer = setTimeout(logout, 5 * 60 * 1000); // ตั้ง timeout (5 นาที)
+    };
+
+    // ตรวจจับการเปลี่ยนสถานะของหน้าเว็บ
+    document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'hidden') {
+            logout(); // Logout หากหน้าเว็บถูกซ่อนไป
+        }
+    });
+
+    // ตรวจจับการกระทำของผู้ใช้
     ['click', 'mousemove', 'keydown', 'scroll', 'touchstart'].forEach((event) => {
         document.addEventListener(event, resetTimer);
     });
 
-    // เริ่มต้นจับเวลา
+    // เริ่มต้นการจับเวลา
     resetTimer();
 
     // บล็อกการใช้ปุ่มย้อนกลับ
     window.addEventListener('popstate', () => {
         history.pushState(null, null, location.href);
-        alert('Session expired! Redirecting to login page.');
-        redirectToLogin(); // บังคับให้ไปหน้า login หากพยายามย้อนกลับ
+        alert('Please login again to access this page.');
+        logout(); // บังคับ logout หากพยายามย้อนกลับ
     });
 
     // ตั้งค่าหน้าแรกเมื่อโหลดหน้าเว็บ
