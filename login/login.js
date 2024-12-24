@@ -40,7 +40,7 @@ input.addEventListener('input', async () => {
 
     // Update meta span based on student data
     if (student) {
-        metaSpan.textContent = "(Username)";
+        metaSpan.textContent = "(ถูกต้อง)";
         metaSpan.style.color = "#0b9c23"; // Change text color
     } else {
         metaSpan.textContent = "";
