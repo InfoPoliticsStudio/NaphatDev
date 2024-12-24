@@ -75,7 +75,13 @@
             userName.addEventListener('click', (event) => {
                 event.stopPropagation();
             });
+    
+            // ซ่อนชื่อเมื่อสูญเสียโฟกัสจากหน้าต่างเบราว์เซอร์
+            window.addEventListener('blur', () => {
+                userName.style.display = 'none';
+            });
         });
     </script>
+
 </body>
 </html>
