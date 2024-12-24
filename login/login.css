@@ -140,7 +140,7 @@ button, select, input, textarea {
 /*     padding: .5em .9em .4em; */
     min-height: 44px;
     font-size: 1.125em;
-    font-weight: bold;
+    font-weight: normal;
     transition: all .4s ease-in-out;
 }
 .cursor-pointer, .cursor-pointer:hover {
