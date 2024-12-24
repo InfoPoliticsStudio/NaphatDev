@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
+    justify-content: center;
 }
 
 .site-body {
@@ -76,7 +77,7 @@ nav, button, ._heading, blockquote, label, legend {
 }
 
 .t-row select, .t-row input:not([type=checkbox]):not([type=radio]) {
-    width: 100%;
+    width: ;
 }
 input[type=text], input[type=date], input[type=number], input[type=tel], input[type=email], input[type=file], input[type=password], textarea {
     font-family: "kvl", sans-serif;
