@@ -1,81 +1,37 @@
-// d-login.js
-
 async function fetchUsers() {
     try {
-        const response = await fetch('/login/users.json'); // Fetch the JSON file
+        const response = await fetch('users.json');
         if (!response.ok) {
-            throw new Error(`Error fetching users.json: ${response.statusText}`);
+            throw new Error('Failed to fetch users.json');
         }
         return await response.json();
     } catch (error) {
-        console.error(error);
-        Swal.fire({
-            icon: 'error',
-            title: 'Error',
-            text: 'Could not load user data.',
-        });
+        Swal.fire('Error', 'Unable to load user data', 'error');
         return null;
     }
 }
 
 async function login() {
-    // Get input values
-    const usernameInput = document.getElementById("username").value.trim();
-    const passwordInput = document.getElementById("password").value.trim();
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value.trim();
 
-    // Validate inputs
-    if (!usernameInput || !passwordInput) {
-        Swal.fire({
-            icon: 'error',
-            title: 'Missing Information',
-            text: 'Please enter both email and password.',
-        });
-        return false; // Prevent form submission
+    if (!username || !password) {
+        Swal.fire('Error', 'Please enter both username and password', 'error');
+        return false;
     }
 
-    // Fetch users from the JSON file
     const users = await fetchUsers();
-    if (!users) {
-        return false; // Prevent form submission if users can't be fetched
-    }
+    if (!users) return false;
 
-    // Find matching user
-    const user = users.find(
-        (u) => u.username === usernameInput && u.password === passwordInput
-    );
-
+    const user = users.find(u => u.username === username && u.password === password);
     if (user) {
-        Swal.fire({
-            icon: 'success',
-            title: 'Login Successful',
-            html: `
-                <p>Welcome, <strong>${user.name_th}</strong>!</p>
-                <p>Email: ${user.email}</p>
-                <p>Joined on: ${user.joined_on}</p>
-            `,
-            imageUrl: user.pic_url,
-            imageAlt: 'User Picture',
-        }).then(() => {
-            // Redirect to another page or perform other actions
-            window.location.href = "/login/dashboard.html";
+        localStorage.setItem('loggedInUser', JSON.stringify(user));
+        Swal.fire('Success', `Welcome, ${user.name_th}!`, 'success').then(() => {
+            window.location.href = 'dashboard.html';
         });
     } else {
-        Swal.fire({
-            icon: 'error',
-            title: 'Login Failed',
-            text: 'Invalid username or password.',
-        });
+        Swal.fire('Error', 'Invalid username or password', 'error');
     }
 
-    return false; // Prevent default form submission behavior
-}
-if (user) {
-    localStorage.setItem('loggedInUser', JSON.stringify(user)); // Store user data
-    Swal.fire({
-        icon: 'success',
-        title: 'Login Successful',
-        text: `Welcome, ${user.name_th}!`,
-    }).then(() => {
-        window.location.href = "/login/dashboard.html"; // Redirect to dashboard
-    });
+    return false;
 }
