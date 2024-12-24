@@ -3,3 +3,96 @@ body {
     padding: 0;
     display: flex;
 }
+
+.site-body {
+    min-height: 140px;
+    position: relative;
+}
+@media (min-width: 800px) {
+    .t-form {
+        padding: 20px;
+    }
+}
+.t-form {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+.site-body h1 {
+    font-weight: bold;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    margin-bottom: 20px;
+}
+.t-form h1 {
+    margin-top: 6px;
+}
+h1 {
+    font-size: 1.8em;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.t-row {
+    display: flex;
+    width: calc(100% + 20px);
+    margin-left: -10px;
+    margin-right: -10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+@media (min-width: 768px) {
+    .t-row .col {
+        width: 50%;
+    }
+}
+.t-row .col {
+    width: 100%;
+    position: relative;
+}
+.t-row>div {
+    padding: 0 10px 20px;
+}
+.t-form label {
+    display: flex;
+    width: 100%;
+}
+nav, button, ._heading, blockquote, label, legend {
+    font-size: 1.125em;
+}
+.t-row .required>label:not(.has-meta):not(.no-x):after, .t-row .required>.has-meta>span:first-of-type:after {
+    content: "*";
+    color: #ea0c42;
+    margin: 0 2px;
+}
+
+.t-form label .meta {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.t-row select, .t-row input:not([type=checkbox]):not([type=radio]) {
+    width: 100%;
+}
+input[type=text], input[type=date], input[type=number], input[type=tel], input[type=email], input[type=file], input[type=password], textarea {
+    font-family: "kvl", sans-serif;
+    border: 2px solid #d5d5d7;
+    transition: .3s ease;
+    background-size: 30px 20px;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+button, select, input, textarea {
+    font-size: 1.125em;
+    padding: .474em .5em .36em;
+    line-height: 1.4;
+    border-radius: 3px;
+}
+.t-row>div {
+    padding: 0 10px 20px;
+}
