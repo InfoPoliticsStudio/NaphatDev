@@ -22,7 +22,7 @@
         <p>ข้อสอบจะเริ่มต้นเมื่อคุณพร้อม</p>
         <button id="start-test">เริ่มทำข้อสอบ</button>
     </div>
-<!--     <script>
+    <script>
         // ดึงชื่อผู้ใช้จาก query string
         const urlParams = new URLSearchParams(window.location.search);
         const userName = urlParams.get('name');
@@ -31,35 +31,6 @@
         // แสดงชื่อผู้ใช้ในหน้า
         document.getElementById('exam-user-name').textContent = userName || 'ไม่ทราบชื่อ';
         document.getElementById('user-img').textContent = userImg || 'ไม่ทราบชื่อ';
-    </script> -->
-    <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const userName = urlParams.get('name');
-            const userImg = urlParams.get('img');
-        
-            // ตรวจสอบค่าที่ดึงได้
-            console.log('User Name:', userName);
-            console.log('User Image:', userImg);
-        
-            // อัปเดต HTML
-            const userNameElement = document.getElementById('user-name');
-            const userImgElement = document.getElementById('user-img');
-        
-            if (userName) {
-                userNameElement.textContent = userName;
-            } else {
-                console.error('User Name not found in query string');
-            }
-        
-            if (userImg) {
-                userImgElement.src = userImg;
-                userImgElement.alt = userName || 'Profile Picture';
-            } else {
-                console.error('User Image not found in query string');
-            }
-        });
-
     </script>
 </body>
 </html>
