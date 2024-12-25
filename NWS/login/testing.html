@@ -114,5 +114,14 @@
             userImgElement.alt = 'ไม่พบรูปโปรไฟล์';
         }
     </script>
+    <script>
+        document.getElementById("start-test").addEventListener("click", function() {
+            // แสดง .box
+            document.querySelector(".box").style.display = "block";
+            // ซ่อน button#start-test
+            this.style.display = "none";
+        });
+
+    </script>
 </body>
 </html>
