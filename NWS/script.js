@@ -1,14 +1,20 @@
-// Toggle sidebar and switch icon between ☰ and X
+// Toggle sidebar and switch icon between ☰ and X with transition
 const menuToggle = document.getElementById('menu-toggle');
 const sidebar = document.getElementById('sidebar');
+const menuIcon = menuToggle.querySelector('i');
 
 menuToggle.addEventListener('click', function() {
   sidebar.classList.toggle('open');
-  // Toggle between fa-bars (☰) and fa-times (X)
+  
+  // Add transition to icon change
   if (sidebar.classList.contains('open')) {
-    menuToggle.innerHTML = '<i class="fas fa-times"></i>'; // Change to 'X' when sidebar is open
+    menuIcon.style.transform = 'rotate(180deg)'; // Rotate the icon when sidebar opens
+    menuIcon.classList.remove('fa-bars');
+    menuIcon.classList.add('fa-times');
   } else {
-    menuToggle.innerHTML = '<i class="fas fa-bars"></i>'; // Change back to '☰' when sidebar is closed
+    menuIcon.style.transform = 'rotate(0deg)'; // Reset rotation when sidebar closes
+    menuIcon.classList.remove('fa-times');
+    menuIcon.classList.add('fa-bars');
   }
 });
 
