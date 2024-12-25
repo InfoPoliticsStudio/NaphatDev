@@ -23,15 +23,14 @@
         <button id="start-test">เริ่มทำข้อสอบ</button>
     </div>
     <script>
-        // ดึงค่าจาก query string
+        // ดึงชื่อผู้ใช้จาก query string
         const urlParams = new URLSearchParams(window.location.search);
         const userName = urlParams.get('name');
-        const userImg = urlParams.get('img'); // รูปจาก query string
-
-        // แสดงชื่อและรูปภาพในหน้า
-        document.getElementById('user-name').textContent = userName || 'ไม่ทราบชื่อ';
+        const userImg = urlParams.get('img'); 
+        
+        // แสดงชื่อผู้ใช้ในหน้า
         document.getElementById('exam-user-name').textContent = userName || 'ไม่ทราบชื่อ';
-        document.getElementById('user-img').src = userImg || 'https://via.placeholder.com/40'; // ใช้ placeholder หากไม่มีรูป
+        document.getElementById('user-img').textContent = userImg || 'ไม่ทราบชื่อ';
     </script>
 </body>
 </html>
