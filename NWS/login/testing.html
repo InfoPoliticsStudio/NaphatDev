@@ -33,29 +33,33 @@
         document.getElementById('user-img').textContent = userImg || 'ไม่ทราบชื่อ';
     </script> -->
     <script>
-        // ดึงค่าจาก Query String
-        const urlParams = new URLSearchParams(window.location.search);
-        const userName = urlParams.get('name');
-        const userImg = urlParams.get('img');
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const userName = urlParams.get('name');
+            const userImg = urlParams.get('img');
         
-        // ตรวจสอบค่าที่ดึงได้
-        console.log('User Name:', userName);
-        console.log('User Image:', userImg);
+            // ตรวจสอบค่าที่ดึงได้
+            console.log('User Name:', userName);
+            console.log('User Image:', userImg);
         
-        // อัปเดต HTML ด้วยค่าที่ดึงมา
-        if (userName) {
-            document.getElementById('user-name').textContent = userName;
-        } else {
-            document.getElementById('user-name').textContent = 'Unknown User';
-        }
+            // อัปเดต HTML
+            const userNameElement = document.getElementById('user-name');
+            const userImgElement = document.getElementById('user-img');
         
-        if (userImg) {
-            document.getElementById('user-img').src = userImg;
-            document.getElementById('user-img').alt = userName || 'Profile Picture';
-        } else {
-            document.getElementById('user-img').src = 'https://via.placeholder.com/40';
-            document.getElementById('user-img').alt = 'No Image Available';
-        }
+            if (userName) {
+                userNameElement.textContent = userName;
+            } else {
+                console.error('User Name not found in query string');
+            }
+        
+            if (userImg) {
+                userImgElement.src = userImg;
+                userImgElement.alt = userName || 'Profile Picture';
+            } else {
+                console.error('User Image not found in query string');
+            }
+        });
+
     </script>
 </body>
 </html>
