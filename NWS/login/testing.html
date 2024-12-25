@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="testing-container">
+        <h1>ผู้ทำข้อสอบ: <span id="exam-user-name"></span></h1>
+        <p>ข้อสอบจะเริ่มต้นเมื่อคุณพร้อม</p>
+        <button id="start-test">เริ่มทำข้อสอบ</button>
+    </div>
+    <script>
+        // ดึงชื่อผู้ใช้จาก query string
+        const urlParams = new URLSearchParams(window.location.search);
+        const userName = urlParams.get('name');
+        
+        // แสดงชื่อผู้ใช้ในหน้า
+        document.getElementById('exam-user-name').textContent = userName || 'ไม่ทราบชื่อ';
+    </script>
+</body>
+</html>
