@@ -57,8 +57,8 @@ if (window.location.pathname.includes('dashboard.html')) {
 document.getElementById('start-exam').addEventListener('click', () => {
     const user = JSON.parse(localStorage.getItem('loggedInUser'));
     if (user) {
-        // ส่งข้อมูลชื่อผู้ใช้ไปยัง testing.html ผ่าน query string
-        window.location.href = `testing.html?name=${encodeURIComponent(user.name)}`;
+        // ส่งชื่อและรูปไปยัง testing.html
+        window.location.href = `testing.html?name=${encodeURIComponent(user.name)}&img=${encodeURIComponent(user.img)}`;
     } else {
         alert('กรุณาเข้าสู่ระบบก่อนทำข้อสอบ');
         window.location.href = 'index.html';
