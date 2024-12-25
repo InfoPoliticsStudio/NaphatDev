@@ -39,6 +39,7 @@
             const userImg = document.getElementById('user-img');
             const userContainer = document.getElementById('user-container');
             const userNameSpan = document.getElementById('user-name');
+            document.getElementById('user-name').textContent = userNameSpan || 'ไม่ทราบชื่อ';
 
             // แสดงหรือซ่อนเมนูผู้ใช้เมื่อคลิกที่รูปโปรไฟล์
             userImg.addEventListener('click', () => {
