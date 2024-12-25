@@ -52,3 +52,15 @@ if (window.location.pathname.includes('dashboard.html')) {
         window.location.href = 'index.html';
     });
 }
+
+// เมื่อคลิกปุ่มทำข้อสอบ
+document.getElementById('start-exam').addEventListener('click', () => {
+    const user = JSON.parse(localStorage.getItem('loggedInUser'));
+    if (user) {
+        // ส่งข้อมูลชื่อผู้ใช้ไปยัง testing.html ผ่าน query string
+        window.location.href = `testing.html?name=${encodeURIComponent(user.name)}`;
+    } else {
+        alert('กรุณาเข้าสู่ระบบก่อนทำข้อสอบ');
+        window.location.href = 'index.html';
+    }
+});
