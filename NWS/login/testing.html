@@ -31,6 +31,15 @@
         // แสดงชื่อผู้ใช้ในหน้า
         document.getElementById('exam-user-name').textContent = userName || 'ไม่ทราบชื่อ';
         document.getElementById('user-img').textContent = userImg || 'ไม่ทราบชื่อ';
+        // แสดงรูปภาพในหน้า
+        const userImgElement = document.getElementById('user-img');
+        if (userImg) {
+            userImgElement.src = userImg;  // ตั้งค่าคุณสมบัติ src ของ <img> 
+            userImgElement.alt = userName || 'รูปโปรไฟล์';  // ตั้งค่า alt ของรูปภาพ
+        } else {
+            userImgElement.src = 'default-profile.jpg';  // รูปโปรไฟล์สำรองหากไม่พบรูป
+            userImgElement.alt = 'ไม่พบรูปโปรไฟล์';
+        }
     </script>
 </body>
 </html>
