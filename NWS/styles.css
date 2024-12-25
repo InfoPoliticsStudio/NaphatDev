@@ -1,0 +1,120 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Anuphan", serif;
+}
+
+body {
+  font-family: "Anuphan", serif;
+  background: #0f0f0f;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: #00bcd4;
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #1a1a1a;
+}
+
+header .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #00bcd4;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+header nav ul li a {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+header nav ul li a:hover {
+  color: #00bcd4;
+}
+
+/* Main Section Styles */
+main {
+  padding: 50px;
+}
+
+.hero {
+  background: #333;
+  padding: 60px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.hero button {
+  padding: 10px 20px;
+  background: #00bcd4;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.hero button:hover {
+  background: #007f8c;
+}
+
+.content {
+  margin: 40px 0;
+}
+
+.content h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.content p, .content ul {
+  font-size: 18px;
+}
+
+.content ul {
+  list-style: none;
+}
+
+.content ul li {
+  margin: 10px 0;
+}
+
+/* Footer Styles */
+footer {
+  background: #1a1a1a;
+  padding: 20px;
+  text-align: center;
+  font-size: 16px;
+  color: #777;
+}
+
+footer p {
+  margin: 0;
+}
