@@ -12,10 +12,7 @@
             <img src="logo.png" alt="Website Logo" class="logo" style="height: 40px; margin: 1em;">
             <ul class="user-info">
                 <li>
-                    <img id="user-img" src="/naphat.jpg" alt="รูปโปรไฟล์ของ Naphat Panyo" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;">
-                </li>
-                <li>
-                    <span id="user-name" style="margin-left: 10px; font-weight: bold;">Naphat Panyo</span>
+                    <img id="user-img" src="" alt="รูปโปรไฟล์" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;">
                 </li>
             </ul>
         </div>
@@ -26,15 +23,19 @@
         <button id="start-test">เริ่มทำข้อสอบ</button>
     </div>
     <script>
-        // ดึงข้อมูลผู้ใช้จาก query string
-        const urlParams = new URLSearchParams(window.location.search);
-        const userName = urlParams.get('name');
-        const userImg = "/naphat.jpg"; // ตัวอย่างรูปโปรไฟล์
-        
-        // แสดงข้อมูลใน Header และส่วน Testing
-        document.getElementById('user-name').textContent = userName || 'ไม่ทราบชื่อ';
-        document.getElementById('exam-user-name').textContent = userName || 'ไม่ทราบชื่อ';
-        document.getElementById('user-img').src = userImg;
+        // ดึงข้อมูลผู้ใช้จาก localStorage
+        const user = JSON.parse(localStorage.getItem('loggedInUser'));
+
+        if (user) {
+            // แสดงชื่อผู้ใช้และรูปภาพ
+            document.getElementById('user-name').textContent = user.name || 'ไม่ทราบชื่อ';
+            document.getElementById('exam-user-name').textContent = user.name || 'ไม่ทราบชื่อ';
+            document.getElementById('user-img').src = user.img || 'default-profile.png'; // กำหนดรูป default หากไม่มี
+        } else {
+            // หากไม่มีข้อมูลผู้ใช้ใน localStorage ให้กลับไปหน้า login
+            alert('กรุณาเข้าสู่ระบบก่อนทำข้อสอบ');
+            window.location.href = 'index.html';
+        }
     </script>
 </body>
 </html>
