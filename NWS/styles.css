@@ -52,6 +52,43 @@ header nav ul li a:hover {
   color: #00bcd4;
 }
 
+.menu-toggle {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: #333;
+  transition: left 0.3s ease;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 20px;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  font-size: 20px;
+  color: #fff;
+}
+
+.sidebar ul li a:hover {
+  color: #00bcd4;
+}
+
 /* Main Section Styles */
 main {
   padding: 50px;
@@ -122,4 +159,23 @@ footer {
 
 footer p {
   margin: 0;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 630px) {
+  header nav {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .sidebar {
+    left: -250px;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
 }
