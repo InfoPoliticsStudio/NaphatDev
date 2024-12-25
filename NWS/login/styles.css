@@ -84,6 +84,7 @@ ul.user-info {
     justify-content: center;
     padding-top: 10px;
     gap: 5px;
+    text-align: center;
 }
 
 #user-container ul li a {
