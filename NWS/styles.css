@@ -179,3 +179,17 @@ footer p {
     left: 0;
   }
 }
+
+#sidebar .logo {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding-top: 20px;
+    font-weight: 900;
+    font-size: 20px;
+    color: #00bcd4;
+}
+
+#sidebar .logo:hover {
+    color: #fff;
+}
