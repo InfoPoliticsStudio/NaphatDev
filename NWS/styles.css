@@ -187,9 +187,9 @@ footer p {
     padding-top: 20px;
     font-weight: 900;
     font-size: 20px;
-    color: #00bcd4;
+    color: #fff;
 }
 
 #sidebar .logo:hover {
-    color: #fff;
+    color: #ff0000;
 }
