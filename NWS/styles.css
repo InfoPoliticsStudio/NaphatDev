@@ -197,3 +197,119 @@ footer p {
 #sidebar .logo:hover {
     color: #ff0000;
 }
+
+.ant-modal-body {
+    background-color: #fff;
+}
+
+.box {
+    background-color: #fff;
+    border: 0;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+    pointer-events: auto;
+    padding: 30px;
+    text-align: left;
+}
+
+button.ant-modal-close {
+    position: absolute;
+    z-index: 10;
+    padding: 0;
+    color: rgba(0, 0, 0, .45);
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    -webkit-transition: color .3s;
+    transition: color .3s;
+    display: flex;
+    justify-content: end;
+    width: 360px;
+}
+
+span.ant-modal-close-x {
+    justify-content: end;
+    display: flex;
+}
+
+p.HomeExamSuggest_text_header__3CK6N {
+    color: #05007a;
+    font-size: 28px;
+    font-weight: 500;
+}
+
+p.exam-name {
+    color: #05007a;
+    font-size: 28px;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+.row {
+    position: relative;
+    height: auto;
+    margin-right: 0;
+    margin-left: 0;
+    zoom: 1;
+    display: block;
+    box-sizing: border-box;
+    display: flex;
+}
+.row:after , .row:before {
+    display:table;
+    content: "";
+}
+.col-2 {
+    display: block;
+    box-sizing: border-box;
+    width: auto;
+}
+
+.col.col-2 img {
+    vertical-align: middle;
+    border-style: none;
+    width: 70px;
+}
+
+.col-o-1 {
+    margin-left: 4.16666667%;
+}
+
+.col-21 {
+    display: block;
+    box-sizing: border-box;
+    width: auto;
+}
+
+p {
+    margin: 0;
+}
+
+.col-o-3 {
+    margin-left: 12.5%;
+}
+
+.col-8 {
+    width: 33.33333333%;
+}
+
+.testing-container > div {
+    width: 85%;
+}
+
+button.aaa {
+    color: #05007a;
+    background-color: rgb(255, 255, 255);
+    border-color: #f7941d;
+    line-height: 1.499;
+    text-align: center;
+    border: 2px solid #05007a;
+    padding: 0 15px;
+    font-size: 16px;
+    border-radius: 20px;
+}
