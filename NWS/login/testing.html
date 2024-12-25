@@ -7,18 +7,34 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <div class="header-container">
+            <img src="logo.png" alt="Website Logo" class="logo" style="height: 40px; margin: 1em;">
+            <ul class="user-info">
+                <li>
+                    <img id="user-img" src="/naphat.jpg" alt="รูปโปรไฟล์ของ Naphat Panyo" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;">
+                </li>
+                <li>
+                    <span id="user-name" style="margin-left: 10px; font-weight: bold;">Naphat Panyo</span>
+                </li>
+            </ul>
+        </div>
+    </header>
     <div class="testing-container">
         <h1>ผู้ทำข้อสอบ: <span id="exam-user-name"></span></h1>
         <p>ข้อสอบจะเริ่มต้นเมื่อคุณพร้อม</p>
         <button id="start-test">เริ่มทำข้อสอบ</button>
     </div>
     <script>
-        // ดึงชื่อผู้ใช้จาก query string
+        // ดึงข้อมูลผู้ใช้จาก query string
         const urlParams = new URLSearchParams(window.location.search);
         const userName = urlParams.get('name');
+        const userImg = "/naphat.jpg"; // ตัวอย่างรูปโปรไฟล์
         
-        // แสดงชื่อผู้ใช้ในหน้า
+        // แสดงข้อมูลใน Header และส่วน Testing
+        document.getElementById('user-name').textContent = userName || 'ไม่ทราบชื่อ';
         document.getElementById('exam-user-name').textContent = userName || 'ไม่ทราบชื่อ';
+        document.getElementById('user-img').src = userImg;
     </script>
 </body>
 </html>
