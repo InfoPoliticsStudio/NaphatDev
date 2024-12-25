@@ -23,19 +23,15 @@
         <button id="start-test">เริ่มทำข้อสอบ</button>
     </div>
     <script>
-        // ดึงข้อมูลผู้ใช้จาก localStorage
-        const user = JSON.parse(localStorage.getItem('loggedInUser'));
+        // ดึงค่าจาก query string
+        const urlParams = new URLSearchParams(window.location.search);
+        const userName = urlParams.get('name');
+        const userImg = urlParams.get('img'); // รูปจาก query string
 
-        if (user) {
-            // แสดงชื่อผู้ใช้และรูปภาพ
-            document.getElementById('user-name').textContent = user.name || 'ไม่ทราบชื่อ';
-            document.getElementById('exam-user-name').textContent = user.name || 'ไม่ทราบชื่อ';
-            document.getElementById('user-img').src = user.img || 'default-profile.png'; // กำหนดรูป default หากไม่มี
-        } else {
-            // หากไม่มีข้อมูลผู้ใช้ใน localStorage ให้กลับไปหน้า login
-            alert('กรุณาเข้าสู่ระบบก่อนทำข้อสอบ');
-            window.location.href = 'index.html';
-        }
+        // แสดงชื่อและรูปภาพในหน้า
+        document.getElementById('user-name').textContent = userName || 'ไม่ทราบชื่อ';
+        document.getElementById('exam-user-name').textContent = userName || 'ไม่ทราบชื่อ';
+        document.getElementById('user-img').src = userImg || 'https://via.placeholder.com/40'; // ใช้ placeholder หากไม่มีรูป
     </script>
 </body>
 </html>
