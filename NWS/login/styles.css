@@ -110,3 +110,31 @@ ul.user-info {
     box-shadow: 0px 0px 10px 1px #8e8e8e;
     border-radius: 2px;
 }
+
+button#start-test {
+    width: 125px;
+    height: 32px;
+    line-height: 1.499;
+    position: relative;
+    display: inline-block;
+    font-weight: 400;
+    white-space: nowrap;
+    text-align: center;
+    background-image: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .3);
+    cursor: pointer;
+    transition: all .3s cubic-bezier(.645,.045,.355,1);
+    user-select: none;
+    touch-action: manipulation;
+    padding: 0 15px;
+    font-size: 16px;
+    border-radius: 100px;
+    color: #00aaff;
+    background-color: #fff;
+    border: 2px solid #00aaff;
+}
+
+button#start-test:hover {
+    color: #1d8ef7;
+    border: 2px solid #1d8ef7;
+}
