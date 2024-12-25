@@ -132,6 +132,7 @@ button#start-test {
     color: #00aaff;
     background-color: #fff;
     border: 2px solid #00aaff;
+    margin: 20px 0;
 }
 
 button#start-test:hover {
