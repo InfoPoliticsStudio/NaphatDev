@@ -15,7 +15,9 @@
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="https://nsgroup.pages.dev/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer">
-<script>
+
+
+    <script>
         document.addEventListener('DOMContentLoaded', () => {
             const slides = document.querySelector('.slides');
             const dots = document.querySelectorAll('.dot');
@@ -32,7 +34,16 @@
             function goToSlide(index) {
                 const translateX = -index * 100; // เลื่อนทีละ 100%
                 slides.style.transform = `translateX(${translateX}%)`;
-                updateDots(index);
+                updateDots(index % totalSlides); // อัปเดต dot แบบวน
+            }
+
+            // Auto move slides
+            function autoSlide() {
+                currentIndex++;
+                if (currentIndex === totalSlides) {
+                    currentIndex = 0; // วนกลับไปสไลด์แรก
+                }
+                goToSlide(currentIndex);
             }
 
             // Add click event for dots
@@ -43,70 +54,8 @@
                 });
             });
 
-            // Dragging functionality
-            let startX = 0;
-            let isDragging = false;
-
-            slides.addEventListener('mousedown', (e) => {
-                isDragging = true;
-                startX = e.clientX;
-            });
-
-            slides.addEventListener('mouseup', (e) => {
-                if (!isDragging) return;
-                isDragging = false;
-                const diff = e.clientX - startX;
-                if (Math.abs(diff) > 50) {
-                    if (diff < 0 && currentIndex < totalSlides - 1) {
-                        currentIndex++;
-                    } else if (diff > 0 && currentIndex > 0) {
-                        currentIndex--;
-                    }
-                }
-                goToSlide(currentIndex);
-            });
-
-            slides.addEventListener('mousemove', (e) => {
-                if (!isDragging) return;
-                const diff = e.clientX - startX;
-                slides.style.transform = `translateX(calc(${-currentIndex * 100}% + ${diff}px))`;
-            });
-
-            slides.addEventListener('mouseleave', () => {
-                if (isDragging) {
-                    isDragging = false;
-                    goToSlide(currentIndex);
-                }
-            });
-
-            // Touch functionality
-            slides.addEventListener('touchstart', (e) => {
-                isDragging = true;
-                startX = e.touches[0].clientX;
-            });
-
-            slides.addEventListener('touchend', () => {
-                if (!isDragging) return;
-                isDragging = false;
-                const diff = slides.getBoundingClientRect().x - startX;
-                if (Math.abs(diff) > 50) {
-                    if (diff < 0 && currentIndex < totalSlides - 1) {
-                        currentIndex++;
-                    } else if (diff > 0 && currentIndex > 0) {
-                        currentIndex--;
-                    }
-                }
-                goToSlide(currentIndex);
-            });
-
-            slides.addEventListener('touchmove', (e) => {
-                if (!isDragging) return;
-                const diff = e.touches[0].clientX - startX;
-                slides.style.transform = `translateX(calc(${-currentIndex * 100}% + ${diff}px))`;
-            });
-
-            // Initialize the first slide
-            goToSlide(currentIndex);
+            // Auto-play slides every 3 seconds
+            setInterval(autoSlide, 3000);
         });
     </script>
 	<style>
