@@ -15,16 +15,12 @@
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="https://nsgroup.pages.dev/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer">
-	<script>
+<script>
         document.addEventListener('DOMContentLoaded', () => {
             const slides = document.querySelector('.slides');
-            const slideElements = document.querySelectorAll('.slide');
             const dots = document.querySelectorAll('.dot');
+            const totalSlides = dots.length;
             let currentIndex = 0;
-            let startX = 0;
-            let isDragging = false;
-            let currentTranslate = 0;
-            let prevTranslate = 0;
 
             // Update active dot
             function updateDots(index) {
@@ -34,35 +30,46 @@
 
             // Move to a specific slide
             function goToSlide(index) {
-                currentTranslate = -index * 100;
-                slides.style.transform = `translateX(${currentTranslate}%)`;
+                const translateX = -index * 100; // เลื่อนทีละ 100%
+                slides.style.transform = `translateX(${translateX}%)`;
                 updateDots(index);
-                prevTranslate = currentTranslate;
             }
+
+            // Add click event for dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentIndex = index;
+                    goToSlide(currentIndex);
+                });
+            });
+
+            // Dragging functionality
+            let startX = 0;
+            let isDragging = false;
 
             slides.addEventListener('mousedown', (e) => {
                 isDragging = true;
                 startX = e.clientX;
             });
 
-            slides.addEventListener('mousemove', (e) => {
-                if (!isDragging) return;
-                const diff = e.clientX - startX;
-                currentTranslate = prevTranslate + (diff / window.innerWidth) * 100;
-                slides.style.transform = `translateX(${currentTranslate}%)`;
-            });
-
             slides.addEventListener('mouseup', (e) => {
+                if (!isDragging) return;
                 isDragging = false;
                 const diff = e.clientX - startX;
                 if (Math.abs(diff) > 50) {
-                    if (diff < 0 && currentIndex < slideElements.length - 1) {
+                    if (diff < 0 && currentIndex < totalSlides - 1) {
                         currentIndex++;
                     } else if (diff > 0 && currentIndex > 0) {
                         currentIndex--;
                     }
                 }
                 goToSlide(currentIndex);
+            });
+
+            slides.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                const diff = e.clientX - startX;
+                slides.style.transform = `translateX(calc(${-currentIndex * 100}% + ${diff}px))`;
             });
 
             slides.addEventListener('mouseleave', () => {
@@ -72,23 +79,18 @@
                 }
             });
 
+            // Touch functionality
             slides.addEventListener('touchstart', (e) => {
                 isDragging = true;
                 startX = e.touches[0].clientX;
             });
 
-            slides.addEventListener('touchmove', (e) => {
-                if (!isDragging) return;
-                const diff = e.touches[0].clientX - startX;
-                currentTranslate = prevTranslate + (diff / window.innerWidth) * 100;
-                slides.style.transform = `translateX(${currentTranslate}%)`;
-            });
-
             slides.addEventListener('touchend', () => {
+                if (!isDragging) return;
                 isDragging = false;
-                const diff = currentTranslate - prevTranslate;
-                if (Math.abs(diff) > 10) {
-                    if (diff < 0 && currentIndex < slideElements.length - 1) {
+                const diff = slides.getBoundingClientRect().x - startX;
+                if (Math.abs(diff) > 50) {
+                    if (diff < 0 && currentIndex < totalSlides - 1) {
                         currentIndex++;
                     } else if (diff > 0 && currentIndex > 0) {
                         currentIndex--;
@@ -97,16 +99,14 @@
                 goToSlide(currentIndex);
             });
 
+            slides.addEventListener('touchmove', (e) => {
+                if (!isDragging) return;
+                const diff = e.touches[0].clientX - startX;
+                slides.style.transform = `translateX(calc(${-currentIndex * 100}% + ${diff}px))`;
+            });
+
             // Initialize the first slide
             goToSlide(currentIndex);
-
-            // Add click event for dots
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    currentIndex = index;
-                    goToSlide(currentIndex);
-                });
-            });
         });
     </script>
 	<style>
