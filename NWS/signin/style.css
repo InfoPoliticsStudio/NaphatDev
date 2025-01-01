@@ -33,7 +33,7 @@ label {
 }
 
 input {
-    width: 100%;
+    width: -webkit-fill-available;
     padding: 10px;
     border: 1px solid #cccccc;
     border-radius: 5px;
@@ -43,7 +43,7 @@ input {
 button {
     width: 100%;
     padding: 10px;
-    background-color: #007BFF;
+    background-color: #28a745;
     color: #ffffff;
     border: none;
     border-radius: 5px;
@@ -52,7 +52,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #00b32c;
 }
 
 #successMessage {
