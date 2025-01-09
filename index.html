@@ -15,53 +15,75 @@
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="https://nsgroup.pages.dev/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer">
-
-
+	
     <script>
-	    const slides = document.querySelector('.slides');
-	    const dots = document.querySelectorAll('.dot');
-	    const slideCount = document.querySelectorAll('.slide').length;
-	    let currentIndex = 0;
-	    let slideInterval;
-	
-	    function showSlide(index) {
-	        currentIndex = index;
-	        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-	        updateDots();
-	    }
-	
-	    function showNextSlide() {
-	        currentIndex = (currentIndex + 1) % slideCount;
-	        showSlide(currentIndex);
-	    }
-	
-	    function updateDots() {
-	        dots.forEach((dot, index) => {
-	            dot.classList.toggle('active', index === currentIndex);
-	        });
-	    }
-	
-	    function startSlideInterval() {
-	        slideInterval = setInterval(showNextSlide, 5000);
-	    }
-	
-	    function resetSlideInterval() {
-	        clearInterval(slideInterval);
-	        startSlideInterval();
-	    }
-	
-	    // เพิ่ม eventListener ให้ dot คลิกเพื่อเลือกภาพ
-	    dots.forEach((dot, index) => {
-	        dot.addEventListener('click', () => {
-	            showSlide(index);
-	            resetSlideInterval(); // รีเซ็ตเวลาเมื่อคลิกที่จุด
-	        });
-	    });
-	
-	    // เริ่มการเลื่อนภาพ
-	    startSlideInterval();
-	    updateDots();
-	</script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Menu toggle logic
+            const menuToggle = document.getElementById('menuToggle');
+            const navMenu = document.getElementById('navMenu');
+            const menuIcon = menuToggle.querySelector('i');
+            
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                if (menuIcon.classList.contains('fa-bars')) {
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-times');
+                } else {
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
+                }
+            });
+
+            // Drag-to-slide logic
+            const slides = document.querySelector('.slides');
+            let isDragging = false;
+            let startX = 0;
+            let currentTranslate = 0;
+            let prevTranslate = 0;
+
+            slides.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                startX = e.clientX;
+                slides.style.cursor = 'grabbing';
+            });
+
+            slides.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                const currentPosition = e.clientX - startX;
+                currentTranslate = prevTranslate + currentPosition;
+                slides.style.transform = `translateX(${currentTranslate}px)`;
+            });
+
+            slides.addEventListener('mouseup', () => {
+                isDragging = false;
+                prevTranslate = currentTranslate;
+                slides.style.cursor = 'grab';
+            });
+
+            slides.addEventListener('mouseleave', () => {
+                isDragging = false;
+                prevTranslate = currentTranslate;
+                slides.style.cursor = 'grab';
+            });
+
+            slides.addEventListener('touchstart', (e) => {
+                isDragging = true;
+                startX = e.touches[0].clientX;
+            });
+
+            slides.addEventListener('touchmove', (e) => {
+                if (!isDragging) return;
+                const currentPosition = e.touches[0].clientX - startX;
+                currentTranslate = prevTranslate + currentPosition;
+                slides.style.transform = `translateX(${currentTranslate}px)`;
+            });
+
+            slides.addEventListener('touchend', () => {
+                isDragging = false;
+                prevTranslate = currentTranslate;
+            });
+        });
+    </script>
 	<style>
     .n-box {
         max-width: 700px;
@@ -416,7 +438,51 @@ table.content-s {
     </style>
 </section>
 
+<script>
+    const slides = document.querySelector('.slides');
+    const dots = document.querySelectorAll('.dot');
+    const slideCount = document.querySelectorAll('.slide').length;
+    let currentIndex = 0;
+    let slideInterval;
 
+    function showSlide(index) {
+        currentIndex = index;
+        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        updateDots();
+    }
+
+    function showNextSlide() {
+        currentIndex = (currentIndex + 1) % slideCount;
+        showSlide(currentIndex);
+    }
+
+    function updateDots() {
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+    }
+
+    function startSlideInterval() {
+        slideInterval = setInterval(showNextSlide, 5000);
+    }
+
+    function resetSlideInterval() {
+        clearInterval(slideInterval);
+        startSlideInterval();
+    }
+
+    // เพิ่ม eventListener ให้ dot คลิกเพื่อเลือกภาพ
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            showSlide(index);
+            resetSlideInterval(); // รีเซ็ตเวลาเมื่อคลิกที่จุด
+        });
+    });
+
+    // เริ่มการเลื่อนภาพ
+    startSlideInterval();
+    updateDots();
+</script>
 	<div class="n-section">
 	    <h1 class="main-heading">ความมุ่งมั่นสู่ความสำเร็จ</h1>
 	    <p class="sub-heading">ความเพียรนำไปสู่ความก้าวหน้า</p>
