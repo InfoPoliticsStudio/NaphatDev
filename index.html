@@ -18,46 +18,50 @@
 
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const slides = document.querySelector('.slides');
-            const dots = document.querySelectorAll('.dot');
-            const totalSlides = dots.length;
-            let currentIndex = 0;
-
-            // Update active dot
-            function updateDots(index) {
-                dots.forEach(dot => dot.classList.remove('active'));
-                dots[index].classList.add('active');
-            }
-
-            // Move to a specific slide
-            function goToSlide(index) {
-                const translateX = -index * 100; // เลื่อนทีละ 100%
-                slides.style.transform = `translateX(${translateX}%)`;
-                updateDots(index % totalSlides); // อัปเดต dot แบบวน
-            }
-
-            // Auto move slides
-            function autoSlide() {
-                currentIndex++;
-                if (currentIndex === totalSlides) {
-                    currentIndex = 0; // วนกลับไปสไลด์แรก
-                }
-                goToSlide(currentIndex);
-            }
-
-            // Add click event for dots
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    currentIndex = index;
-                    goToSlide(currentIndex);
-                });
-            });
-
-            // Auto-play slides every 3 seconds
-            setInterval(autoSlide, 3000);
-        });
-    </script>
+	    const slides = document.querySelector('.slides');
+	    const dots = document.querySelectorAll('.dot');
+	    const slideCount = document.querySelectorAll('.slide').length;
+	    let currentIndex = 0;
+	    let slideInterval;
+	
+	    function showSlide(index) {
+	        currentIndex = index;
+	        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+	        updateDots();
+	    }
+	
+	    function showNextSlide() {
+	        currentIndex = (currentIndex + 1) % slideCount;
+	        showSlide(currentIndex);
+	    }
+	
+	    function updateDots() {
+	        dots.forEach((dot, index) => {
+	            dot.classList.toggle('active', index === currentIndex);
+	        });
+	    }
+	
+	    function startSlideInterval() {
+	        slideInterval = setInterval(showNextSlide, 5000);
+	    }
+	
+	    function resetSlideInterval() {
+	        clearInterval(slideInterval);
+	        startSlideInterval();
+	    }
+	
+	    // เพิ่ม eventListener ให้ dot คลิกเพื่อเลือกภาพ
+	    dots.forEach((dot, index) => {
+	        dot.addEventListener('click', () => {
+	            showSlide(index);
+	            resetSlideInterval(); // รีเซ็ตเวลาเมื่อคลิกที่จุด
+	        });
+	    });
+	
+	    // เริ่มการเลื่อนภาพ
+	    startSlideInterval();
+	    updateDots();
+	</script>
 	<style>
     .n-box {
         max-width: 700px;
