@@ -79,3 +79,8 @@ button:hover {
     text-align: center;
     font-size: 18px;
 }
+
+@media (max-width: 768px) {
+    .nav-menu {
+        background-color: #00000075 !important;
+    }
