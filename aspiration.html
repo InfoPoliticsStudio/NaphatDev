@@ -94,6 +94,34 @@
             justify-content: center;
     		border-radius: 50%;
         }
+
+        .status.failed:before {
+            content: '\2717'; /* Unicode ของ cross mark */
+            color: #dc3545; /* สีแดง */
+            font-weight: bold;
+            margin-right: 8px;
+            width: 20px;
+            height: 20px;
+            display: flex;
+    		background: #fff;
+            align-items: center;
+            justify-content: center;
+    		border-radius: 50%;
+        }
+        
+        .status.pending:before {
+            content: '\2013'; /* Unicode ของ dash */
+            color: #ffd100; 
+            font-weight: bold;
+            margin-right: 8px;
+            width: 20px;
+            height: 20px;
+            display: flex;
+    		background: #fff;
+            align-items: center;
+            justify-content: center;
+    		border-radius: 50%;
+        }
     </style>
 </head>
 <body>
