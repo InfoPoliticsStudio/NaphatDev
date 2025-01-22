@@ -86,7 +86,7 @@
 
     <div class="container">
         <div class="dream-company">
-            <img src="https://i.postimg.cc/7hWtmJLM/NS-TECH-logo.png" alt="Dream Company Logo">
+            <img src="dream-company-logo.png" alt="Dream Company Logo">
             <h2>Dream Company: Google</h2>
         </div>
 
@@ -109,15 +109,29 @@
 
                 data.forEach(item => {
                     const listItem = document.createElement('li');
-                    const checkbox = document.createElement('input');
-                    checkbox.type = 'checkbox';
-                    checkbox.checked = item.completed;
 
-                    const label = document.createElement('label');
+                    const label = document.createElement('span');
                     label.textContent = item.task;
 
-                    listItem.appendChild(checkbox);
+                    const status = document.createElement('span');
+                    status.classList.add('status');
+                    status.textContent = item.status;
+
+                    // Add appropriate class for status
+                    if (item.status === 'Completed') {
+                        status.classList.add('completed');
+                    } else if (item.status === 'Pending') {
+                        status.classList.add('pending');
+                    } else if (item.status === 'In Progress') {
+                        status.classList.add('in-progress');
+                    } else if (item.status === 'Following Up') {
+                        status.classList.add('following-up');
+                    } else if (item.status === 'Failed') {
+                        status.classList.add('failed');
+                    }
+
                     listItem.appendChild(label);
+                    listItem.appendChild(status);
                     checklist.appendChild(listItem);
                 });
             } catch (error) {
