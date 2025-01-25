@@ -91,6 +91,10 @@ a {
 ;
 }
 
-.news a:hover{
-    text-decoration: none !important;
+h5 a:hover {
+    text-decoration: none;
+}
+
+.writer a:hover {
+    text-decoration: none;
 }
