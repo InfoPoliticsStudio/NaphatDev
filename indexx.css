@@ -276,6 +276,11 @@ table.content-s {
 img{
     user-select: none;
 }
+@media (max-width: 600px) {
+    .spec img {
+      width: calc(50% - 10px);
+    }
+  }
 
 .news {
     margin-bottom: 1.5rem !important;
