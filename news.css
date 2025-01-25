@@ -6,11 +6,10 @@
 }
 
 .single-news-item {
-    background-color: #fff; /* พื้นหลังขาว */
-    border-radius: 8px; /* มุมโค้ง */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เงาบางๆ รอบๆ */
-    overflow: hidden; /* ป้องกันการแสดงผลที่ไม่ต้องการ */
-    transition: transform 0.3s ease-in-out; /* เพิ่มเอฟเฟกต์ขยายเมื่อ hover */
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
 }
 
 .single-news-item:hover {
