@@ -366,14 +366,14 @@ img{
 
 @media (max-width: 600px) {
   .col-4 {
-    flex-basis: 50%; /* แก้ไข: เพิ่ม ':' */
-    max-width: 50%;  /* แก้ไข: เพิ่ม ':' */
+    flex-basis: 50% !important; /* แก้ไข: เพิ่ม ':' */
+    max-width: 50% !important;  /* แก้ไข: เพิ่ม ':' */
   }
 }
 
 @media (max-width: 376px) {
   .col-4 {
-    flex-basis: 100%; /* แก้ไข: เพิ่ม ':' */
-    max-width: 100%;  /* แก้ไข: เพิ่ม ':' */
+    flex-basis: 100% !important; /* แก้ไข: เพิ่ม ':' */
+    max-width: 100% !important;  /* แก้ไข: เพิ่ม ':' */
   }
 }
