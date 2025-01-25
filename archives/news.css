@@ -62,3 +62,7 @@ body main {
     padding: 45px 0 60px;
     margin-bottom: -45px;
 }
+
+.offset-1 {
+    margin-left: 8.33333%;
+}
