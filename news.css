@@ -1,0 +1,83 @@
+.single-news-item {
+    background-color: #fff; /* พื้นหลังขาว */
+    border-radius: 8px; /* มุมโค้ง */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เงาบางๆ รอบๆ */
+    overflow: hidden; /* ป้องกันการแสดงผลที่ไม่ต้องการ */
+    transition: transform 0.3s ease-in-out; /* เพิ่มเอฟเฟกต์ขยายเมื่อ hover */
+}
+
+.single-news-item:hover {
+    transform: translateY(-10px); /* ขยายขึ้นเมื่อ hover */
+}
+
+.single-news-item .image {
+    display: block;
+}
+
+.single-news-item .image img {
+    width: 100%; /* ให้รูปเต็มความกว้างของคอนเทนเนอร์ */
+    height: auto; /* รักษาสัดส่วนของรูป */
+    object-fit: cover; /* ให้ภาพครอบคลุมพื้นที่ */
+}
+
+.single-news-item .info {
+    padding: 20px;
+}
+
+.single-news-item .writer {
+    font-size: 14px;
+    color: #888;
+}
+
+.single-news-item .writer .date {
+    margin-right: 10px;
+}
+
+.single-news-item .writer .author {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.single-news-item h5 {
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+.single-news-item h5 a {
+    text-decoration: none;
+    color: #333; /* สีข้อความหลัก */
+    font-weight: bold;
+}
+
+.single-news-item h5 a:hover {
+    color: #007bff; /* เปลี่ยนสีเมื่อ hover */
+}
+
+.single-news-item .d-inline-block {
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.single-news-item .d-inline-block:hover {
+    text-decoration: underline; /* เพิ่มเส้นใต้เมื่อ hover */
+}
+
+/* ใช้ media query สำหรับการจัดวางในอุปกรณ์ต่างๆ */
+@media (max-width: 991px) {
+    .single-news-item {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 575px) {
+    .single-news-item .info {
+        padding: 15px;
+    }
+    .single-news-item h5 {
+        font-size: 16px;
+    }
+    .single-news-item .d-inline-block {
+        font-size: 13px;
+    }
+}
