@@ -264,17 +264,20 @@
 <body>
 	<div class="MuiBox-root css-1ltj605 loader css-1ltj605" id="">
         <script>
-          window.addEventListener("load", () => {
-              const loader = document.querySelector(".css-1ltj605");
-      
-              loader.classList.add("css-1ltj605-hidden");
-      
-              loader.addEventListener("transitionend", () => {
-                  document.body.removeChild("loader");
-              })
-          })
-      
-        </script>
+  window.addEventListener("load", () => {
+    const loader = document.querySelector(".css-1ltj605");
+
+    // รอ 5 วินาทีก่อนเพิ่มคลาสซ่อน
+    setTimeout(() => {
+      loader.classList.add("css-1ltj605-hidden");
+
+      // รอการเปลี่ยนแปลง transition เสร็จสิ้นก่อนลบ loader ออกจาก DOM
+      loader.addEventListener("transitionend", () => {
+        document.body.removeChild(loader);
+      });
+    }, 5000); // 5000 มิลลิวินาที = 5 วินาที
+  });
+</script>
         <span class="MuiCircularProgress-root MuiCircularProgress-indeterminate MuiCircularProgress-colorPrimary css-z01bqi" role="progressbar" style="width: 100px; height: 100px;"><svg class="MuiCircularProgress-svg css-13o7eu2" viewBox="22 22 44 44"><circle class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate css-14891ef" cx="44" cy="44" r="20.2" fill="none" stroke-width="3.6"></circle></svg></span>
     </div>
     <!-- Header -->
