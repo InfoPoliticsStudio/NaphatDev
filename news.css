@@ -90,3 +90,7 @@ a {
     display: flex
 ;
 }
+
+.news a:hover{
+    text-decoration: none;
+}
