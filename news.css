@@ -101,3 +101,8 @@ h5 a:hover {
 .info a:hover {
     text-decoration: none;
 }
+.news{
+    display: flex;
+    justify-content: space-between;
+}
+    
