@@ -26,10 +26,15 @@
     text-decoration: none;
 }
 
+
 .single-news-item .image img {
-    width: 100%; /* ให้รูปเต็มความกว้างของคอนเทนเนอร์ */
-    height: auto; /* รักษาสัดส่วนของรูป */
-    object-fit: cover; /* ให้ภาพครอบคลุมพื้นที่ */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out, -o-transform .2s ease-in-out;
 }
 
 .single-news-item .info {
