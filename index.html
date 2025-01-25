@@ -86,12 +86,125 @@
             });
         });
     </script>
+	<style>
+    .news-start {
+        display: flex;
+        justify-content: center;
+    }
+    .news {
+        padding: 15px;
+        max-width: 860px;
+        
+    }
+
+    .news h2 {
+        font-size: 24px;
+        margin: 0;
+        padding-bottom: 15px;
+    }
+
+    .news a.view-all {
+        color: #800;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+    .news a.view-all:hover {
+        padding-right: 10px;
+        transition: 0.3s;
+    }
+
+    .news-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .news-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        border-bottom: 1px solid #ddd;
+        padding: 10px 0;
+    }
+
+    .news-item:last-child {
+        border-bottom: none;
+    }
+
+    .news-image img {
+        width: 150px;
+        height: auto;
+        border-radius: 8px;
+        object-fit: cover;
+    }
+
+    .news-details {
+        flex: 1;
+    }
+
+    .news-title {
+        font-size: 18px;
+        margin: 0 0 5px;
+        color: #333;
+    }
+
+    .news-date {
+        font-size: 14px;
+        color: #666;
+        margin: 0 0 10px;
+    }
+
+    .news-content {
+        font-size: 16px;
+        color: #444;
+        margin: 0 0 10px;
+    }
+
+    .news-link {
+        text-decoration: none;
+        color: #000;
+        transition: color 0.3s ease;
+    }
+
+    .news-link:hover {
+        color: #555;
+    }
+    .congratulations{
+            display: flex;
+            width: 100%;
+            height: 100%;
+            flex-wrap: wrap;
+    }
+
+    .congratulations img {
+            width: 33.3333%;
+            height: 100%;
+            object-fit: cover;
+            padding: 10px;
+        }
+</style>
 	<link rel="stylesheet" href="indexx.css">
 	<link rel="stylesheet" href="news.css">
 	<script src="news.js"></script>
 </head>
 <body>
-
+	<div class="MuiBox-root css-1ltj605 loader css-1ltj605" id="">
+        <script>
+          window.addEventListener("load", () => {
+              const loader = document.querySelector(".css-1ltj605");
+      
+              loader.classList.add("css-1ltj605-hidden");
+      
+              loader.addEventListener("transitionend", () => {
+                  document.body.removeChild("loader");
+              })
+          })
+      
+        </script>
+        <span class="MuiCircularProgress-root MuiCircularProgress-indeterminate MuiCircularProgress-colorPrimary css-z01bqi" role="progressbar" style="width: 100px; height: 100px;"><svg class="MuiCircularProgress-svg css-13o7eu2" viewBox="22 22 44 44"><circle class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate css-14891ef" cx="44" cy="44" r="20.2" fill="none" stroke-width="3.6"></circle></svg></span>
+    </div>
     <!-- Header -->
 	<div class="top">
 	    <a href="countdown">นับถอยหลัง</a>
