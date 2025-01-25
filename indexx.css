@@ -264,3 +264,12 @@ table.content-s {
         top: 73.2px !important;
     }
 }
+
+.spec {
+    display: flex;
+    gap: 10px;
+}
+
+.spec img {
+    width: calc(25% - 10px);
+}
