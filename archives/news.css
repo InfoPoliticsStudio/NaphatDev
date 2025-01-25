@@ -15,7 +15,7 @@ body main {
     }
 }
 #post-content .hero-image {
-    padding-top: 56.25%;
+    padding-top: 38.25% ;
 }
 @media screen and (min-width: 992px) {
     .hero-image.large {
@@ -23,7 +23,7 @@ body main {
     }
 }
 .hero-image.large {
-    padding-top: 56.25%;
+    padding-top: 38.25% -;
 }
 .hero-image {
     position: relative;
