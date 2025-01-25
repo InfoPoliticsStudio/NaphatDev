@@ -297,6 +297,9 @@ img{
     margin-bottom: .5rem;
     font-weight: 500;
     margin-top: 0;
+    color: unset;
+    background: unset;
+    padding: unset;
 }
 
 .news a{
