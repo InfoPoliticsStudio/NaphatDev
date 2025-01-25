@@ -66,3 +66,32 @@ body main {
 .offset-1 {
     margin: 0 5%;
 }
+
+.writer .date {
+    padding-right: 5px;
+    border-right: 1px solid #8e8e93;
+    color: #8e8e93;
+}
+
+.writer .author {
+    padding-left: 5px;
+    color: #8e8e93;
+}
+
+.mt-4, .my-4 {
+    margin-top: 1.5rem !important;
+}
+
+#post-content .content-description h1, #post-content .content-description h2, #post-content .content-description h3, #post-content .content-description h4, #post-content .content-description h5, #post-content .content-description h6 {
+    font-weight: 400;
+    margin: 0;
+}
+
+h2.entry-title{
+    line-height: 1.4;
+    font-size: 2.25rem;
+}
+
+p {
+    margin: 1.5rem 0;
+}
