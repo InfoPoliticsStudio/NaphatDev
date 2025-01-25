@@ -43,3 +43,13 @@ body main {
     background-position: 50%;
     background-position: var(--bg-position);
 }
+
+.cont-pd, cont-pd {
+    max-width: 720px !important;
+}
+
+@media (min-width: 992px) {
+    .cont, .cont-pd {
+        max-width: 920px !important;
+    }
+}
