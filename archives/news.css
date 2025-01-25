@@ -53,3 +53,12 @@ body main {
         max-width: 920px !important;
     }
 }
+
+#post-content .content-description {
+    border: 1px solid #eaeaea;
+    background-color: #fff;
+    position: relative;
+    top: -45px;
+    padding: 45px 0 60px;
+    margin-bottom: -45px;
+}
