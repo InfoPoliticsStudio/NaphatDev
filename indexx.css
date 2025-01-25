@@ -267,6 +267,7 @@ table.content-s {
 
 .spec {
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
 }
 
