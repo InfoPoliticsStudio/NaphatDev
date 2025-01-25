@@ -24,7 +24,7 @@ function renderNews(newsData) {
     // สร้าง HTML สำหรับแต่ละข่าว
     newsData.forEach(({ link, img, datePost, details }) => {
         const newsItem = `
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-4">
                 <div class="single-news-item">
                     <a href="${link}" class="image">
                         <img fetchpriority="high" decoding="async" src="${img}" alt="" class="img-fluid">
