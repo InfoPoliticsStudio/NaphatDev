@@ -363,3 +363,17 @@ img{
     padding-right: 15px;
     padding-left: 15px;
 }
+
+@media (max-width: 600px) {
+  .col-4 {
+    flex-basis: 50%; /* แก้ไข: เพิ่ม ':' */
+    max-width: 50%;  /* แก้ไข: เพิ่ม ':' */
+  }
+}
+
+@media (max-width: 376px) {
+  .col-4 {
+    flex-basis: 100%; /* แก้ไข: เพิ่ม ':' */
+    max-width: 100%;  /* แก้ไข: เพิ่ม ':' */
+  }
+}
