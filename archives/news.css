@@ -1,0 +1,21 @@
+
+@media screen and (min-width: 992px) {
+    #post-content .hero-image {
+        padding-top: 38.25%;
+    }
+}
+#post-content .hero-image {
+    padding-top: 56.25%;
+}
+@media screen and (min-width: 992px) {
+    .hero-image.large {
+        padding-top: 38.25%;
+    }
+}
+.hero-image.large {
+    padding-top: 56.25%;
+}
+.hero-image {
+    position: relative;
+    height: 0;
+}
