@@ -102,6 +102,7 @@ h5 a:hover {
     text-decoration: none;
 }
 .news{
+    max-width: 100% !important;
     display: flex;
     justify-content: space-between;
 }
