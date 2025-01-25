@@ -273,3 +273,6 @@ table.content-s {
 .spec img {
     width: calc(25% - 10px);
 }
+img{
+    user-select: none;
+}
