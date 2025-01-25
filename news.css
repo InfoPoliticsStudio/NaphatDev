@@ -12,12 +12,18 @@
     flex-direction: column;
 }
 
-.single-news-item:hover {
-    transform: translateY(-10px); /* ขยายขึ้นเมื่อ hover */
-}
-
 .single-news-item .image {
-    display: block;
+    width: 100%;
+    padding-top: 66.5%;
+    position: relative;
+    background: #f1f1f1;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+.elementor a {
+    box-shadow: none;
+    text-decoration: none;
 }
 
 .single-news-item .image img {
