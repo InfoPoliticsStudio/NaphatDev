@@ -277,11 +277,22 @@ table.content-s {
 img{
     user-select: none;
 }
-@media (max-width: 600px) {
+  @media (max-width: 600px) {
     .spec img {
       width: calc(50% - 10px);
     }
   }
+
+  @media (max-width: 376px) {
+    .spec {
+      gap: 0px; /* ไม่มีระยะห่างระหว่างรูป */
+    }
+
+    .spec img {
+      width: 100%; /* รูปภาพเต็มความกว้างของบรรทัด */
+    }
+  }
+</style>
 
 .news {
     margin-bottom: 1.5rem !important;
