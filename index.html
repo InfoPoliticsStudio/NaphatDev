@@ -15,10 +15,12 @@
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="https://nsgroup.pages.dev/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <script src="Certificate.js"></script>
+    <script src="tcas68.js"></script>
+	<style>
         /*  LOADER  */
         .css-1ltj605 {
             height: 100vh;
@@ -90,6 +92,64 @@
               }
         
         </style>
+	
+    <script>
+        function countdown(targetDate, timerPrefix) {
+            var countDownDate = new Date(targetDate).getTime();
+
+            var x = setInterval(function() {
+                var now = new Date().getTime();
+                var distance = countDownDate - now;
+
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById(timerPrefix + '-days').innerHTML = days;
+                document.getElementById(timerPrefix + '-hours').innerHTML = hours;
+                document.getElementById(timerPrefix + '-minutes').innerHTML = minutes;
+                document.getElementById(timerPrefix + '-seconds').innerHTML = seconds;
+
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById(timerPrefix + '-days').innerHTML = "0";
+                    document.getElementById(timerPrefix + '-hours').innerHTML = "0";
+                    document.getElementById(timerPrefix + '-minutes').innerHTML = "0";
+                    document.getElementById(timerPrefix + '-seconds').innerHTML = "0";
+                }
+            }, 1000);
+        }
+
+        // เรียกใช้งานฟังก์ชัน countdown สำหรับแต่ละเหตุการณ์
+        countdown("Sep 25, 2024 00:00:00", "exam1");
+        countdown("Oct 28, 2024 09:00:00", "tcas");
+        countdown("Jan 13, 2025 00:00:00", "exam2");
+        countdown("Dec 8, 2024 00:00:00", "tgat-tpat");
+        countdown("Feb 15, 2025 00:00:00", "graduation");
+        countdown("Nov 16, 2024 00:00:00", "nationalacademictest");
+
+        function toggleMenu() {
+            const fullMenu = document.getElementById('fullMenu');
+            fullMenu.classList.toggle('show');
+        }
+
+        // Calculate age dynamically based on the birthdate
+        function calculateAge() {
+            const birthdate = new Date('2007-04-30'); // Set birthdate here
+            const today = new Date();
+            let age = today.getFullYear() - birthdate.getFullYear();
+            const monthDifference = today.getMonth() - birthdate.getMonth();
+            if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthdate.getDate())) {
+                age--;
+            }
+            document.getElementById('age').textContent = `${age} ปี`;
+        }
+
+        // Call the function to set the age when the page loads
+        window.onload = calculateAge;
+
+    </script>
 	<script>
         document.addEventListener('DOMContentLoaded', () => {
             // Menu toggle logic
@@ -494,115 +554,22 @@
           
           <div class="t-container">
               <div class="box" style=" width: 100%; ">
-                  <h2 style=" background: var(--c-yellow); ">TGAT/TPAT</h2>
-                  <table class="content-s">
+                  <h2 style=" background: var(--c-yellow); ">คะแนน TCAS68</h2>
+                  <table class="content-s" id="score-tcas68">
+		      <thead>
+	                <tr style="border-bottom: 1px solid var(--c-yellow);">
+	                    <td class="align-middle _heading"><center>ชื่อวิชา</center></td>
+	                    <td class="align-middle _heading" style=" width: 25%; "><center>คะแนนที่ได้</center></td>
+	                    <td class="align-middle _heading" style=" width: 25%; "><center>คะแนนมาตรฐาน</center></td>
+	                    <td class="align-middle _heading" style=" width: 25%; "><center>เปอร์เซ็นต์ไทล์</center></td>
+	                </tr>
+		      </thead>
 	              <tbody>
-	                <tr style="border-bottom: 1px solid var(--c-yellow);">
-	                    <td class="align-middle _heading">Subject</td>
-	                    <td class="align-middle _heading" style=" width: 50%; "><center>X<sub>i</sub></center></td>
-	                    <td class="align-middle _heading" style=" width: 50%; "><center>T<sub>i</sub></center></td>
-	                </tr>
-	                <tr>
-	                    <td class="align-middle _heading"><b>TGAT</b></td>
-	                    <td class="align-middle _heading"><center>61.805</center></td>
-	                    <td class="align-middle _heading"><center>59.649</center></td>
-	                </tr>
-	                <tr>
-	                    <td class="align-middle _heading">TGAT1</td>
-	                    <td class="align-middle _heading"><center>46.666</center></td>
-	                    <td class="align-middle _heading"><center>53.274</center></td>
-	                </tr>
-	                <tr>
-	                    <td class="align-middle _heading">TGAT2</td>
-	                    <td class="align-middle _heading"><center>70.000</center></td>
-	                    <td class="align-middle _heading"><center>64.741</center></td>
-	                </tr>
-	                <tr style="border-bottom: 1px solid var(--c-yellow);">
-	                    <td class="align-middle _heading">TGAT3</td>
-	                    <td class="align-middle _heading"><center>68.750</center></td>
-	                    <td class="align-middle _heading"><center>55.228</center></td>
-	                </tr>
-	                <tr style="border-bottom: 1px solid var(--c-yellow);">
-	                    <td class="align-middle _heading"><b>TPAT3</b></td>
-	                    <td class="align-middle _heading"><center>52.000</center></td>
-	                    <td class="align-middle _heading"><center>57.375</center></td>
-	                </tr>
-<!-- 	                <tr>
-	                    <td class="align-middle _heading"><b>TPAT5</b></td>
-	                    <td class="align-middle _heading"><center></center></td>
-	                    <td class="align-middle _heading"><center></center></td>
-	                </tr> -->
 	              </tbody>
 	           </table>
               </div>
           </div>
       </div>
-        <style> 
-    
-	p {
-	    text-indent: 2.5em;
-	}
-        .body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-	    margin: 0 0 30px 0;
-	    padding-top: 0;
-        }
-    
-        .outer-container {
-            display: flex;
-            gap: 20px;
-	    width: 1200px;
-	    max-width: 1200px;
-    	    padding: 0 50px 50px 50px;
-        }
-    
-        .t-container {
-            display: grid;
-            gap: 20px;
-   	    width: 100%;
-        }
-    
-        .box {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0px 1px 3px rgba(0, 0, 0, .15);
-            width: auto;
-        }
-    
-        h2 {
-            color: #fff;
-            background: #01008d;
-            margin: 0;
-            padding: 12px 20px;
-        }
-    
-        .content {
-            display: flex;
-            align-items: center;
-            padding: 20px;
-            font-weight: 500;
-            font-size: 1.125em;
-            line-height: 1.5;
-        }
-    
-        .body img {
-            width: 120px;
-            height: auto;
-            border-radius: 8px;
-        }
-    
-        .info p {
-            color: #555;
-            margin: 0;
-        }
-    
-        .info b {
-            color: #333;
-        }
-    
-        </style>
     </div>
      <div class="body" id="body" style=" display: none; ">
       <div class="outer-container">
@@ -623,117 +590,7 @@
                   </div>
               </div>
           </div>
-          <div class="t-container">
-              <div class="box" style=" width: 100%; ">
-                  <h2 style=" background: var(--c-yellow); ">TGAT/TPAT</h2>
-                  <table class="content-s">
-	              <tbody>
-	                <tr style="border-bottom: 1px solid var(--c-yellow);">
-	                    <td class="align-middle _heading">Subject</td>
-	                    <td class="align-middle _heading" style=" width: 50%; "><center>X<sub>i</sub></center></td>
-	                    <td class="align-middle _heading" style=" width: 50%; "><center>T<sub>i</sub></center></td>
-	                </tr>
-	                <tr>
-	                    <td class="align-middle _heading"><b>TGAT</b></td>
-	                    <td class="align-middle _heading"><center></center></td>
-	                    <td class="align-middle _heading"><center></center></td>
-	                </tr>
-	                <tr>
-	                    <td class="align-middle _heading">TGAT1</td>
-	                    <td class="align-middle _heading"><center></center></td>
-	                    <td class="align-middle _heading"><center></center></td>
-	                </tr>
-	                <tr>
-	                    <td class="align-middle _heading">TGAT2</td>
-	                    <td class="align-middle _heading"><center></center></td>
-	                    <td class="align-middle _heading"><center></center></td>
-	                </tr>
-	                <tr style="border-bottom: 1px solid var(--c-yellow);">
-	                    <td class="align-middle _heading">TGAT3</td>
-	                    <td class="align-middle _heading"><center></center></td>
-	                    <td class="align-middle _heading"><center></center></td>
-	                </tr>
-	                <tr style="border-bottom: 1px solid var(--c-yellow);">
-	                    <td class="align-middle _heading"><b>TPAT3</b></td>
-	                    <td class="align-middle _heading"><center></center></td>
-	                    <td class="align-middle _heading"><center></center></td>
-	                </tr>
-<!-- 	                <tr>
-	                    <td class="align-middle _heading"><b>TPAT5</b></td>
-	                    <td class="align-middle _heading"><center></center></td>
-	                    <td class="align-middle _heading"><center></center></td>
-	                </tr> -->
-	              </tbody>
-	           </table>
-              </div>
-          </div>
       </div>
-        <style> 
-    
-	p {
-	    text-indent: 2.5em;
-	}
-        .body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-	    margin: 0 0 30px 0;
-	    padding-top: 0;
-        }
-    
-        .outer-container {
-            display: flex;
-            gap: 20px;
-	    width: 1200px;
-	    max-width: 1200px;
-    	    padding: 0 50px 50px 50px;
-        }
-    
-        .t-container {
-            display: grid;
-            gap: 20px;
-   	    width: 100%;
-        }
-    
-        .box {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0px 1px 3px rgba(0, 0, 0, .15);
-            width: auto;
-        }
-    
-        h2 {
-            color: #fff;
-            background: #01008d;
-            margin: 0;
-            padding: 12px 20px;
-        }
-    
-        .content {
-            display: flex;
-            align-items: center;
-            padding: 20px;
-            font-weight: 500;
-            font-size: 1.125em;
-            line-height: 1.5;
-        }
-    
-        .body img {
-            width: 120px;
-            height: auto;
-            border-radius: 8px;
-        }
-    
-        .info p {
-            color: #555;
-            margin: 0;
-        }
-    
-        .info b {
-            color: #333;
-        }
-    
-        </style>
     </div>
 	<div class="body" id="body" style=" margin-top: -30px; display: none;">
       <div class="outer-container">
@@ -894,7 +751,6 @@
         		</thead>
                         <tbody id="data-certificate">
                         </tbody>
-			<script src="Certificate.js"></script>
                     </table>
                     <table class="wikitable" style="display: none; text-align: center;font-size:100%;width:-webkit-fill-available;">
                         <tbody>
@@ -1101,30 +957,6 @@
             </table>
         </div>
     </section>
-
-    
-
-    <!-- Timeline -->
-	
-<!--     <section class="timeline">
-        <div class="timeline-box"><center>ลำดับเหตุการณ์</center></div>
-        <div class="timeline-item left">
-            <div class="timeline-content">
-                <h2>ปีการศึกษา 2561</h2>
-                <img src="https://i.postimg.cc/Cxt7NDX0/image.png" alt="Image 1">
-                <p>ผลการทดสอบทางการศึกษาระดับชาติขั้นพื้นฐาน (O-NET) ชั้นประถมศึกษาปีที่ 6 ปีการศึกษา 2561</p>
-            </div>
-        </div>
-        <div class="timeline-item right">
-            <div class="timeline-content">
-                <h2>เหตุการณ์ที่ 2</h2>
-                <img src="path/to/image2.jpg" alt="Image 2">
-                <p>คำอธิบายเกี่ยวกับเหตุการณ์ที่ 2</p>
-            </div>
-        </div>
-    </section>
- -->
-    
     <section>
     <footer>
 	    <center><a href="https://dara-esc.pages.dev/" style="color:#fff;font-family: 'Prompt';">DARA PRE ENGINEERING SCI-MATH</a></center>
@@ -1172,63 +1004,138 @@
     </footer>
 </section>
 
+<!--  ////////////////////////////////////////// STYLE สไตล์ //////////////////////////////////////////   -->
+        <style> 
     
-    <script>
-        function countdown(targetDate, timerPrefix) {
-            var countDownDate = new Date(targetDate).getTime();
-
-            var x = setInterval(function() {
-                var now = new Date().getTime();
-                var distance = countDownDate - now;
-
-                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                document.getElementById(timerPrefix + '-days').innerHTML = days;
-                document.getElementById(timerPrefix + '-hours').innerHTML = hours;
-                document.getElementById(timerPrefix + '-minutes').innerHTML = minutes;
-                document.getElementById(timerPrefix + '-seconds').innerHTML = seconds;
-
-                if (distance < 0) {
-                    clearInterval(x);
-                    document.getElementById(timerPrefix + '-days').innerHTML = "0";
-                    document.getElementById(timerPrefix + '-hours').innerHTML = "0";
-                    document.getElementById(timerPrefix + '-minutes').innerHTML = "0";
-                    document.getElementById(timerPrefix + '-seconds').innerHTML = "0";
-                }
-            }, 1000);
+	p {
+	    text-indent: 2.5em;
+	}
+        .body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+	    margin: 0 0 30px 0;
+	    padding-top: 0;
         }
-
-        // เรียกใช้งานฟังก์ชัน countdown สำหรับแต่ละเหตุการณ์
-        countdown("Sep 25, 2024 00:00:00", "exam1");
-        countdown("Oct 28, 2024 09:00:00", "tcas");
-        countdown("Jan 13, 2025 00:00:00", "exam2");
-        countdown("Dec 8, 2024 00:00:00", "tgat-tpat");
-        countdown("Feb 15, 2025 00:00:00", "graduation");
-        countdown("Nov 16, 2024 00:00:00", "nationalacademictest");
-
-        function toggleMenu() {
-            const fullMenu = document.getElementById('fullMenu');
-            fullMenu.classList.toggle('show');
+    
+        .outer-container {
+            display: flex;
+            gap: 20px;
+	    width: 1200px;
+	    max-width: 1200px;
+    	    padding: 0 50px 50px 50px;
         }
-
-        // Calculate age dynamically based on the birthdate
-        function calculateAge() {
-            const birthdate = new Date('2007-04-30'); // Set birthdate here
-            const today = new Date();
-            let age = today.getFullYear() - birthdate.getFullYear();
-            const monthDifference = today.getMonth() - birthdate.getMonth();
-            if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthdate.getDate())) {
-                age--;
-            }
-            document.getElementById('age').textContent = `${age} ปี`;
+    
+        .t-container {
+            display: grid;
+            gap: 20px;
+   	    width: 100%;
         }
-
-        // Call the function to set the age when the page loads
-        window.onload = calculateAge;
-
-    </script>
+    
+        .box {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, .15);
+            width: auto;
+        }
+    
+        h2 {
+            color: #fff;
+            background: #01008d;
+            margin: 0;
+            padding: 12px 20px;
+        }
+    
+        .content {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            font-weight: 500;
+            font-size: 1.125em;
+            line-height: 1.5;
+        }
+    
+        .body img {
+            width: 120px;
+            height: auto;
+            border-radius: 8px;
+        }
+    
+        .info p {
+            color: #555;
+            margin: 0;
+        }
+    
+        .info b {
+            color: #333;
+        }
+    
+        </style>
+        <style> 
+    
+	p {
+	    text-indent: 2.5em;
+	}
+        .body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+	    margin: 0 0 30px 0;
+	    padding-top: 0;
+        }
+    
+        .outer-container {
+            display: flex;
+            gap: 20px;
+	    width: 1200px;
+	    max-width: 1200px;
+    	    padding: 0 50px 50px 50px;
+        }
+    
+        .t-container {
+            display: grid;
+            gap: 20px;
+   	    width: 100%;
+        }
+    
+        .box {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, .15);
+            width: auto;
+        }
+    
+        h2 {
+            color: #fff;
+            background: #01008d;
+            margin: 0;
+            padding: 12px 20px;
+        }
+    
+        .content {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            font-weight: 500;
+            font-size: 1.125em;
+            line-height: 1.5;
+        }
+    
+        .body img {
+            width: 120px;
+            height: auto;
+            border-radius: 8px;
+        }
+    
+        .info p {
+            color: #555;
+            margin: 0;
+        }
+    
+        .info b {
+            color: #333;
+        }
+    
+        </style>
 </body>
 </html>
