@@ -79,7 +79,7 @@ a {
  h5 {
     font-size: 16px;
 }
-
+h5 a {color:#000;}
 
 .mb-5, .my-5 {
     margin-bottom: 3rem !important;
