@@ -391,3 +391,256 @@ img{
     max-width: 100% !important;  /* แก้ไข: เพิ่ม ':' */
   }
 }
+
+    
+	p {
+	    text-indent: 2.5em;
+	}
+        .body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+	    margin: 0 0 30px 0;
+	    padding-top: 0;
+        }
+    
+        .outer-container {
+            display: flex;
+            gap: 20px;
+	    width: 1200px;
+	    max-width: 1200px;
+    	    padding: 0 50px 50px 50px;
+        }
+    
+        .t-container {
+            display: grid;
+            gap: 20px;
+	    width: 540px;
+	    margin: 0 auto;
+        }
+    
+        .box {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, .15);
+            width: auto;
+        }
+    
+        h2 {
+            color: #fff;
+            background: #01008d;
+            margin: 0;
+            padding: 12px 20px;
+        }
+    
+        .content {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            font-weight: 500;
+            font-size: 1.125em;
+            line-height: 1.5;
+        }
+    
+        .body img {
+            width: 120px;
+            height: auto;
+            border-radius: 8px;
+        }
+    
+        .info p {
+            color: #555;
+            margin: 0;
+        }
+    
+        .info b {
+            color: #333;
+        }
+    
+        </style>
+        <style> 
+    
+	p {
+	    text-indent: 2.5em;
+	}
+        .body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+	    margin: 0 0 30px 0;
+	    padding-top: 0;
+        }
+    
+        .outer-container {
+            display: flex;
+            gap: 20px;
+	    width: 1200px;
+	    max-width: 1200px;
+    	    padding: 0 50px 50px 50px;
+        }
+    
+    
+        .box {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, .15);
+            width: auto;
+        }
+    
+        h2 {
+            color: #fff;
+            background: #01008d;
+            margin: 0;
+            padding: 12px 20px;
+        }
+    
+        .content {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            font-weight: 500;
+            font-size: 1.125em;
+            line-height: 1.5;
+        }
+    
+        .body img {
+            width: 120px;
+            height: auto;
+            border-radius: 8px;
+        }
+    
+        .info p {
+            color: #555;
+            margin: 0;
+        }
+    
+        .info b {
+            color: #333;
+        }
+
+/* -------------------------------   เริ่มภาพสไลด์   --------------------------------- */
+
+        /* สไตล์ของภาพสไลด์ */
+        .countdown-banner {
+            position: relative;
+            width: 100%;
+            max-width: auto;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .slide {
+            height: 100vh;
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100vh;
+            display: block;
+            object-fit: cover;
+        }
+        
+        /* สไตล์ของจุด (Indicators) */
+        .dots {
+            text-align: center;
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+        }
+
+        .dot {
+            height: 10px;
+            width: 10px;
+            margin: 0 5px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background-color: #ff0000;
+        }
+
+/* -------------------------------   จบภาพสไลด์   --------------------------------- */
+
+/* -------------------------------   START LOADER   --------------------------------- */
+        .css-1ltj605 {
+            height: 100vh;
+            display: flex;
+                  position: fixed;
+                  inset: 0px;
+                  background: rgb(255, 255, 255);
+                  z-index: 99999;
+                  -webkit-box-align: center;
+                  align-items: center;
+                  -webkit-box-pack: center;
+                  justify-content: center;
+                  transition: opacity 0.75s, visibility 0.75s;
+              }
+        .css-1ltj605-hidden{
+            opacity: 0;
+            visibility: hidden;
+        }
+              
+        .css-nvmvi3 *, .css-nvmvi3 *::before, .css-nvmvi3 *::after {
+                  box-sizing: inherit;
+              }
+              .css-z01bqi {
+                  display: inline-block;
+                  color: #800;
+                  animation: 1.4s linear 0s infinite normal none running animation-61bdi0;
+              }
+              .css-nvmvi3 *, .css-nvmvi3 *::before, .css-nvmvi3 *::after {
+                  box-sizing: inherit;
+              }
+              @keyframes animation-61bdi0{
+              0% {
+                  transform: rotate(0deg);
+              }
+              100% {
+                  transform: rotate(360deg);
+              }
+                }
+              .css-13o7eu2 {
+                  display: block;
+              }
+              .css-nvmvi3 *, .css-nvmvi3 *::before, .css-nvmvi3 *::after {
+                  box-sizing: inherit;
+              }
+              .css-14891ef {
+                  stroke: currentcolor;
+                  stroke-dasharray: 80px, 200px;
+                  stroke-dashoffset: 0;
+                  animation: 1.4s ease-in-out 0s infinite normal none running animation-1p2h4ri;
+              }
+              
+              .css-nvmvi3 *, .css-nvmvi3 *::before, .css-nvmvi3 *::after {
+                  box-sizing: inherit;
+              }
+              
+              @keyframes nimation-1p2h4ri{
+              0% {
+                  stroke-dasharray: 1px, 200px;
+                  stroke-dashoffset: 0;
+              }
+              50% {
+                  stroke-dasharray: 100px, 200px;
+                  stroke-dashoffset: -15px;
+              }
+              100% {
+                  stroke-dasharray: 100px, 200px;
+                  stroke-dashoffset: -125px;
+              }
+              }
+/* -------------------------------   END LOADER   --------------------------------- */
