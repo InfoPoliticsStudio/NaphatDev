@@ -233,12 +233,12 @@
     border-radius: 8px;
 }
 	    
+
 table.content-s {
-    display: contents;
-    align-items: center;
+    margin: 0 auto;
     padding: 20px;
     font-weight: 500;
-    justify-content: center;
+    width: 540px;
 }
 	    
 .content-s tbody {
