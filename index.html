@@ -586,45 +586,6 @@
 <!--  ////////////////////////////////////////// SCRIPT //////////////////////////////////////////   -->
 	
     <script>
-        function countdown(targetDate, timerPrefix) {
-            var countDownDate = new Date(targetDate).getTime();
-
-            var x = setInterval(function() {
-                var now = new Date().getTime();
-                var distance = countDownDate - now;
-
-                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                document.getElementById(timerPrefix + '-days').innerHTML = days;
-                document.getElementById(timerPrefix + '-hours').innerHTML = hours;
-                document.getElementById(timerPrefix + '-minutes').innerHTML = minutes;
-                document.getElementById(timerPrefix + '-seconds').innerHTML = seconds;
-
-                if (distance < 0) {
-                    clearInterval(x);
-                    document.getElementById(timerPrefix + '-days').innerHTML = "0";
-                    document.getElementById(timerPrefix + '-hours').innerHTML = "0";
-                    document.getElementById(timerPrefix + '-minutes').innerHTML = "0";
-                    document.getElementById(timerPrefix + '-seconds').innerHTML = "0";
-                }
-            }, 1000);
-        }
-
-        // เรียกใช้งานฟังก์ชัน countdown สำหรับแต่ละเหตุการณ์
-        countdown("Sep 25, 2024 00:00:00", "exam1");
-        countdown("Oct 28, 2024 09:00:00", "tcas");
-        countdown("Jan 13, 2025 00:00:00", "exam2");
-        countdown("Dec 8, 2024 00:00:00", "tgat-tpat");
-        countdown("Feb 15, 2025 00:00:00", "graduation");
-        countdown("Nov 16, 2024 00:00:00", "nationalacademictest");
-
-        function toggleMenu() {
-            const fullMenu = document.getElementById('fullMenu');
-            fullMenu.classList.toggle('show');
-        }
 
         // Calculate age dynamically based on the birthdate
         function calculateAge() {
