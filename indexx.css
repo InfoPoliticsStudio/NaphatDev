@@ -199,7 +199,7 @@
 
 @media (max-width: 640px) {
     .image-content {
-        display: none;
+        display: none !important;
     }
 }
 
@@ -234,7 +234,7 @@
 }
 	    
 table.content-s {
-    display: inline-flex;
+    display: contents;
     align-items: center;
     padding: 20px;
     font-weight: 500;
