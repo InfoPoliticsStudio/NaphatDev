@@ -189,6 +189,20 @@
     width: 100%;
 }
 
+@media (max-width: 920px) {
+    .profile-section {
+        display: inline-grid;
+        gap: 20px;
+        align-items: center;
+    }
+}
+
+@media (max-width: 640px) {
+    .image-content {
+        display: none;
+    }
+}
+
 .text-content {
     flex: 1;
     padding-right: 20px;
