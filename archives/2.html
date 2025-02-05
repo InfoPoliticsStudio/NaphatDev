@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="th"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link rel="icon" href="https://i.postimg.cc/7hWtmJLM/NS-TECH-logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@100..700&family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <title>Naphat Dev</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="wiki.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="https://nsgroup.pages.dev/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
+    
+	<!-- Meta tags for social media -->
+	<!-- ชื่อเว็บไซต์ -->
+	<meta property="og:title" content="ยืนยันสิทธิ์แล้ว! วิศวลาดกระบัง สาขาวิศวกรรมขนส่งทางราง">
+	<!-- คำอธิบาย -->
+	<meta property="og:description" content="ถือเป็นก้าวแรกของการเดินทางในเส้นทางวิศวกรรมที่เต็มไปด้วยโอกาสและอนาคตของผม">
+	<!-- URL ของเว็บไซต์ -->
+	<meta property="og:url" content="https://naphatdev.pages.dev/archives/002">
+	<!-- รูปภาพตัวอย่าง -->
+	<meta property="og:image" content="https://naphatdev.pages.dev/archives/002.png">
+	<!-- ประเภทเนื้อหา -->
+	<meta property="og:type" content="website">
+	
+	<!-- Twitter meta tags -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="ยืนยันสิทธิ์แล้ว! วิศวลาดกระบัง สาขาวิศวกรรมขนส่งทางราง">
+	<meta name="twitter:description" content="ถือเป็นก้าวแรกของการเดินทางในเส้นทางวิศวกรรมที่เต็มไปด้วยโอกาสและอนาคตของผม">
+	<meta name="twitter:image" content="https://naphatdev.pages.dev/archives/002.png">
+	<meta name="twitter:site" content="@naphatdev">
+
+	<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Menu toggle logic
+            const menuToggle = document.getElementById('menuToggle');
+            const navMenu = document.getElementById('navMenu');
+            const menuIcon = menuToggle.querySelector('i');
+            
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                if (menuIcon.classList.contains('fa-bars')) {
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-times');
+                } else {
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
+                }
+            });
+
+            // Drag-to-slide logic
+            const slides = document.querySelector('.slides');
+            let isDragging = false;
+            let startX = 0;
+            let currentTranslate = 0;
+            let prevTranslate = 0;
+
+            slides.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                startX = e.clientX;
+                slides.style.cursor = 'grabbing';
+            });
+
+            slides.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                const currentPosition = e.clientX - startX;
+                currentTranslate = prevTranslate + currentPosition;
+                slides.style.transform = `translateX(${currentTranslate}px)`;
+            });
+
+            slides.addEventListener('mouseup', () => {
+                isDragging = false;
+                prevTranslate = currentTranslate;
+                slides.style.cursor = 'grab';
+            });
+
+            slides.addEventListener('mouseleave', () => {
+                isDragging = false;
+                prevTranslate = currentTranslate;
+                slides.style.cursor = 'grab';
+            });
+
+            slides.addEventListener('touchstart', (e) => {
+                isDragging = true;
+                startX = e.touches[0].clientX;
+            });
+
+            slides.addEventListener('touchmove', (e) => {
+                if (!isDragging) return;
+                const currentPosition = e.touches[0].clientX - startX;
+                currentTranslate = prevTranslate + currentPosition;
+                slides.style.transform = `translateX(${currentTranslate}px)`;
+            });
+
+            slides.addEventListener('touchend', () => {
+                isDragging = false;
+                prevTranslate = currentTranslate;
+            });
+        });
+    </script>
+	<link rel="stylesheet" href="/indexx.css">
+	<link rel="stylesheet" href="/archives/news.css">
+	<script src="news.js"></script>
+</head>
+<body style="font-family: 'Bai Jamjuree', serif;">
+
+    <!-- Header -->
+	<div class="top">
+	    <a href="countdown">นับถอยหลัง</a>
+	</div>
+	<header class="header" style=" height: 73.2px !important;!i;!; ">
+        <div class="logo" style=" display: flex; align-items: center; gap: 5px; ">
+            <img style=" height: 40px; " src="https://i.postimg.cc/7hWtmJLM/NS-TECH-logo.png" alt="โลโก้">
+            <div class="logo-text">NaphatDev</div>
+	</div>
+        <nav class="nav-menu" id="navMenu">
+          <ul class="menu-list">
+            <li class="TH"><a href="/">หน้าหลัก</a></li>
+ 	          <li class="TH"><a href="aspiration">ความใฝ่ฝัน</a></li>
+            <li class="TH"><a href="https://dara-esc.pages.dev/">สังกัด</a></li>
+		  
+	    <!--<li class="TH"><a href="NAV">ทรัพย์สินสุทธิ</a></li>
+            <li class="EN"><a href="NAV">NAV</a></li> -->
+		  
+            <li class="EN"><a href="/">Home</a></li>
+	          <li class="EN"><a href="aspiration">Aspiration</a></li>
+            <li class="EN"><a href="about">About</a></li>
+            <!--<li class="TH"><a href="reg">เข้าสู่ระบบ</a></li>
+            <li class="EN"><a href="reg">login</a></li>-->
+          </ul>
+        </nav>
+        <div class="menu-toggle" id="menuToggle">
+          <i class="fas fa-bars"></i>
+        </div>
+      </header>
+      <main class="main">
+	<div id="post-content">
+	    <div class="hero-image large" style="--bg-image: url(/archives/002.png); --bg-position: ;">
+		    
+	    </div>
+	    <div class="cont-pd">
+		  <div class="row">
+		    <div class="col-12">
+		      <div class="content-description">
+		        <div class="row">
+		          <div class="col-10 offset-1">
+		            <div class="writer">
+		              <time class="date" datetime="">February 05, 2025 - 12:57</time>
+		              <a href="#" rel="author" class="author">โดย NaphatDev</a>
+		            </div>
+                
+            		<div class="post-detail mt-4">
+                  <h2 class="entry-title" style=" color: unset; background: unset; ">ยืนยันสิทธิ์แล้ว! วิศวลาดกระบัง สาขาวิศวกรรมขนส่งทางราง</h2>
+                
+                  <div class="post-detail">
+                    <p>
+                      ถือเป็นก้าวแรกของการเดินทางในเส้นทางวิศวกรรมที่เต็มไปด้วยโอกาสและอนาคตของผม
+                    </p>
+                    <p>
+                      ✅ ยืนยันสิทธิ์: คณะวิศวกรรมศาสตร์ สาขาวิศวกรรมขนส่งทางราง (ลาดกระบัง)
+                    </p>
+                    <p>
+                      🎯 ผ่านการคัดเลือกในรอบ Portfolio ผ่านคัดเลือก 4 สาขา ได้แก่
+                      <br>
+                      - สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง (วิศวกรรมขนส่งทางราง)
+                      <br>
+                      - มหาวิทยาลัยมหาสารคาม (คณิตศาสตร์)
+                      <br>
+                      - มหาวิทยาลัยแม่โจ้ (คณิตศาสตร์)
+                      <br>
+                      - มหาวิทยาลัยพะเยา (วิศวกรรมโยธา)
+                    </p>
+                    <p>
+                      <strong>เส้นทางข้างหน้า</strong>
+                      <br>
+                      การศึกษาระดับมหาวิทยาลัยเป็นจุดเริ่มต้นของการค้นหาตัวตนและการเติบโต ไม่ว่าจะเลือกเส้นทางไหน ทุกก้าวที่เดินล้วนสำคัญ ขอให้รักษาความมุ่งมั่นและความกระตือรือร้นในการเรียนรู้ต่อไป
+                    </p>
+                    <p>
+                      <strong>แรงบันดาลใจ</strong>
+                      <br>
+                      "ความสำเร็จไม่ได้มาจากโชคช่วย แต่มาจากความพยายามอย่างต่อเนื่องและไม่ยอมแพ้"
+                    </p>
+                    <p>
+                      ขอให้การเดินทางครั้งนี้เต็มไปด้วยความสุข ความสำเร็จ และประสบการณ์ที่มีค่า! 🚀
+                    </p>
+                    <p>
+                      สร้างและผลิตสื่อโดย Facebook : Naphat Panyo (ณภัทร ปัญโญ)
+                      <br> Website : https://naphatdev.pages.dev/archives/002.html
+                    </p>
+                    <p>#Portfolio #ยืนยันสิทธิ์ #นักศึกษาใหม่ #ลาดกระบัง #ความสำเร็จ</p>
+                  </div> <!-- /.post-detail -->
+                </div> <!-- /.post-detail mt-4 -->
+		          </div> <!-- /.col-10 offset-1 -->
+		        </div> <!-- /.row -->
+		      </div> <!-- /.content-description -->
+		    </div> <!-- /.col-12 -->
+		  </div> <!-- /.row -->
+	    </div> <!-- /.cont-pd -->
+	</div>
+      </main>
+</body>
+</html>
