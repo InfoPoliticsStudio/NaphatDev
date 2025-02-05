@@ -42,6 +42,10 @@ section.box1 {
     vertical-align: middle;
 }
 
+.img-logo:hover {
+    border-color: #ffd700;
+}
+
 .desc {
     text-align: center;
     color: white;
@@ -75,6 +79,11 @@ section.box1 {
     padding: 10px;
     margin: 17px 0;
     transition: 0.3s;
+}
+
+.link .link-a:hover {
+    background: white;
+    color: #f26424;
 }
 
 .link .link-a i {
