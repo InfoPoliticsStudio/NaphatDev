@@ -28,6 +28,7 @@ section.box1 {
 .logo {
     width: 100%;
     max-width: 135px;
+    user-select: none;
 }
 
 .img-logo {
@@ -55,6 +56,7 @@ section.box1 {
 
 .desc h2 {
     font-weight: normal;
+    user-select: none;
 }
 
 .desc p {
@@ -71,6 +73,7 @@ section.box1 {
 .link a {
     color: white;
     text-decoration: none;
+    user-select: none;
 }
 
 .link .link-a {
@@ -103,6 +106,7 @@ footer {
     text-align: center;
     padding: 3px;
     color: white;
+    user-select: none;
 }
 ::selection {
     background: #fff;
