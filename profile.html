@@ -69,31 +69,35 @@
         
         <h3>📷 รูปภาพ</h3>
         <div class="gallery">
-            <img src="NaphatPagesDev.jpg">
+            <img src="NaphatPagesDev.jpg" onclick="openImage(this)">
             <div class="gallery">
-            	<img src="IMG/naphatIMG.png">
-            	<img src="IMG/naphatIMG2.png">
-            	<img src="IMG/37698.jpg">
-            	<img src="IMG/NaphatTeam.jpg">
+            	<img src="IMG/naphatIMG.png" onclick="openImage(this)">
+            	<img src="IMG/naphatIMG2.png" onclick="openImage(this)">
+            	<img src="IMG/37698.jpg" onclick="openImage(this)">
+            	<img src="IMG/NaphatTeam.jpg" onclick="openImage(this)">
             </div>
             <div class="gallery">
-            	<img src="IMG/m605.jpg">
-            	<img src="IMG/I&T.jpg">
+            	<img src="IMG/m605.jpg" onclick="openImage(this)">
+            	<img src="IMG/I&T.jpg" onclick="openImage(this)">
             </div>
             <div class="gallery">
-            	<img src="IMG/eggdrop.jpg">
-            	<img src="IMG/cabinet.jpg">
+            	<img src="IMG/eggdrop.jpg" onclick="openImage(this)">
+            	<img src="IMG/cabinet.jpg" onclick="openImage(this)">
             </div>
-            <img src="IMG/WS.jpg">
+            <img src="IMG/WS.jpg" onclick="openImage(this)">
             <div class="gallery">
-            	<img src="IMG/WS2.jpg">
-            	<img src="IMG/art.jpg">
-            	<img src="IMG/ts.jpg">
-            	<img src="IMG/btsCard.jpg">
+            	<img src="IMG/WS2.jpg" onclick="openImage(this)">
+            	<img src="IMG/art.jpg" onclick="openImage(this)">
+            	<img src="IMG/ts.jpg" onclick="openImage(this)">
+            	<img src="IMG/btsCard.jpg" onclick="openImage(this)">
             </div>
             <div class="gallery">
-            	<img src="IMG/suk1.jpg">
-            	<img src="IMG/suk2.jpg">
+            	<img src="IMG/suk1.jpg" onclick="openImage(this)">
+            	<img src="IMG/suk2.jpg" onclick="openImage(this)">
+            </div>
+            <div class="gallery">
+            	<img src="IMG/bag.jpg" onclick="openImage(this)">
+            	<img src="IMG/m3.jpg" onclick="openImage(this)">
             </div>
         </div>
         
@@ -105,5 +109,11 @@
             <a href="https://www.tiktok.com/@naphat_aut" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
         </div>
     </div>
+	
+    <script>
+        function openImage(img) {
+            window.open(img.src, '_blank');
+        }
+    </script>
 </body>
 </html>
