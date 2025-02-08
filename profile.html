@@ -70,6 +70,7 @@
 	    justify-content: space-around;
 	    align-items: center;
 	    position: relative;
+   	    margin-bottom: 30px;
 	  }
 	  .timeline::before {
 	    content: '';
@@ -110,11 +111,26 @@
 	  .event .content h2 {
 	    margin: 0;
 	    font-size: 16px;
+	    display: flex;
+	    gap: 10px;
 	  }
 	  .event .content p {
 	    margin: 5px 0 0;
 	    font-size: 16px;
 	  }
+	.event .content h2::before {
+	    content: "";
+	    width: 30px;
+	    height: 30px;
+	    display: block;
+	    background-size: contain;
+	}
+	.event .content h2#DRA::before{
+	    background: url(IMG/dara.png) no-repeat center;
+	}
+	.event .content h2#KMITL::before{
+	    background: url(https://assets.mytcas.com/i/logo/016.png) no-repeat center;
+	}
     </style>
 </head>
 <body>
@@ -124,19 +140,19 @@
 	<div class="timeline">
 	  <div class="event">
 	    <div class="content">
-	      <h2>โรงเรียนดาราวิทยาลัย, 2021</h2>
+	      <h2 id="DRA">โรงเรียนดาราวิทยาลัย, 2021</h2>
 	      <p>135 เมธา</p>
 	    </div>
 	  </div>
 	  <div class="event">
 	    <div class="content">
-	      <h2>โรงเรียนดาราวิทยาลัย, 2024</h2>
+	      <h2 id="DRA">โรงเรียนดาราวิทยาลัย, 2024</h2>
 	      <p>138 Marlène</p>
 	    </div>
 	  </div>
 	  <div class="event">
 	    <div class="content">
-	      <h2>RTE, KMITL</h2>
+	      <h2 id="KMITL">RTE, KMITL</h2>
 	      <p>2025 - Present</p>
 	    </div>
 	  </div>
