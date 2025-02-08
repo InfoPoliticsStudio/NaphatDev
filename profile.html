@@ -8,8 +8,12 @@
     <meta property="og:description" content="ทำความรู้จัก - ณภัทร ปัญโญ">
     <meta property="og:image" content="https://naphatdev.pages.dev/IMG/WS.jpg">
     <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@100..700&family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
-	<style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+	:root {
+	    --kmitl-col: #FF640B;
+	    --kmitl-col-hover: #F16322;
+	}
         body {
   	    font-family: "Anuphan", serif;
             text-align: center;
@@ -58,10 +62,11 @@
             display: inline-block;
             margin: 10px;
             font-size: 1.5em;
-            color: #007BFF;
+            color: var(--kmitl-col);
             text-decoration: none;
         }
-	i:hover { color: #0021ff; }
+	.contacts a:hover { color: var(--kmitl-col-hover); }
+	i:hover { color: var(--kmitl-col-hover); }
 	.gallery-2 { display: grid ; gap: 2px; } 
 	.gallery-2 img { width: 100%; aspect-ratio: 2 / 1; object-fit: cover; object-position: top; }
 	
