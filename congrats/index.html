@@ -20,8 +20,9 @@
         }
         #section1 { background-color: #fff; }
         #section2 { background-color: #fec401; }
-        #section3 { background-color: #fc6c7c; }
-        #section4 { background-color: #F16322; }
+        #section3 { background-color: #fec401; }
+        #section4 { background-color: #fec401; }
+        #section5 { background-color: #F16322; }
         .flex{display: flex;}
 
         .flex img {
@@ -143,143 +144,143 @@
             }
         }
         
-@media screen and (max-width: 690px) {
-  section {
-    height: 65vh;
-  }
-  .card:nth-child(2) {
-    grid-column: span 1 !important;
-    grid-row: span 1 !important;
-  }
-  .card:nth-child(3) {
-    grid-column: 2/4 !important;
-    grid-row: 1/2 !important;
-  }
-  .card:nth-child(6) {
-    grid-column: 2/4 !important;
-    grid-row: 2/3 !important;
-  }
-}
-
-@media screen and (max-width: 470px) {
-  section {
-    grid-template-columns: repeat(2, 1fr) !important;
-    grid-template-rows: repeat(3, 35%) !important;
-  }
-  .card {
-    grid-column: span 1 !important;
-  }
-  .card:nth-child(5) {
-    grid-column: span 2 !important;
-  }
-  .card:nth-child(2) {
-    grid-column: span 1 !important;
-    grid-row: span 1 !important;
-  }
-}
-
-@media screen and (max-width: 690px) {
-  section {
-    height: 65vh;
-  }
-  .card:nth-child(2) {
-    grid-column: span 1 !important;
-    grid-row: span 1 !important;
-  }
-  .card:nth-child(3) {
-    grid-column: 2/4 !important;
-    grid-row: 1/2 !important;
-  }
-  .card:nth-child(6) {
-    grid-column: 2/4 !important;
-    grid-row: 2/3 !important;
-  }
-}
-
-@media screen and (max-width: 470px) {
-  section {
-    grid-template-columns: repeat(2, 1fr) !important;
-    grid-template-rows: repeat(3, 35%) !important;
-  }
-  .card {
-    grid-column: span 1 !important;
-  }
-  .card:nth-child(5) {
-    grid-column: span 2 !important;
-  }
-  .card:nth-child(2) {
-    grid-column: span 1 !important;
-    grid-row: span 1 !important;
-  }
-}
-
-.body {
-  height: 100vh;
-  display: grid;
-  place-items: center;
-}
-
-.card__img img {
-  width: 100%;
-  display: block;
-  height: 100%;
-  object-fit: cover;
-}
-
-section {
-  display: grid;
-  grid-template-columns: 25% 30% 15% 25%;
-  gap: 15px;
-  place-content: center;
-  grid-template-rows: 50% 50%;
-  height: 80vh;
-  min-height: 460px;
-  padding: max(2vh, 1.5rem);
-}
-
-.card {
-  border-radius: 25px;
-  box-shadow: -2px 4px 15px rgb(0 0 0 / 26%);
-}
-
-.card:nth-child(2) {
-  grid-column: 2/3;
-  grid-row: span 2;
-}
-
-.card:nth-child(3) {
-  grid-column: span 2;
-}
-
-.card__img {
-  position: relative;
-  height: 100%;
-}
-
-.card__img img {
-  border-radius: 25px;
-    transition: .5s;
-}
-
-.card__overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  content: "";
-  color: #fff;
-  padding: clamp(0.938rem, 5vw, 1.563rem);
-  background: linear-gradient(0deg, rgb(0 0 0 / 57%) 0%, rgb(255 255 255 / 0%) 100%);
-  width: 100%;
-  height: 100%;
-  border-radius: 25px;
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: column;
-}
-
-.card__img img:hover {
-    box-shadow: -2px 4px 15px rgb(0 0 0 / 26%);
-}
+        @media screen and (max-width: 690px) {
+          section {
+            height: 65vh;
+          }
+          .card:nth-child(2) {
+            grid-column: span 1 !important;
+            grid-row: span 1 !important;
+          }
+          .card:nth-child(3) {
+            grid-column: 2/4 !important;
+            grid-row: 1/2 !important;
+          }
+          .card:nth-child(6) {
+            grid-column: 2/4 !important;
+            grid-row: 2/3 !important;
+          }
+        }
+        
+        @media screen and (max-width: 470px) {
+          section {
+            grid-template-columns: repeat(2, 1fr) !important;
+            grid-template-rows: repeat(3, 35%) !important;
+          }
+          .card {
+            grid-column: span 1 !important;
+          }
+          .card:nth-child(5) {
+            grid-column: span 2 !important;
+          }
+          .card:nth-child(2) {
+            grid-column: span 1 !important;
+            grid-row: span 1 !important;
+          }
+        }
+        
+        @media screen and (max-width: 690px) {
+          section {
+            height: 65vh;
+          }
+          .card:nth-child(2) {
+            grid-column: span 1 !important;
+            grid-row: span 1 !important;
+          }
+          .card:nth-child(3) {
+            grid-column: 2/4 !important;
+            grid-row: 1/2 !important;
+          }
+          .card:nth-child(6) {
+            grid-column: 2/4 !important;
+            grid-row: 2/3 !important;
+          }
+        }
+        
+        @media screen and (max-width: 470px) {
+          section {
+            grid-template-columns: repeat(2, 1fr) !important;
+            grid-template-rows: repeat(3, 35%) !important;
+          }
+          .card {
+            grid-column: span 1 !important;
+          }
+          .card:nth-child(5) {
+            grid-column: span 2 !important;
+          }
+          .card:nth-child(2) {
+            grid-column: span 1 !important;
+            grid-row: span 1 !important;
+          }
+        }
+        
+        .body {
+          height: 100vh;
+          display: grid;
+          place-items: center;
+        }
+        
+        .card__img img {
+          width: 100%;
+          display: block;
+          height: 100%;
+          object-fit: cover;
+        }
+        
+        section {
+          display: grid;
+          grid-template-columns: 25% 30% 15% 25%;
+          gap: 15px;
+          place-content: center;
+          grid-template-rows: 50% 50%;
+          height: 80vh;
+          min-height: 460px;
+          padding: max(2vh, 1.5rem);
+        }
+        
+        .card {
+          border-radius: 25px;
+          box-shadow: -2px 4px 15px rgb(0 0 0 / 26%);
+        }
+        
+        .card:nth-child(2) {
+          grid-column: 2/3;
+          grid-row: span 2;
+        }
+        
+        .card:nth-child(3) {
+          grid-column: span 2;
+        }
+        
+        .card__img {
+          position: relative;
+          height: 100%;
+        }
+        
+        .card__img img {
+          border-radius: 25px;
+            transition: .5s;
+        }
+        
+        .card__overlay {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          content: "";
+          color: #fff;
+          padding: clamp(0.938rem, 5vw, 1.563rem);
+          background: linear-gradient(0deg, rgb(0 0 0 / 57%) 0%, rgb(255 255 255 / 0%) 100%);
+          width: 100%;
+          height: 100%;
+          border-radius: 25px;
+          display: flex;
+          justify-content: flex-end;
+          flex-direction: column;
+        }
+        
+        .card__img img:hover {
+            box-shadow: -2px 4px 15px rgb(0 0 0 / 26%);
+        }
     </style>
 </head>
 <body>
@@ -376,8 +377,13 @@ section {
             
             </section>
         </div>
-        <div class="section" id="section3">Section 3</div>
+        <div class="section" id="section3">
+            
+        </div>
         <div class="section" id="section4">
+            
+        </div>
+        <div class="section" id="section5">
         	<div class="flex justify-content-center align-items-center" style="margin-left: 50px;gap: 20px;color: #fff;">
               <img src="https://naphatdev.pages.dev/IMG/WS.jpg" width="300px">
               <h2>
