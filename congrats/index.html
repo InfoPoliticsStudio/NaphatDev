@@ -7,6 +7,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@100..700&amp;family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css">
     <style>
+        @keyframes a-rotate {
+          25% {transform: rotate(15deg);}
+          75% {transform: rotate(-15deg);}
+        }
     	*{
         	font-family: "Anuphan", serif;
         }
@@ -106,6 +110,7 @@
 
         .party{
             position: fixed;
+            animation: a-rotate 5s infinite;
         }
         .party-top{right: 20px;top: 10px;transform: rotate(180deg);}
         .party-bottom{left: 20px; bottom: 10px;}
