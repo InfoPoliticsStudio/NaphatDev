@@ -423,20 +423,22 @@
         <div class="section" id="section4">
             <div style=" display: grid; justify-content: center; ">
                 <div style="max-width: 520px;text-align: center;">
-                    <h3>ถ้าคิดถึงกันมาหากันได้ที่ ลาดกระบังนะ😊😙🤗</h3>
+                    <h1>ถ้าคิดถึงกันมาหากันได้ที่ ลาดกระบังนะ😊😙🤗</h1>
+                    <br>
+                    <h3>ส่งข้อความถึง ณภัทร ลับๆ</h3>
                     <form method="post" autocomplete="off" name="hello-sheet">
-                          <div style="display: flex;gap: 10px;">
-                            <div style=" display: grid; text-align: left; ">
-                              <label for="name">ชื่อผู้ส่ง</label>
-                              <input type="text" id="name" placeholder="ชื่อผู้ส่ง" name="name" required="">
+                        <div style="display: flex; gap: 10px;">
+                            <div style="display: grid; text-align: left;">
+                                <label for="name">ชื่อผู้ส่ง</label>
+                                <input type="text" id="name" placeholder="ชื่อผู้ส่ง" name="name" required>
                             </div>
-                          <div style=" display: grid; text-align: left; ">
-                              <label for="text">ข้อความที่จะบอก ณภัทร</label>
-                              <input type="text" id="text" placeholder="ข้อความที่จะบอก ณภัทร" name="text" required="">
-                          </div>
-                    </div>
-                    <button type="submit" name="submit" value="Send message" class="btn btn-primary" fdprocessedid="hnuyi">ส่งข้อความ</button>
-                </form>
+                            <div style="display: grid; text-align: left;">
+                                <label for="text">ข้อความที่จะบอก ณภัทร</label>
+                                <input type="text" id="text" placeholder="ข้อความที่จะบอก ณภัทร" name="text" required>
+                            </div>
+                        </div>
+                        <button type="submit" id="submitBtn" class="btn btn-primary">ส่งข้อความ</button>
+                    </form>
               </div>
             </div>
         </div>
@@ -473,19 +475,27 @@
             navigation: true,
         });
     </script>
-        <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbzMbIpH-Y5c0S9pBsmPnDqPzFlBLKod_2zTea204ZecS5NkU_rIud1zGMK6pb_DEZJE/exec'
-        const form = document.forms['hello-sheet']
-      
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzMbIpH-Y5c0S9pBsmPnDqPzFlBLKod_2zTea204ZecS5NkU_rIud1zGMK6pb_DEZJE/exec';
+        const form = document.forms['hello-sheet'];
+        const submitBtn = document.getElementById('submitBtn');
+    
         form.addEventListener('submit', e => {
-          e.preventDefault()
-          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => {
-                alert("ส่งข้อมูลเรียบร้อยแล้ว..");
-                window.location.href = "#"; 
-            })
-            .catch(error => console.error('Error!', error.message))
-        })
+            e.preventDefault();
+            submitBtn.disabled = true; // ปิดปุ่มชั่วคราว
+    
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    alert("ส่งข้อมูลเรียบร้อยแล้ว!");
+                    form.reset(); // เคลียร์ค่าฟอร์ม
+                    submitBtn.disabled = false; // เปิดปุ่มให้กดได้อีกครั้ง
+                })
+                .catch(error => {
+                    console.error('Error!', error.message);
+                    alert("เกิดข้อผิดพลาด กรุณาลองใหม่!");
+                    submitBtn.disabled = false; // เปิดปุ่มอีกครั้งในกรณีเกิดข้อผิดพลาด
+                });
+        });
     </script>
 </body>
 </html>
