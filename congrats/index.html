@@ -482,6 +482,7 @@
           fetch(scriptURL, { method: 'POST', body: new FormData(form)})
             .then(response => {
                 alert("ส่งข้อมูลเรียบร้อยแล้ว..");
+                window.location.href = "#"; 
             })
             .catch(error => console.error('Error!', error.message))
         })
