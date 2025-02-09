@@ -82,6 +82,15 @@
             .less680 {
                 display: block;
             }
+            .party{
+                width: 100px;
+            }
+            .party-top{
+                top: 50px;
+            }
+            .party-bottom{
+                bottom: 20px;
+            }
         }
         
         #section1 cc {
@@ -94,12 +103,18 @@
         #section1 cc p {
             text-indent: 40px;
         }
+
+        .party{
+            position: fixed;
+        }
+        .party-top{right: 20px;top: 10px;transform: rotate(180deg);}
+        .party-bottom{left: 20px; bottom: 10px;}
     </style>
 </head>
 <body>
     <div id="fullpage">
         <div class="section" id="section1">
-            <img src="https://media-public.canva.com/FDXUs/MAFOboFDXUs/1/t.png" style=" position: fixed; left: 20px; top: 10px; ">
+            <img class="party party-top" src="https://media-public.canva.com/FDXUs/MAFOboFDXUs/1/t.png">
             <div class="grid justify-content-center align-items-center">
                 <h2 class="flex  justify-content-center pb-50 pink">
                     <div class="curved-text more680" style="min-width: 596.838px;min-height: 120.8px;font-size: 100px;">
@@ -152,7 +167,7 @@
                     </span>
                 </cc>
             </div>
-            <img src="https://media-public.canva.com/FDXUs/MAFOboFDXUs/1/t.png" style=" position: fixed; left: 20px; bottom: 10px; ">
+            <img class="party party-bottom" src="https://media-public.canva.com/FDXUs/MAFOboFDXUs/1/t.png">
         </div>
         <div class="section" id="section2">Section 2</div>
         <div class="section" id="section3">Section 3</div>
