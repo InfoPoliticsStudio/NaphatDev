@@ -396,10 +396,20 @@
             <div style=" display: grid; justify-content: center; ">
                 <div style="max-width: 520px;text-align: center;">
                     <h3>ถ้าคิดถึงกันมาหากันได้ที่ ลาดกระบังนะ😊😙🤗</h3>
-                    <form>
-                        
-                    </form>
-                </div>
+                    <form method="post" autocomplete="off" name="hello-sheet">
+                          <div style="display: flex;gap: 10px;">
+                            <div style=" display: grid; text-align: left; ">
+                              <label for="name">ชื่อผู้ส่ง</label>
+                              <input type="text" id="name" placeholder="ชื่อผู้ส่ง" name="name" required="">
+                            </div>
+                          <div style=" display: grid; text-align: left; ">
+                              <label for="text">ข้อความที่จะบอก ณภัทร</label>
+                              <input type="text" id="text" placeholder="ข้อความที่จะบอก ณภัทร" name="text" required="">
+                          </div>
+                    </div>
+                    <button type="submit" name="submit" value="Send message" class="btn btn-primary" fdprocessedid="hnuyi">ส่งข้อความ</button>
+                </form>
+              </div>
             </div>
         </div>
         <div class="section" id="section5">
@@ -434,6 +444,19 @@
             autoScrolling: true,
             navigation: true,
         });
+    </script>
+        <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzMbIpH-Y5c0S9pBsmPnDqPzFlBLKod_2zTea204ZecS5NkU_rIud1zGMK6pb_DEZJE/exec'
+        const form = document.forms['hello-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                alert("ส่งข้อมูลเรียบร้อยแล้ว..");
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
     </script>
 </body>
 </html>
