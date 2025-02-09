@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ลงทะเบียน & เข้าสู่ระบบ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        input {
+            width: -webkit-fill-available;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="registerBox">
+        <h2>ลงทะเบียน</h2>
+        <input type="text" id="regUser" placeholder="ชื่อผู้ใช้" required>
+        <input type="password" id="regPass" placeholder="รหัสผ่าน" required>
+        <button onclick="register()">ลงทะเบียน</button>
+        <p>มีบัญชีแล้ว? <a href="#" onclick="toggleForms()">เข้าสู่ระบบ</a></p>
+    </div>
+
+    <div class="container hidden" id="loginBox">
+        <h2>เข้าสู่ระบบ</h2>
+        <input type="text" id="loginUser" placeholder="ชื่อผู้ใช้" required>
+        <input type="password" id="loginPass" placeholder="รหัสผ่าน" required>
+        <button onclick="login()">เข้าสู่ระบบ</button>
+        <p>ยังไม่มีบัญชี? <a href="#" onclick="toggleForms()">ลงทะเบียน</a></p>
+    </div>
+
+    <script>
+        function toggleForms() {
+            document.getElementById('registerBox').classList.toggle('hidden');
+            document.getElementById('loginBox').classList.toggle('hidden');
+        }
+
+        function register() {
+            let user = document.getElementById("regUser").value;
+            let pass = document.getElementById("regPass").value;
+            if (user && pass) {
+                localStorage.setItem(user, pass);
+                alert("ลงทะเบียนสำเร็จ! กรุณาเข้าสู่ระบบ");
+                toggleForms();
+            } else {
+                alert("กรุณากรอกข้อมูลให้ครบ");
+            }
+        }
+
+        function login() {
+            let user = document.getElementById("loginUser").value;
+            let pass = document.getElementById("loginPass").value;
+            if (localStorage.getItem(user) === pass) {
+                alert("เข้าสู่ระบบสำเร็จ! ยินดีต้อนรับ " + user);
+                window.location.href = "question.html"; // เปลี่ยนหน้าไปยัง Q&A
+            } else {
+                alert("ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง");
+            }
+        }
+    </script>
+</body>
+</html>
