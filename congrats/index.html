@@ -90,15 +90,6 @@
             .less680 {
                 display: block;
             }
-            .party{
-                width: 100px;
-            }
-            .party-top{
-                top: 50px;
-            }
-            .party-bottom{
-                bottom: 20px;
-            }
         }
         
         #section1 cc {
@@ -111,13 +102,54 @@
         #section1 cc p {
             text-indent: 40px;
         }
-
-        .party{
+        
+        /* ค่าเริ่มต้น (ค่า default) */
+        .party {
             position: fixed;
             width: 150px;
         }
-        .party-top{right: 20px;top: 10px;transform: rotate(180deg); animation: t-rotate 5s infinite;}
-        .party-bottom{left: 20px; bottom: 10px;animation: b-rotate 5s infinite;}
+        
+        .party-top {
+            right: 20px;
+            top: 10px;
+            transform: rotate(180deg);
+            animation: t-rotate 5s infinite;
+        }
+        
+        .party-bottom {
+            left: 20px;
+            bottom: 10px;
+            animation: b-rotate 5s infinite;
+        }
+        
+        /* ถ้าหน้าจอใหญ่กว่า 1080px */
+        @media (min-width: 1080px) {
+            .party {
+                width: 200px; 
+            }
+            .party-top {
+                right: 50px;
+                top: 25px;
+            }
+            .party-bottom {
+                left: 50px;
+                bottom: 25px;
+            }
+        }
+        
+        /* ถ้าหน้าจอเล็กกว่า 680px */
+        @media (max-width: 680px) {
+            .party {
+                width: 100px !important;
+            }
+            .party-top {
+                top: 50px !important;
+            }
+            .party-bottom {
+                bottom: 20px !important;
+            }
+        }
+
     </style>
 </head>
 <body>
