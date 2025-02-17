@@ -16,7 +16,7 @@
 }
 
 body {
-    background: linear-gradient(314deg, #cb4000, #ff000069, #e61f93);
+    background: linear-gradient(-120deg, #f16322, #ff000069, #e61f93);
     background-size: 200% 200%;
     animation: gradientMove 6s ease infinite;
 }
