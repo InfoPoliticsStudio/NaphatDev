@@ -13,70 +13,71 @@ section {
     margin-top: 50px;
 }
 
-.center {
+section > div {
     max-width: 500px;
     margin: 0 auto;
     padding: 0 2%;
 }
 
-.container {
+
+section > div > div {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-.logo {
+section > div > div > div:first-child {
     width: 100%;
     max-width: 135px;
     user-select: none;
 }
 
-.img-logo {
+section > div > div > div:first-child > div {
     border: 2px solid white;
     border-radius: 50%;
     padding: 3px;
     transition: 0.3s;
 }
 
-.logo img {
+section > div > div > div:first-child img {
     width: 100%;
     border-radius: 1000%;
     vertical-align: middle;
 }
 
-.img-logo:hover {
+section > div > div > div:first-child > div:hover {
     border-color: #ffd700;
 }
 
-.desc {
+section > div > div > div:nth-child(2) {
     text-align: center;
     color: white;
     margin: 10px 0;
 }
 
-.desc h2 {
+section > div > div > div:nth-child(2) h2 {
     font-weight: normal;
     user-select: none;
 }
 
-.desc p {
+section > div > div > div:nth-child(2) p {
     font-size: 18px;
     margin-top: 20px;
     color: #fff;
 }
 
-.link {
+section > div > div > div:last-child {
     width: 100%;
     text-align: center;
 }
 
-.link a {
+section > div > div > div:last-child a {
     color: white;
     text-decoration: none;
     user-select: none;
 }
 
-.link .link-a {
+section > div > div > div:last-child a > div {
     position: relative;
     border-radius: 7px;
     border: 2px solid white;
@@ -85,19 +86,19 @@ section {
     transition: 0.3s;
 }
 
-.link .link-a:hover {
+section > div > div > div:last-child a > div:hover {
     background: white;
     color: #f26424;
 }
 
-.link .link-a i {
+section > div > div > div:last-child a > div i {
     position: absolute;
     left: 20px;
     line-height: 1;
     font-size: 23px;
 }
 
-.link .link-a h3 {
+section > div > div > div:last-child a > div h3 {
     font-weight: normal;
 }
 
