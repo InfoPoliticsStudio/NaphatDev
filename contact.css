@@ -7,8 +7,22 @@
 
 body {
     background: linear-gradient(-90deg, #f16322, #ff000069, #e61f93);
+    animation: fadeIn 1.5s ease-in-out;
 }
-
+section > div > div > div:last-child a > div {
+            transition: transform 0.3s ease-in-out;
+        }
+section > div > div > div:last-child a > div:hover {
+            transform: scale(1.1);
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
 section {
     margin-top: 50px;
 }
