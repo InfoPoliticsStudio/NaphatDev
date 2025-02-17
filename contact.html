@@ -20,15 +20,15 @@
     <link href="contact.css" rel="stylesheet">
     <style>
         @media (max-width: 1140px) {
-            .link {
+            section > div > div > div:last-child {
                 display: flex;
                 justify-content: space-around;
                 margin-top: 60px;
             }
-            .link .link-a h3 {
+            section > div > div > div:last-child a > div h3 {
                 display: none;
             }
-            .link .link-a i {
+            section > div > div > div:last-child a > div i {
                 position: relative;
                 left: 0px;
                 padding: 10px;
@@ -40,7 +40,7 @@
                 align-items: center;
                 display: flex;
             }
-            .link .link-a {
+            section > div > div > div:last-child a > div {
                 border: none;
             }
         }
@@ -49,36 +49,36 @@
 </head>
 <body>
     <section>
-        <div class="center">
-            <div class="container">
-                <div class="logo">
-                    <div class="img-logo"><img src="NaphatPagesDev.jpg"></div>
+        <div>
+            <div>
+                <div>
+                    <div><img src="NaphatPagesDev.jpg"></div>
                 </div>
-                <div class="desc">
+                <div>
                     <h2>Aut Naphat</h2>
                     <p>นักศึกษา ปี 68 วิศวะขนส่งทางราง สจล.</p>
                 </div>
-                <div class="link">
+                <div>
                     <a href="https://www.facebook.com/NSDTCNTs">
-                        <div class="link-a">
+                        <div>
                             <i class="fa-brands fa-facebook"></i>
                             <h3>Facebook</h3>
                         </div>
                     </a>
                     <a href="https://www.instagram.com/npgmstudio/">
-                        <div class="link-a">
+                        <div>
                             <i class="fa-brands fa-instagram"></i>
                             <h3>Instagram</h3>
                         </div>
                     </a>
                     <a href="https://discordapp.com/users/1201060701440061462">
-                        <div class="link-a">
+                        <div>
                             <i class="fa-brands fa-discord"></i>
                             <h3>Discord</h3>
                         </div>
                     </a> 
                     <a href="https://www.tiktok.com/@naphat_aut">
-                        <div class="link-a">
+                        <div>
                             <i class="fa-brands fa-tiktok"></i>
                             <h3>Tiktok</h3>
                         </div>
@@ -91,7 +91,7 @@
 
 </section>
     <footer>
-        <p>Copyright © 2024<span id="currentYear"></span> By NaphatDev <br>
+        <p>Copyright © 2024 By NaphatDev <br>
             สงวนลิขสิทธิ์ ตามพระราชบัญญัติลิขสิทธิ์ พ.ศ. 2537</p>
     </footer>
 </body>
