@@ -5,10 +5,22 @@
   font-family: "Anuphan", serif;
 }
 
-body {
+/* body {
     background: linear-gradient(-90deg, #f16322, #ff000069, #e61f93);
     animation: fadeIn 1.5s ease-in-out;
+} */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
+
+body {
+    background: linear-gradient(-90deg, #f16322, #ff000069, #e61f93);
+    background-size: 200% 200%;
+    animation: gradientMove 6s ease infinite;
+}
+
 section > div > div > div:last-child a > div {
             transition: transform 0.3s ease-in-out;
         }
