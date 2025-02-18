@@ -111,5 +111,12 @@
       audio.play().catch(error => console.log("Autoplay error:", error));
     }
   </script>
+    <script>
+    function playAudio() {
+      let audio = new Audio("https://naphatdev.pages.dev/แม้จากไกล.mp3");
+      audio.loop = true; // ทำให้เสียงเล่นซ้ำ
+      audio.play().catch(error => console.log("Autoplay error:", error));
+    }
+  </script>
 </body>
 </html>
