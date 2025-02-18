@@ -11,6 +11,13 @@ async function getIPInfo() {
     }
 }
 
+// ฟังก์ชันบันทึกข้อมูลไปหน้า admin.html
+function sendToAdmin(ipInfo) {
+    let adminLogs = JSON.parse(localStorage.getItem("adminLogs")) || [];
+    adminLogs.push(ipInfo);
+    localStorage.setItem("adminLogs", JSON.stringify(adminLogs));
+}
+
 // ฟังก์ชันเพิ่มเวลาแบน 24 ชั่วโมง และบันทึกข้อมูล
 async function banIP() {
     let ipInfo = await getIPInfo();
@@ -41,16 +48,15 @@ async function banIP() {
     localStorage.setItem("bannedIPs", JSON.stringify(bannedIPs));
 
     // 📌 บันทึก IP ลงใน LocalStorage
-    let logData = JSON.parse(localStorage.getItem("ipLogs")) || [];
-    logData.push({
+    let logData = {
         ip: ip,
         city: city,
         region: region,
         country: country,
         time: new Date().toLocaleString(),
         reason: "กดปุ่มต้องห้าม"
-    });
-    localStorage.setItem("ipLogs", JSON.stringify(logData));
+    };
+    sendToAdmin(logData);
 
     // แจ้งเตือนและบล็อกเว็บ
     let hoursLeft = Math.ceil((bannedIPs[ip] - now) / 3600000);
