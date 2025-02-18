@@ -3,7 +3,6 @@ async function getIPInfo() {
     try {
         let response = await fetch("https://ipapi.co/json/");
         let data = await response.json();
-        if (!data || !data.ip) throw new Error("IP Not Found");
         return { ip: data.ip, city: data.city, region: data.region, country: data.country };
     } catch (error) {
         console.error("❌ ไม่สามารถดึงข้อมูล IP ได้", error);
@@ -12,14 +11,9 @@ async function getIPInfo() {
 }
 
 // ฟังก์ชันเพิ่มเวลาแบน 24 ชั่วโมง และบันทึกข้อมูล
-async function banIP(reason = "พฤติกรรมต้องห้าม") {
+async function banIP() {
     let ipInfo = await getIPInfo();
-    
-    // ถ้าหา IP ไม่เจอ → แบนทันที
-    if (!ipInfo) {
-        document.body.innerHTML = `<h1>🚫 คุณถูกแบนเนื่องจากไม่สามารถตรวจสอบ IP ได้ 🚫</h1>`;
-        return;
-    }
+    if (!ipInfo) return;
 
     let { ip, city, region, country } = ipInfo;
 
@@ -48,7 +42,7 @@ async function banIP(reason = "พฤติกรรมต้องห้าม"
         region: region,
         country: country,
         time: new Date().toLocaleString(),
-        reason: reason
+        reason: "กดปุ่มต้องห้าม"
     });
     localStorage.setItem("ipLogs", JSON.stringify(logData));
 
@@ -57,27 +51,6 @@ async function banIP(reason = "พฤติกรรมต้องห้าม"
     alert(`🚨 ระบบตรวจพบพฤติกรรมต้องสงสัย คุณถูกแบน ${hoursLeft} ชั่วโมง 🚨`);
     document.body.innerHTML = `<h1>🚫 คุณถูกแบน ${hoursLeft} ชั่วโมง 🚫</h1>`;
 }
-
-// ตรวจสอบ IP เมื่อเข้าเว็บ
-window.onload = async function () {
-    let ipInfo = await getIPInfo();
-    
-    // ❌ หา IP ไม่เจอ → แบนเลย
-    if (!ipInfo) {
-        document.body.innerHTML = `<h1>🚫 คุณถูกแบนเนื่องจากไม่สามารถตรวจสอบ IP ได้ 🚫</h1>`;
-        return;
-    }
-
-    let { ip, city, region, country } = ipInfo;
-    let bannedIPs = JSON.parse(localStorage.getItem("bannedIPs")) || {};
-    let now = new Date().getTime();
-
-    // ❌ ตรวจสอบว่า IP นี้ถูกแบนหรือไม่
-    if (bannedIPs[ip] && now < bannedIPs[ip]) {
-        let hoursLeft = Math.ceil((bannedIPs[ip] - now) / 3600000);
-        document.body.innerHTML = `<h1>🚫 คุณถูกแบน ${hoursLeft} ชั่วโมง 🚫</h1>`;
-    }
-};
 
 // ปิดคลิกขวา
 document.addEventListener("contextmenu", (e) => e.preventDefault());
@@ -92,6 +65,21 @@ document.addEventListener("keydown", function (e) {
         (e.ctrlKey && e.keyCode === 83) // Ctrl+S
     ) {
         e.preventDefault();
-        banIP("กดปุ่มต้องห้าม");
+        banIP();
     }
 });
+
+// ตรวจสอบสถานะแบนเมื่อโหลดเว็บ
+window.onload = async function () {
+    let ipInfo = await getIPInfo();
+    if (!ipInfo) return;
+
+    let { ip, city, region, country } = ipInfo;
+    let bannedIPs = JSON.parse(localStorage.getItem("bannedIPs")) || {};
+    let now = new Date().getTime();
+
+    if (bannedIPs[ip] && now < bannedIPs[ip]) {
+        let hoursLeft = Math.ceil((bannedIPs[ip] - now) / 3600000);
+        document.body.innerHTML = `<h1>🚫 คุณถูกแบน ${hoursLeft} ชั่วโมง 🚫</h1>`;
+    }
+};
