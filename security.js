@@ -3,17 +3,23 @@ async function getIPInfo() {
     try {
         let response = await fetch("https://ipapi.co/json/");
         let data = await response.json();
-        return { ip: data.ip, city: data.city, region: data.region, country: data.country_name };
+        if (!data.ip) throw new Error("ไม่พบข้อมูล IP");
+        return { ip: data.ip, city: data.city, region: data.region, country: data.country };
     } catch (error) {
         console.error("❌ ไม่สามารถดึงข้อมูล IP ได้", error);
         return null;
     }
 }
 
-// ฟังก์ชันเพิ่มเวลาแบน 24 ชั่วโมง
+// ฟังก์ชันเพิ่มเวลาแบน 24 ชั่วโมง และบันทึกข้อมูล
 async function banIP() {
     let ipInfo = await getIPInfo();
-    if (!ipInfo) return;
+
+    // ❌ ถ้า IP หาไม่เจอ → แบนเลย
+    if (!ipInfo) {
+        document.body.innerHTML = `<h1>🚫 ไม่พบ IP - คุณถูกแบนถาวร 🚫</h1>`;
+        return;
+    }
 
     let { ip, city, region, country } = ipInfo;
 
@@ -26,7 +32,6 @@ async function banIP() {
     let bannedIPs = JSON.parse(localStorage.getItem("bannedIPs")) || {};
     let now = new Date().getTime();
 
-    // ถ้า IP ถูกแบนแล้ว ให้เพิ่มเวลาแบนไปอีก 24 ชั่วโมง
     if (bannedIPs[ip] && now < bannedIPs[ip]) {
         bannedIPs[ip] += 86400000; // +24 ชั่วโมง
     } else {
@@ -35,34 +40,22 @@ async function banIP() {
 
     localStorage.setItem("bannedIPs", JSON.stringify(bannedIPs));
 
+    // 📌 บันทึก IP ลงใน LocalStorage
+    let logData = JSON.parse(localStorage.getItem("ipLogs")) || [];
+    logData.push({
+        ip: ip,
+        city: city,
+        region: region,
+        country: country,
+        time: new Date().toLocaleString(),
+        reason: "กดปุ่มต้องห้าม"
+    });
+    localStorage.setItem("ipLogs", JSON.stringify(logData));
+
     // แจ้งเตือนและบล็อกเว็บ
     let hoursLeft = Math.ceil((bannedIPs[ip] - now) / 3600000);
     alert(`🚨 ระบบตรวจพบพฤติกรรมต้องสงสัย คุณถูกแบน ${hoursLeft} ชั่วโมง 🚨`);
     document.body.innerHTML = `<h1>🚫 คุณถูกแบน ${hoursLeft} ชั่วโมง 🚫</h1>`;
-}
-
-// ฟังก์ชันตรวจสอบสถานะแบน
-async function checkBanStatus() {
-    let ipInfo = await getIPInfo();
-    if (!ipInfo) return;
-
-    let { ip, city, region, country } = ipInfo;
-
-    // ❌ ถ้าอยู่เชียงใหม่ ให้ข้ามการแบน
-    if (city === "Chiang Mai" || region === "Chiang Mai" || country !== "Thailand") {
-        console.log(`✅ ไม่แบน IP: ${ip} (เชียงใหม่)`);
-        return;
-    }
-
-    let bannedIPs = JSON.parse(localStorage.getItem("bannedIPs")) || {};
-    let now = new Date().getTime();
-
-    if (bannedIPs[ip] && now < bannedIPs[ip]) {
-        let hoursLeft = Math.ceil((bannedIPs[ip] - now) / 3600000);
-        document.body.innerHTML = `<h1>🚫 คุณถูกแบน ${hoursLeft} ชั่วโมง 🚫</h1>`;
-        return true;
-    }
-    return false;
 }
 
 // ปิดคลิกขวา
@@ -82,23 +75,22 @@ document.addEventListener("keydown", function (e) {
     }
 });
 
-// ป้องกัน Console Hack
-(function () {
-    function detectDevTools() {
-        console.clear();
-        setInterval(async function () {
-            let before = new Date().getTime();
-            debugger; // บังคับให้หยุดถ้าเปิด Console
-            let after = new Date().getTime();
-            if (after - before > 100) {
-                await banIP();
-            }
-        }, 500);
-    }
-    detectDevTools();
-})();
-
 // ตรวจสอบสถานะแบนเมื่อโหลดเว็บ
 window.onload = async function () {
-    await checkBanStatus();
+    let ipInfo = await getIPInfo();
+
+    // ❌ ถ้า IP หาไม่เจอ → แบนทันที
+    if (!ipInfo) {
+        document.body.innerHTML = `<h1>🚫 ไม่สามารถตรวจสอบ IP ได้ - คุณถูกแบน 🚫</h1>`;
+        return;
+    }
+
+    let { ip, city, region, country } = ipInfo;
+    let bannedIPs = JSON.parse(localStorage.getItem("bannedIPs")) || {};
+    let now = new Date().getTime();
+
+    if (bannedIPs[ip] && now < bannedIPs[ip]) {
+        let hoursLeft = Math.ceil((bannedIPs[ip] - now) / 3600000);
+        document.body.innerHTML = `<h1>🚫 คุณถูกแบน ${hoursLeft} ชั่วโมง 🚫</h1>`;
+    }
 };
