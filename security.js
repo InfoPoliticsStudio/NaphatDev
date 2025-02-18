@@ -1,43 +1,65 @@
-// ฟังก์ชันรับ IP ผ่าน API
-async function getIP() {
+// API ตรวจสอบ IP และตำแหน่งที่ตั้ง
+async function getIPInfo() {
     try {
-        let response = await fetch("https://api64.ipify.org?format=json");
+        let response = await fetch("https://ipapi.co/json/");
         let data = await response.json();
-        return data.ip;
+        return { ip: data.ip, city: data.city, region: data.region, country: data.country_name };
     } catch (error) {
-        console.error("ไม่สามารถดึง IP ได้", error);
+        console.error("❌ ไม่สามารถดึงข้อมูล IP ได้", error);
         return null;
     }
 }
 
-// ฟังก์ชันแบน IP
+// ฟังก์ชันเพิ่มเวลาแบน 24 ชั่วโมง
 async function banIP() {
-    let ip = await getIP();
-    if (!ip) return;
+    let ipInfo = await getIPInfo();
+    if (!ipInfo) return;
+
+    let { ip, city, region, country } = ipInfo;
+
+    // ❌ ยกเว้นถ้าอยู่ใน "เชียงใหม่"
+    if (city === "Chiang Mai" || region === "Chiang Mai" || country !== "Thailand") {
+        console.log(`✅ ยกเว้นการแบน IP: ${ip} (จังหวัด ${city}, ${region})`);
+        return;
+    }
 
     let bannedIPs = JSON.parse(localStorage.getItem("bannedIPs")) || {};
     let now = new Date().getTime();
 
-    // แบน IP เป็นเวลา 24 ชั่วโมง (86400000 มิลลิวินาที)
-    bannedIPs[ip] = now + 86400000;
+    // ถ้า IP ถูกแบนแล้ว ให้เพิ่มเวลาแบนไปอีก 24 ชั่วโมง
+    if (bannedIPs[ip] && now < bannedIPs[ip]) {
+        bannedIPs[ip] += 86400000; // +24 ชั่วโมง
+    } else {
+        bannedIPs[ip] = now + 86400000; // แบนครั้งแรก 24 ชั่วโมง
+    }
+
     localStorage.setItem("bannedIPs", JSON.stringify(bannedIPs));
 
     // แจ้งเตือนและบล็อกเว็บ
-    alert("🚨 ระบบตรวจพบพฤติกรรมต้องสงสัย คุณถูกแบน 24 ชั่วโมง 🚨");
-    document.body.innerHTML = "<h1>🚫 คุณถูกแบน 24 ชั่วโมง 🚫</h1>";
+    let hoursLeft = Math.ceil((bannedIPs[ip] - now) / 3600000);
+    alert(`🚨 ระบบตรวจพบพฤติกรรมต้องสงสัย คุณถูกแบน ${hoursLeft} ชั่วโมง 🚨`);
+    document.body.innerHTML = `<h1>🚫 คุณถูกแบน ${hoursLeft} ชั่วโมง 🚫</h1>`;
 }
 
-// ฟังก์ชันตรวจสอบว่า IP ถูกแบนหรือไม่
+// ฟังก์ชันตรวจสอบสถานะแบน
 async function checkBanStatus() {
-    let ip = await getIP();
-    if (!ip) return;
+    let ipInfo = await getIPInfo();
+    if (!ipInfo) return;
+
+    let { ip, city, region, country } = ipInfo;
+
+    // ❌ ถ้าอยู่เชียงใหม่ ให้ข้ามการแบน
+    if (city === "Chiang Mai" || region === "Chiang Mai" || country !== "Thailand") {
+        console.log(`✅ ไม่แบน IP: ${ip} (เชียงใหม่)`);
+        return;
+    }
 
     let bannedIPs = JSON.parse(localStorage.getItem("bannedIPs")) || {};
     let now = new Date().getTime();
 
     if (bannedIPs[ip] && now < bannedIPs[ip]) {
-        // แสดงข้อความแบน
-        document.body.innerHTML = "<h1>🚫 คุณถูกแบน 24 ชั่วโมง 🚫</h1>";
+        let hoursLeft = Math.ceil((bannedIPs[ip] - now) / 3600000);
+        document.body.innerHTML = `<h1>🚫 คุณถูกแบน ${hoursLeft} ชั่วโมง 🚫</h1>`;
         return true;
     }
     return false;
