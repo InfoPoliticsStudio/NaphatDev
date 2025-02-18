@@ -23,27 +23,27 @@ body {
 
         @media (max-width: 1140px) {
             section > div > div > div:last-child {
-                display: flex;
-                justify-content: space-around;
-                margin-top: 60px;
+                display: flex!important;
+                justify-content: space-around!important;
+                margin-top: 60px!important;
             }
             section > div > div > div:last-child a > div h3 {
-                display: none;
+                display: none!important;
             }
             section > div > div > div:last-child a > div i {
-                position: relative;
-                left: 0px;
-                padding: 10px;
-                border: 1px solid;
-                border-radius: 20px;
-                height: 50px;
-                width: 50px;
-                justify-content: center;
-                align-items: center;
-                display: flex;
+                position: relative!important;
+                left: 0px!important;
+                padding: 10px!important;
+                border: 1px solid!important;
+                border-radius: 20px!important;
+                height: 50px!important;
+                width: 50px!important;
+                justify-content: center!important;
+                align-items: center!important;
+                display: flex!important;
             }
             section > div > div > div:last-child a > div {
-                border: none;
+                border: none!important;
             }
         }
 section > div > div > div:last-child a > div {
