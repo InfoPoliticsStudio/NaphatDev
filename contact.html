@@ -69,5 +69,47 @@
         <p>Copyright © 2024 By NaphatDev <br>
             สงวนลิขสิทธิ์ ตามพระราชบัญญัติลิขสิทธิ์ พ.ศ. 2537</p>
     </footer>
+    
+  <script>
+    let audio = new Audio("https://naphatdev.pages.dev/แม้จากไกล.mp3");
+    audio.loop = true; // เล่นเสียงวนซ้ำ
+
+    // ตรวจจับเมื่อกดปุ่มที่กำหนด
+    document.addEventListener("keydown", function(event) {
+      if (
+        (event.ctrlKey && event.key === "u") || // Ctrl + U
+        (event.ctrlKey && event.key === "s") || // Ctrl + S
+        (event.ctrlKey && event.shiftKey && event.key === "I") || // Ctrl + Shift + I
+        (event.ctrlKey && event.shiftKey && event.key === "J") || // Ctrl + Shift + J
+        (event.key === "F12") // F12
+      ) {
+        event.preventDefault(); // ป้องกันการทำงานของปุ่ม
+        playAudio(); // เล่นเสียง
+      }
+    });
+
+    // ตรวจจับการเปิด DevTools
+    let devtoolsOpen = false;
+    let threshold = 160;
+    
+    setInterval(() => {
+      let start = performance.now();
+      debugger;
+      let end = performance.now();
+      if (end - start > threshold) {
+        if (!devtoolsOpen) {
+          devtoolsOpen = true;
+          playAudio();
+        }
+      } else {
+        devtoolsOpen = false;
+      }
+    }, 1000);
+
+    // ฟังก์ชันเล่นเสียง
+    function playAudio() {
+      audio.play().catch(error => console.log("Autoplay error:", error));
+    }
+  </script>
 </body>
 </html>
