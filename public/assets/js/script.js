@@ -1,10 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const menuToggle = document.querySelector(".fas");
+    const menuToggle = document.querySelector(".menu-toggle");
     const navLinks = document.querySelector(".nav-links");
     const icon = menuToggle.querySelector("i");
 
+    if (!menuToggle || !navLinks || !icon) {
+        console.error("Element not found!");
+        return;
+    }
+
     menuToggle.addEventListener("click", function () {
         navLinks.classList.toggle("nav-active");
-        navLinks.classList.toggle("fa-times");
+        
+        icon.classList.toggle("fa-bars");
+        icon.classList.toggle("fa-times");
+
+        console.log("Icon class:", icon.classList);
     });
 });
