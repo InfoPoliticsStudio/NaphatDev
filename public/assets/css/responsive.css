@@ -1,7 +1,6 @@
 /* Responsive สำหรับหน้าจอเล็ก */
 @media screen and (max-width: 768px) {
     .container {
-        flex-direction: column;
         text-align: center;
     }
     
@@ -11,7 +10,7 @@
         gap: 10px;
         background: #F16322;
         position: absolute;
-        top: 60px;
+        top: 68px;
         right: 0;
         width: 100%;
         padding: 15px 0;
