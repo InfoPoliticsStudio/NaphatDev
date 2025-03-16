@@ -61,3 +61,8 @@ footer {
     margin-top: 10px;
     font-size: 14px;
 }
+
+img {
+    user-select: none;
+    -webkit-user-drag: none;
+}
