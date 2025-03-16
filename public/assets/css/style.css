@@ -11,6 +11,14 @@ header {
     padding: 15px 0;
 }
 
+.container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .logo img {
     height: 50px;
 }
