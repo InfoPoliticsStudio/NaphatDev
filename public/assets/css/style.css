@@ -9,6 +9,9 @@ body {
 header {
     background-color: #F16322;
     padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
 }
 
 .container {
@@ -205,6 +208,9 @@ margin-top: 20px;
 background-color: #0056b3;
 }
 
+.container.a {
+    margin-top: 84.8px;
+}
 .container.a {
     width: 100%;
     display: flex;
