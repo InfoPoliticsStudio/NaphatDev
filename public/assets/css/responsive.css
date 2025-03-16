@@ -1,1 +1,43 @@
-
+/* Responsive สำหรับหน้าจอเล็ก */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background: #F16322;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        padding: 15px 0;
+    }
+    
+    .nav-links li {
+        padding: 10px 0;
+    }
+    
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+    
+    .nav-active {
+        display: flex;
+    }
+    
+    .footer-right ul {
+        flex-direction: column;
+        text-align: center;
+        padding: 0;
+    }
+    
+    .footer-right ul li {
+        display: block;
+        margin: 5px 0;
+    }
+}
