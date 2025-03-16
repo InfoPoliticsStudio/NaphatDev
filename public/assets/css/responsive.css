@@ -8,16 +8,21 @@
         display: none;
         flex-direction: column;
         gap: 10px;
-        background: #F16322;
+        background: #fff;
         position: absolute;
         top: 68px;
         right: 0;
         width: 100%;
         padding: 15px 0;
+        height: calc(100vh - 114px);
     }
     
     .nav-links li {
         padding: 10px 0;
+    }
+    
+    .nav-links li a {
+        color: #f16322;
     }
     
     .menu-toggle {
