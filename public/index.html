@@ -9,9 +9,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/public/assets/css/style.css">
     <link rel="stylesheet" href="/public/assets/css/responsive.css">
+    <link rel="stylesheet" href="/public/assets/css/loader.css">
     <script defer src="/public/assets/js/script.js"></script>
+    <script>
+      window.addEventListener("load", () => {
+        const loader = document.querySelector(".css-1ltj605");
+    
+        // รอ 5 วินาทีก่อนเพิ่มคลาสซ่อน
+        setTimeout(() => {
+          loader.classList.add("css-1ltj605-hidden");
+    
+          // รอการเปลี่ยนแปลง transition เสร็จสิ้นก่อนลบ loader ออกจาก DOM
+          loader.addEventListener("transitionend", () => {
+            document.body.removeChild(loader);
+          });
+        }, 3000); // 5000 มิลลิวินาที = 5 วินาที
+      });
+    </script>
 </head>
 <body>
+    <div class="MuiBox-root css-1ltj605 loader css-1ltj605" id="">
+        <span class="MuiCircularProgress-root MuiCircularProgress-indeterminate MuiCircularProgress-colorPrimary css-z01bqi" role="progressbar" style="width: 100px; height: 100px;">
+    		<img src="/public/assets/images/NewGear.png" width="150px">
+    	</span>
+    </div>
     <header>
         <div class="container">
             <div class="logo">
