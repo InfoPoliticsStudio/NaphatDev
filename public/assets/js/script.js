@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const menuToggle = document.querySelector(".menu-toggle");
+    const menuToggle = document.querySelector("#menu-toggle");
     const navLinks = document.querySelector(".nav-links");
     const icon = menuToggle.querySelector("i");
 
