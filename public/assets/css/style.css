@@ -66,3 +66,22 @@ img {
     user-select: none;
     -webkit-user-drag: none;
 }
+
+.load-more-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+    cursor: pointer;
+}
+
+.load-more {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #ff6100;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
