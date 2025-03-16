@@ -21,6 +21,7 @@
     
           // รอการเปลี่ยนแปลง transition เสร็จสิ้นก่อนลบ loader ออกจาก DOM
           loader.addEventListener("transitionend", () => {
+              document.body.removeChild(loader);
           });
         }, 3000); // 5000 มิลลิวินาที = 5 วินาที
       });
