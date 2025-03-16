@@ -86,7 +86,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .box{
-    width: calc(33.333333% - 20px);
+    width: 25%;
     padding: 20px;
     border: 1px solid #000;
     border-radius: 10px;
@@ -151,7 +151,7 @@ font-size: 16px;
 }
 @media (max-width: 900px) {
     .box {
-        width: calc(50% - 10px);
+        width: 33.333333%;
     }
     .categories p {
         font-size: 10px!important;
