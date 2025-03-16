@@ -67,21 +67,136 @@ img {
     -webkit-user-drag: none;
 }
 
-.load-more-container {
-    text-align: center;
-    margin-top: 20px;
-}
-
 [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
     cursor: pointer;
 }
 
+/* NEWS */
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    margin-bottom: 1em;
+}
+
+.boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.box{
+    width: calc(33.333333% - 20px);
+    padding: 20px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    color: #000;
+    background: #fff;
+}
+.box img{
+    width: 100%;
+    border-radius: 10px;
+}
+    
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 10px;
+}
+
+.categories p {
+    background: #dddddd;
+    padding: 4px 8px;
+    border-radius: 50px;
+}
+
+
+.box h2 {
+margin-top: 15px;
+font-weight: 900;
+font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .categories p {
+        font-size: 10px!important;
+    }
+
+    h1, h2, h3, h4, h5, h6, p {
+        margin: 0;
+        margin-bottom: .5em!important;
+    }
+
+    .box > p {
+        font-size: 12px!important;
+    }
+}
+@media (max-width: 600px) {
+    .box {
+        width: 100%!important;
+    }
+
+    .categories p {
+        font-size: 10px!important;
+    }
+
+    h1, h2, h3, h4, h5, h6, p {
+        margin: 0;
+        margin-bottom: .5em!important;
+    }
+
+    .box > p {
+        font-size: 12px!important;
+    }
+}
+@media (max-width: 900px) {
+    .box {
+        width: calc(50% - 10px);
+    }
+    .categories p {
+        font-size: 10px!important;
+    }
+
+    h1, h2, h3, h4, h5, h6, p {
+        margin: 0;
+        margin-bottom: .5em!important;
+    }
+
+    .box > p {
+        font-size: 12px!important;
+    }
+}
+@media (max-width: 1200px) {
+
+    .categories p {
+        font-size: 14px;
+    }
+
+    h1, h2, h3, h4, h5, h6, p {
+        margin: 0;
+        margin-bottom: .5em;
+    }
+
+    .box > p {
+        font-size: 16px;
+    }
+}
+
+.load-more-container {
+text-align: center;
+margin-top: 20px;
+}
+
 .load-more {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    background-color: #ff6100;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
+padding: 10px 20px;
+font-size: 16px;
+border: none;
+background-color: #007bff;
+color: white;
+cursor: pointer;
+border-radius: 5px;
+}
+
+.load-more:hover {
+background-color: #0056b3;
 }
