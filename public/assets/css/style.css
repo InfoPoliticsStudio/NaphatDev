@@ -250,3 +250,10 @@ a {
     color: #0d6efd;
     text-decoration: none;
 }
+
+.news {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
