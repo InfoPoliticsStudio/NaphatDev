@@ -53,7 +53,29 @@
         </div>
     </header>
 
-    <main class="container a
+    <main class="container a">
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide active">
+                    <img src="https://via.placeholder.com/800x400/FF5733/FFF?text=Slide+1" alt="Slide 1">
+                </div>
+                <div class="slide">
+                    <img src="https://via.placeholder.com/800x400/33FF57/FFF?text=Slide+2" alt="Slide 2">
+                </div>
+                <div class="slide">
+                    <img src="https://via.placeholder.com/800x400/3357FF/FFF?text=Slide+3" alt="Slide 3">
+                </div>
+            </div>
+        
+            <button class="prev" onclick="moveSlide(-1)">❮</button>
+            <button class="next" onclick="moveSlide(1)">❯</button>
+        
+            <div class="indicators">
+                <span class="dot active" onclick="setSlide(0)"></span>
+                <span class="dot" onclick="setSlide(1)"></span>
+                <span class="dot" onclick="setSlide(2)"></span>
+            </div>
+        </div>
         <div class="news">
             <div class="d-flex justify-content-between w-90">
                 <h1 style=" color: #000; margin-top: 1em; ">ข่าวสาร</h1>
@@ -139,5 +161,6 @@
         loadMoreBtn.addEventListener("click", loadMoreData);
     });
     </script>
+    <script src="slider.js"></script>
 </body>
 </html>
