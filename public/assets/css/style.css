@@ -24,6 +24,7 @@ header {
 
 .logo img {
     height: 50px;
+    width: 91.7px;
 }
 .nav-links {
     list-style: none;
@@ -49,6 +50,7 @@ footer {
 }
 .footer-left img {
     height: 40px;
+    width: 73.35px;
 }
 .footer-right ul {
     list-style: none;
