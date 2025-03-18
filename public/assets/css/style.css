@@ -227,5 +227,17 @@ background-color: #0056b3;
 }
 
 .w-90 {
-    width: 90%;
+    width: 90%; /* ค่าพื้นฐาน */
+}
+
+@media (min-width: 600px) {
+    .w-90 {
+        width: calc(66.666666% + 50px) !important;
+    }
+}
+
+@media (min-width: 900px) {
+    .w-90 {
+        width: calc(75% + 60px) !important;
+    }
 }
