@@ -251,7 +251,7 @@ a {
     text-decoration: none;
 }
 
-.news {
+.news, .dev {
     width: 100%;
     display: flex;
     flex-direction: column;
