@@ -216,3 +216,12 @@ background-color: #0056b3;
     display: flex;
     flex-direction: column;
 }
+
+.d-flex {
+    display: flex;
+    align-items: center;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
