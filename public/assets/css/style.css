@@ -232,7 +232,7 @@ background-color: #0056b3;
 
 @media (min-width: 600px) {
     .w-90 {
-        width: calc(66.666666% + 50px) !important;
+        width: calc(66.666666% + 40px) !important;
     }
 }
 
