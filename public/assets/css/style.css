@@ -275,7 +275,7 @@ a {
 
 @media (max-width: 900px) {
     .m-box {
-        width: 33.333333%;
+        width: calc(33.33333% + 40px);
     }
 }
 @media (max-width: 600px) {
