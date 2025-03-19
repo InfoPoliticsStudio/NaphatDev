@@ -274,12 +274,12 @@ a {
 }
 
 @media (max-width: 900px) {
-    .m-box img {
+    .m-box {
         width: 33.333333%;
     }
 }
 @media (max-width: 600px) {
-    .m-box img {
+    .m-box {
         width: 100% !important;
     }
 }
