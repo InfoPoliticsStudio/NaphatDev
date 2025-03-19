@@ -274,12 +274,12 @@ a {
 }
 
 @media (max-width: 900px) {
-    .m-box {
+    .m-box img {
         width: 33.333333%;
     }
 }
 @media (max-width: 600px) {
-    .m-box {
+    .m-box img {
         width: 100% !important;
     }
 }
@@ -302,4 +302,24 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.btn:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid #aa0404;
+}
+
+.btn {
+    background-color: #aa0404;
+    border: 2px solid #aa0404;
+    color: #FFFFFF;
+    padding: 15px 32px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    margin: 16px 0 !important;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
 }
