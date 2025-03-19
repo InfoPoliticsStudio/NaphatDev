@@ -296,3 +296,10 @@ a {
 .container.b {
     display: grid;
 }
+
+.login {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
