@@ -5,32 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>หน้าหลัก</title>
     <link rel="icon" href="/public/assets/images/NAPHAT_DEV.png" type="image/png">
-    <link rel="stylesheet" href="/public/assets/fonts/Anuphan.css">
+    <link rel="stylesheet" href="/public/assets/fonts/s-index.css">
     <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@100..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/public/assets/css/style.css">
-    <link rel="stylesheet" href="/public/assets/css/responsive.css">
-    <link rel="stylesheet" href="/public/assets/css/loader.css">
-    <link rel="stylesheet" href="/public/assets/css/slider.css">
     <script defer src="/public/assets/js/script.js"></script>
-    <script>
-        window.addEventListener("load", () => {
-          const loader = document.querySelector(".css-1ltj605");
-          document.body.style.overflowY = "hidden"; // ปิดการเลื่อนขณะโหลด
-        
-          // รอ 3 วินาทีก่อนเพิ่มคลาสซ่อน
-          setTimeout(() => {
-            loader.classList.add("css-1ltj605-hidden");
-        
-            // รอ transition เสร็จก่อนลบ loader
-            loader.addEventListener("transitionend", () => {
-              document.body.removeChild(loader);
-              document.body.style.overflowY = ""; // คืนค่าเดิมให้เลื่อนหน้าได้
-            });
-          }, 3000);
-        });
-
-    </script>
 </head>
 <body>
     <div class="MuiBox-root css-1ltj605 loader css-1ltj605" id="">
@@ -117,64 +94,5 @@
             &copy; 2023 NaphatDev. All rights reserved.
         </div>
     </footer>
-    <script>
-        document.addEventListener("DOMContentLoaded", async function () {
-        const apiUrl = "https://script.google.com/macros/s/AKfycbyHNShaLwgNfTLJxnQE4syG8e7vwcTHslZV8kOUUoPc-sXk8cdQ25aqGax5DAUeQwkVQA/exec";
-        const container = document.querySelector(".boxes");
-        const mainContainer = document.querySelector("main");
-        
-        const loadMoreContainer = document.createElement("div");
-        loadMoreContainer.classList.add("load-more-container");
-        
-        const loadMoreBtn = document.createElement("button");
-        loadMoreBtn.textContent = "ดูเพิ่มเติม";
-        loadMoreBtn.classList.add("load-more");
-        
-        loadMoreContainer.appendChild(loadMoreBtn);
-        mainContainer.appendChild(loadMoreContainer);
-        
-        let allData = [];
-        let currentIndex = 0;
-        const itemsPerPage = 3;
-        
-        try {
-            const response = await fetch(apiUrl);
-            allData = await response.json();
-            loadMoreData();
-        } catch (error) {
-            console.error("Error fetching data:", error);
-        }
-        
-        function loadMoreData() {
-            const nextItems = allData.slice(currentIndex, currentIndex + itemsPerPage);
-            nextItems.forEach(item => {
-                const box = document.createElement("div");
-                box.classList.add("box");
-                
-                box.innerHTML = `
-                    <img src="${item.img}" alt="">
-                    <h2>${item.title}</h2>
-                    <div class="categories">
-                        <p>${item.categories1 || ""}</p>
-                        <p>${item.categories2 || ""}</p>
-                        <p style="background: ${item.color};">${item.status}</p>
-                    </div>
-                    <p>${item.details}</p>
-                `;
-                
-                container.appendChild(box);
-            });
-            
-            currentIndex += itemsPerPage;
-            
-            if (currentIndex >= allData.length) {
-                loadMoreBtn.style.display = "none";
-            }
-        }
-        
-        loadMoreBtn.addEventListener("click", loadMoreData);
-    });
-    </script>
-    <script src="/public/assets/js"></script>
 </body>
 </html>
