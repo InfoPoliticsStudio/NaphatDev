@@ -16,7 +16,7 @@ header {
     padding: 10px 20px;
 }
 
-.logo {
+[data-logo] {
     font-size: 20px;
     font-weight: bold;
 }
