@@ -11,7 +11,7 @@ async function login(event) {
 
         if (employee) {
             sessionStorage.setItem("loggedInUser", JSON.stringify(employee));
-            window.location.href = "dashboard.html";  
+            window.location.href = "dashboard/index";  
         } else {
             document.getElementById("error").textContent = "";
         }
