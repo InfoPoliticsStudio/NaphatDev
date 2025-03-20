@@ -3,7 +3,7 @@ const loggedInUser = localStorage.getItem("loggedInUser");
 
 if (!loggedInUser) {
     alert("กรุณาเข้าสู่ระบบ");
-    window.location.href = "login.html"; // ถ้ายังไม่ได้ล็อกอิน ให้กลับไปหน้า Login
+    window.location.href = "/public/login"; // ถ้ายังไม่ได้ล็อกอิน ให้กลับไปหน้า Login
 } else {
     fetch("/public/data/employees.json")
         .then(response => response.json())
