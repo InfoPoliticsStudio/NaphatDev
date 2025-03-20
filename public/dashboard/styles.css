@@ -22,6 +22,8 @@ header {
 [data-logo] {
     font-size: 20px;
     font-weight: bold;
+    cursor: pointer;
+    user-select: none;
 }
 
 button {
