@@ -4,7 +4,7 @@ async function login(event) {
     const password = document.getElementById("password").value;
 
     try {
-        const response = await fetch("");
+        const response = await fetch("/public/data/employees.json");
         const employees = await response.json();
 
         const employee = employees.find(t => t.username === username && t.password === password);
