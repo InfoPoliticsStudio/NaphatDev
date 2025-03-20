@@ -188,7 +188,8 @@ aside ul li {
 .sidebar ul li i {
     margin-right: 10px;
 }
-[home-content] {
+[home-content] ,
+[info-content] {
     padding: 20px;
     text-align: center;
     background-color: #f8f8f8;
@@ -197,18 +198,21 @@ aside ul li {
     margin-bottom: 20px;
 }
 
+[info-content] img,
 [home-content] img {
     max-width: 100%;
     height: auto;
     margin-bottom: 20px;
 }
 
+[info-content] h2,
 [home-content] h2 {
     font-size: 2rem;
     color: #333;
     margin-bottom: 10px;
 }
 
+[info-content] p,
 [home-content] p {
     font-size: 1.2rem;
     color: #666;
