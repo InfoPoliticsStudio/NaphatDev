@@ -1,24 +1,12 @@
-// ดึงข้อมูลผู้ใช้ที่ล็อกอินจาก LocalStorage
+// ดึงข้อมูลผู้ใช้จาก localStorage
 const loggedInUser = localStorage.getItem("loggedInUser");
 
 if (!loggedInUser) {
     alert("กรุณาเข้าสู่ระบบ");
-    window.location.href = "/public/login"; // ถ้ายังไม่ได้ล็อกอิน ให้กลับไปหน้า Login
+    window.location.href = "/public/login.html"; // ถ้ายังไม่ได้ล็อกอิน ให้กลับไปหน้า Login
 } else {
-    fetch("/public/data/employees.json")
-        .then(response => response.json())
-        .then(data => {
-            // ค้นหาข้อมูลของผู้ใช้ที่ล็อกอินอยู่
-            const user = data.find(emp => emp.username === loggedInUser);
-
-            if (user) {
-                displayUserInfo(user);
-            } else {
-                alert("ไม่พบข้อมูลผู้ใช้");
-                window.location.href = "login.html";
-            }
-        })
-        .catch(error => console.error("เกิดข้อผิดพลาดในการโหลดข้อมูล:", error));
+    const user = JSON.parse(loggedInUser);
+    displayUserInfo(user);
 }
 
 // ฟังก์ชันแสดงข้อมูลผู้ใช้
@@ -38,5 +26,5 @@ function displayUserInfo(user) {
 document.getElementById("logoutBtn").addEventListener("click", function() {
     localStorage.removeItem("loggedInUser"); // ลบข้อมูลผู้ใช้
     alert("ออกจากระบบเรียบร้อย");
-    window.location.href = "login.html"; // กลับไปหน้าล็อกอิน
+    window.location.href = "/public/login.html"; // กลับไปหน้าล็อกอิน
 });
