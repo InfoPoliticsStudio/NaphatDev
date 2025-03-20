@@ -247,7 +247,7 @@ background-color: #0056b3;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 90%; /* ค่าพื้นฐาน */
+    width: 90% !important; /* ค่าพื้นฐาน */
 }
 
 @media (min-width: 600px) {
