@@ -1,12 +1,41 @@
-// ดึงข้อมูลผู้ใช้จาก localStorage
-const loggedInUser = localStorage.getItem("loggedInUser");
+async function checkLogin() {
+    // ดึงข้อมูลผู้ใช้จาก localStorage
+    const loggedInUser = localStorage.getItem("loggedInUser");
 
-if (!loggedInUser) {
-    alert("กรุณาเข้าสู่ระบบ");
-    window.location.href = "/public/login.html"; // ถ้ายังไม่ได้ล็อกอิน ให้กลับไปหน้า Login
-} else {
-    const user = JSON.parse(loggedInUser);
-    displayUserInfo(user);
+    if (!loggedInUser) {
+        alert("กรุณาเข้าสู่ระบบ");
+        window.location.href = "/public/login"; // ถ้ายังไม่ได้ล็อกอิน ให้กลับไปหน้า Login
+        return;
+    }
+
+    const user = JSON.parse(loggedInUser); // แปลงข้อมูลจาก localStorage เป็น Object
+
+    try {
+        // โหลดไฟล์ employees.json
+        const response = await fetch("/public/data/employees.json");
+
+        if (!response.ok) {
+            throw new Error("ไม่สามารถโหลดข้อมูลพนักงานได้");
+        }
+
+        const employees = await response.json(); // แปลงไฟล์ JSON
+
+        // เปรียบเทียบ username และ password จาก localStorage กับข้อมูลใน JSON
+        const employee = employees.find(emp => emp.username === user.username && emp.password === user.password);
+
+        if (employee) {
+            // ถ้าข้อมูลตรงกัน แสดงข้อมูลผู้ใช้
+            displayUserInfo(employee);
+        } else {
+            // ถ้าไม่ตรงกัน ให้ลบข้อมูลจาก localStorage และกลับไปหน้า Login
+            localStorage.removeItem("loggedInUser");
+            alert("ข้อมูลผู้ใช้ไม่ตรงกัน กรุณาล็อกอินใหม่");
+            window.location.href = "/public/login.html";
+        }
+    } catch (error) {
+        console.error("เกิดข้อผิดพลาด:", error);
+        alert("เกิดข้อผิดพลาดในการโหลดข้อมูลพนักงาน");
+    }
 }
 
 // ฟังก์ชันแสดงข้อมูลผู้ใช้
@@ -28,3 +57,6 @@ document.getElementById("logoutBtn").addEventListener("click", function() {
     alert("ออกจากระบบเรียบร้อย");
     window.location.href = "/public/login.html"; // กลับไปหน้าล็อกอิน
 });
+
+// เรียกใช้ฟังก์ชันตรวจสอบการล็อกอิน
+checkLogin();
