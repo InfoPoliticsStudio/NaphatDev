@@ -5,7 +5,7 @@ document.querySelectorAll("ul li").forEach(item => {
         if (dataKey === "info") {
             window.location.href = "index.html"; // ถ้าเป็น data-info ให้เข้า index.html
         } else {
-            window.location.href = `${dataKey}.html`; // อื่น ๆ เข้าหน้า *.html ตามชื่อ data-*
+            window.location.href = `${dataKey}`; // อื่น ๆ เข้าหน้า *.html ตามชื่อ data-*
         }
     });
 });
