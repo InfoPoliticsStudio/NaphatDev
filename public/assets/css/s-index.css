@@ -356,11 +356,11 @@ a {
         height: calc(100vh - 114px);
     }
     
-    [data-nav-links] li {
+    [data-nav-links-active] li {
         padding: 10px 0;
     }
     
-    [data-nav-links] li a {
+    [data-nav-links-active] li a {
         color: #f16322;
     }
     
