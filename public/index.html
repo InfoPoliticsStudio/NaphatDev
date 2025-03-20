@@ -14,19 +14,22 @@
     <link rel="stylesheet" href="/public/assets/css/slider.css">
     <script defer src="/public/assets/js/script.js"></script>
     <script>
-      window.addEventListener("load", () => {
-        const loader = document.querySelector(".css-1ltj605");
-    
-        // รอ 5 วินาทีก่อนเพิ่มคลาสซ่อน
-        setTimeout(() => {
-          loader.classList.add("css-1ltj605-hidden");
-    
-          // รอการเปลี่ยนแปลง transition เสร็จสิ้นก่อนลบ loader ออกจาก DOM
-          loader.addEventListener("transitionend", () => {
+        window.addEventListener("load", () => {
+          const loader = document.querySelector(".css-1ltj605");
+          document.body.style.overflowY = "hidden"; // ปิดการเลื่อนขณะโหลด
+        
+          // รอ 3 วินาทีก่อนเพิ่มคลาสซ่อน
+          setTimeout(() => {
+            loader.classList.add("css-1ltj605-hidden");
+        
+            // รอ transition เสร็จก่อนลบ loader
+            loader.addEventListener("transitionend", () => {
               document.body.removeChild(loader);
-          });
-        }, 3000);
-      });
+              document.body.style.overflowY = ""; // คืนค่าเดิมให้เลื่อนหน้าได้
+            });
+          }, 3000);
+        });
+
     </script>
 </head>
 <body>
