@@ -41,7 +41,8 @@ button:hover {
 
 .sidebar {
     width: 200px;
-    background-color: #f4f4f4;
+    background-color: #333;
+    color: #fff;
     padding: 20px;
 }
 
@@ -68,6 +69,11 @@ main {
 .user-details {
     display: flex;
     flex-direction: column;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
 }
 
 @media (max-width: 720px) {
