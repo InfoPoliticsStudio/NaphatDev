@@ -128,3 +128,23 @@ ul {
     margin: 0;
     padding: 5px 0;
 }
+
+
+[data-countdown] {
+    width: 50%;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+[data-sub-countdown] {
+    display: flex;
+    flex-direction: column;
+}
+
+[data-sub-countdown] h3, [data-sub-countdown] p {
+    margin: 0;
+    padding: 5px 0;
+}
