@@ -69,3 +69,14 @@ main {
     display: flex;
     flex-direction: column;
 }
+@media (max-width: 720px) {
+    #userInfo {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #userInfo h3, #userInfo p {
+        margin: 0;
+        padding: 10px 0;
+    }
+}
