@@ -52,7 +52,8 @@ h1[data-h1], h2[data-h2] {
     display: flex;
     gap: 20px;
 }
-[data-nav-links] li a {
+[data-nav-links] li a,
+[data-nav-links-active] li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
