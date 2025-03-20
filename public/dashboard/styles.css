@@ -11,6 +11,11 @@ body {
     display: flex;
 }
 
+[data-flex-1] {
+    display: flex;
+    justify-content: space-around;
+}
+
 [data-flex-gap-width] {
     display: flex;
     gap: 15px;
@@ -142,6 +147,7 @@ ul {
 [data-sub-countdown] {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 [data-sub-countdown] h3, [data-sub-countdown] p {
