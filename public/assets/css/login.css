@@ -3,6 +3,6 @@ body {font-family: "Anuphan", sans-serif;display: flex;justify-content: center;a
 [data-login-container] h2{margin-bottom: 20px;color: #f16322;}
 [data-input-group] {margin-bottom: 15px;text-align: left;}
 label { display: block; margin-bottom: 5px; color: #333; font-family: 'Anuphan'; }
-input[type="text"], input[type="password"] { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-family: 'Anuphan';outline: none; }
+input[type="text"], input[type="password"] { width: 100%; padding: 8px; background: linear-gradient(#fff, #fff) padding-box, linear-gradient(to right, rgb(203 17 17), #ff6800, rgb(255 183 0)) border-box; border: 1px solid transparent; border-radius: 4px; box-sizing: border-box; font-family: 'Anuphan';outline: none; }
 button { width: 100%; padding: 10px; background-color: #ff5000; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-family: 'Anuphan'; }
 [error-message] { color: red; margin-top: 10px; }
