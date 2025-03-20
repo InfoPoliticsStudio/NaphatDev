@@ -60,3 +60,5 @@ document.getElementById("logoutBtn").addEventListener("click", function() {
 
 // เรียกใช้ฟังก์ชันตรวจสอบการล็อกอิน
 checkLogin();
+
+function updateLayout() { let content = document.querySelector("[data-ml], [data-ml-240]"); if (window.innerWidth <= 500) { content.removeAttribute("data-ml-240"); content.setAttribute("data-ml", ""); } } document.querySelector("[data-logo]").addEventListener("click", function() { let sidebar = document.querySelector(".sidebar"); sidebar.classList.toggle("active"); let content = document.querySelector("[data-ml], [data-ml-240]"); if (window.innerWidth > 500) { if (content.hasAttribute("data-ml")) { content.removeAttribute("data-ml"); content.setAttribute("data-ml-240", ""); } else { content.removeAttribute("data-ml-240"); content.setAttribute("data-ml", ""); } } }); window.addEventListener("resize", updateLayout); updateLayout();
