@@ -17,3 +17,4 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("Icon class:", icon.classList);
     });
 });
+document.querySelector('.btn').addEventListener('click', function() {if (this.hasAttribute('data-log-in')) {window.location.href = '/public/login';}});
