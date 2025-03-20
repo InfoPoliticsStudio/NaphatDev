@@ -4,11 +4,11 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f5f5f5;
+    background-color: #F16322;
 }
 
 [data-login-container] {
-    background-color: #fff;
+    background-color: #ffffff25;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
