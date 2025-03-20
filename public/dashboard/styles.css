@@ -171,3 +171,8 @@ ul {
         align-items: center;
     }
 }
+
+aside ul li {
+    padding: 10px 0;
+    cursor: pointer;
+}
