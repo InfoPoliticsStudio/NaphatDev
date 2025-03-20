@@ -371,6 +371,15 @@ a {
     
     [data-nav-links-active] {
         display: flex;
+        flex-direction: column;
+        gap: 10px;
+        background: #fff;
+        position: absolute;
+        top: 68px;
+        right: 0;
+        width: 100%;
+        padding: 15px 0;
+        height: calc(100vh - 114px);
     }
     
     [footer-right] ul {
@@ -468,7 +477,7 @@ img {
 }
 
 [data-icon="1"] {
-    --fa: ""\f00d"";
+    --fa: "\f00d";
 }
 
 [data-fa-brands]:before, [data-fa-regular]:before, [data-fa-solid]:before, [data-fa]:before, [data-fab]:before, [data-far]:before, [data-fas]:before {
