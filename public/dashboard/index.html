@@ -24,7 +24,7 @@
             </ul>
         </aside>
 
-        <main>
+        <main data-ml>
             <img src="/public/assets/images/dash.png" width="100%">
             <h2>ข้อมูลสมาชิก</h2>
             <div id="userInfo"></div>
@@ -32,6 +32,6 @@
     </div>
 
     <script src="dashboard.js"></script>
-    <script>document.querySelector("[data-logo]").addEventListener("click", function() {document.querySelector(".sidebar").classList.toggle("active");});</script>
+    <script>document.querySelector("[data-logo]").addEventListener("click", function() {            document.querySelector(".sidebar").classList.toggle("active"); let content = document.querySelector("[data-ml], [data-ml-240]"); if (content.hasAttribute("data-ml")) { content.removeAttribute("data-ml"); content.setAttribute("data-ml-240", ""); } else { content.removeAttribute("data-ml-240"); content.setAttribute("data-ml", ""); } });</script>
 </body>
 </html>
