@@ -11,6 +11,12 @@ body {
     display: flex;
 }
 
+[data-flex-gap-width] {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
 header {
     display: flex;
     justify-content: space-between;
