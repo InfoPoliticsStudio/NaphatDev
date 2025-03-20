@@ -242,6 +242,6 @@ aside ul li {
     flex-wrap: wrap;
 }
 
-li [active] {
+li[active] {
     background-color: #444;
 }
