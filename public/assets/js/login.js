@@ -23,8 +23,11 @@ async function login(event) {
         const employee = employees.find(emp => emp.username === username && emp.password === password);
 
         if (employee) {
-            sessionStorage.setItem("loggedInUser", JSON.stringify(employee)); // บันทึกข้อมูลผู้ใช้
-            window.location.href = "/public/dashboard/index"; // เปลี่ยนเส้นทางไปหน้า Dashboard
+            // ✅ บันทึกข้อมูลผู้ใช้ไว้ใน localStorage
+            localStorage.setItem("loggedInUser", JSON.stringify(employee)); 
+
+            // ✅ เปลี่ยนเส้นทางไปหน้า Dashboard
+            window.location.href = "/public/dashboard/index"; 
         } else {
             errorElement.textContent = "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง";
         }
