@@ -46,7 +46,7 @@ function displayUserInfo(user) {
         <div class="user-details">
             <h3>${user.fname} ${user.lname}</h3>
             <p>ตำแหน่ง: ${user.position}</p>
-            <p>การศึกษา: ${user.education}</p>
+            <p>มหาวิทยาลัย: ${user.education}</p>
         </div>
     `;
 }
