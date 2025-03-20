@@ -82,3 +82,8 @@ main {
         padding: 10px 0;
     }
 }
+
+#userInfo p, #userInfo h3 {
+    margin: 0;
+    padding: 5px 0;
+}
