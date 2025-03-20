@@ -3,6 +3,9 @@
     .container {
         text-align: center;
     }
+    [data-container] {
+        text-align: center;
+    }
     
     .nav-links {
         display: none;
