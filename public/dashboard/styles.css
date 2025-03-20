@@ -41,9 +41,17 @@ button:hover {
 
 .sidebar {
     width: 200px;
+    height: 100%;
     background-color: #333;
     color: #fff;
     padding: 20px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    transition: left 0.3s ease;
+}
+.sidebar.active {
+    left: 0;
 }
 
 main {
