@@ -165,3 +165,9 @@ ul {
     margin: 0;
     padding: 5px 0;
 }
+@media (max-width: 600px) {
+    [data-flex-1] {
+        flex-direction: column;
+        align-items: center;
+    }
+}
