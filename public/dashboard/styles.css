@@ -92,6 +92,7 @@ main {
 }
 
 #userInfo {
+    width: 50%;
     display: flex;
     align-items: center;
     gap: 50px;
@@ -139,9 +140,19 @@ ul {
     width: 50%;
     background: #eee;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     padding: 15px;
     border-radius: 8px;
+}
+
+@media (max-width: 1080px) {
+    [data-flex-gap-width] {
+        flex-direction: column;
+    }
+    
+    #userInfo, [data-countdown] {
+        width: 100%;
+    }
 }
 
 [data-sub-countdown] {
