@@ -60,10 +60,12 @@ button:hover {
 
 [data-ml-240] {
     margin-left: 240px;
+    transition: margin-left 0.3s ease;
 }
 
 [data-ml] {
     margin-left: 0px;
+    transition: margin-left 0.3s ease;
 }
 
 main {
