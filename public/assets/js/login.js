@@ -24,7 +24,7 @@ async function login(event) {
 
         if (employee) {
             sessionStorage.setItem("loggedInUser", JSON.stringify(employee)); // บันทึกข้อมูลผู้ใช้
-            window.location.href = "/dashboard.html"; // เปลี่ยนเส้นทางไปหน้า Dashboard
+            window.location.href = "/public/dashboard/index"; // เปลี่ยนเส้นทางไปหน้า Dashboard
         } else {
             errorElement.textContent = "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง";
         }
