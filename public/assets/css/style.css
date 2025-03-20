@@ -21,7 +21,17 @@ h1[data-h1], h2[data-h2] {
     margin-top: 1em;
 }
 
-.container {
+[data-container-b] {
+    display: grid;
+}
+
+@media screen and (max-width: 768px) {
+    [data-container] {
+        text-align: center;
+    }
+}
+
+[data-container] {
     width: 90%;
     margin: auto;
     display: flex;
@@ -217,10 +227,10 @@ margin-top: 20px;
 background-color: #0056b3;
 }
 
-.container.a {
+[data-container-a] {
     margin-top: 84.8px;
 }
-.container.a {
+[data-container-a] {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -290,10 +300,6 @@ a {
 
 [data-dev] img {
     cursor: pointer;
-}
-
-.container.b {
-    display: grid;
 }
 
 .login {
