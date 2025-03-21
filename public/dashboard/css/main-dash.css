@@ -303,3 +303,15 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+[card][bg-success] {
+    box-shadow: 0 9px 9px -1px #17c6664d;
+}
+
+[card][bg-danger] {
+    box-shadow: 0 9px 9px -1px #ea4d4d4d;
+}
+
+[card][bg-warning] {
+    box-shadow: 0 9px 9px -1px #ffa21d4d;
+}
