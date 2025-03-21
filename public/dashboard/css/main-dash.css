@@ -78,10 +78,12 @@
 
 /* -------------------------------------------------------- */
 
-[overview] h3 {
+
+[dashboard-container] h3 {
     text-align: start;
     margin: 0;
 }
+
 
 [dashboard-container] {
     display: grid;
