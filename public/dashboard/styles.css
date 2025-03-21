@@ -250,4 +250,15 @@ li[active] {
 [home-content] h2, [info-content] h2{
     text-align: start;
     margin: 0;
+    display: flex;
+}
+
+[home-content] h2:before, [info-content] h2:before {
+    content: "";
+    width: 5px;
+    height: 41.6px;
+    position: relative;
+    background: #f16322;
+    display: flex;
+    margin-right: 10px;
 }
