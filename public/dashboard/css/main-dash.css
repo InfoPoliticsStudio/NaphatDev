@@ -104,9 +104,6 @@
 }
 
 /* Overview Section */
-[overview] {
-    grid-column: span 2; /* Makes the overview section span full width */
-}
 
 /* Stat Cards */
 [cards] {
