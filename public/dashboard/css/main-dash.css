@@ -315,3 +315,15 @@
 [card][bg-warning] {
     box-shadow: 0 9px 9px -1px #ffa21d4d;
 }
+
+[bg-success] {
+    background-color: #17c666;
+}
+
+[bg-danger] {
+    background-color: #ea4d4d;
+}
+
+[bg-warning] {
+    background-color: #ffa21d !important;
+}
