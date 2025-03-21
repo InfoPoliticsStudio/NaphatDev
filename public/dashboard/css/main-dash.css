@@ -78,6 +78,10 @@
 
 /* -------------------------------------------------------- */
 
+[overview] {
+    width: 50%;
+}
+
 [overview] h3 {
     text-align: start;
     margin: 0;
@@ -112,14 +116,18 @@
     gap: 15px;
 }
 
+[attendance] {
+    width: calc(50% - 50px);
+}
+
 @media (max-width: 660px) {
     [stat-card-a] {
-        width: calc(50% - 30px);
+        width: 100%;
     }
 }
 
 [stat-card-a] {
-    width: calc(25% - 45px);
+    width: calc(50% - 50px);
     background: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
     padding: 15px;
