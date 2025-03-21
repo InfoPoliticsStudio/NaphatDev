@@ -79,7 +79,7 @@
 /* -------------------------------------------------------- */
 
 [overview] {
-    width: 50%;
+    width:  calc(50% - 50px);
 }
 
 [overview] h3 {
@@ -124,7 +124,7 @@
 }
 
 [stat-card-a] {
-    width: calc(50% - 50px);
+    width: calc(50% - 40px);
     background: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
     padding: 15px;
