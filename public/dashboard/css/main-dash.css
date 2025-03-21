@@ -226,9 +226,9 @@
     flex-shrink: 0;
     width: 100%;
     max-width: 100%;
-    padding-right: calc(var(--bs-gutter-x)* .5);
-    padding-left: calc(var(--bs-gutter-x)* .5);
-    margin-top: var(--bs-gutter-y);
+    padding-right: calc(1.5rem * .5);
+    padding-left: calc(var1.5rem * .5);
+    margin-top: 0;
 }
 
 [card][bg-primary] {
