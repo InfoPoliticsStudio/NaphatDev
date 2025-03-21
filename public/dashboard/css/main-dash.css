@@ -212,9 +212,6 @@
     display: flex;
     flex-wrap: wrap;
     margin-top: 0;
-    margin-right: calc(-.5* 1.5rem);
-    margin-left: calc(-.5* 1.5rem);
-    width: 100%;
     justify-content: center;
 }
 
