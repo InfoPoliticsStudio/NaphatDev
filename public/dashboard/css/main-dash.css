@@ -147,3 +147,7 @@
     font-size: 12px;
     color: #888;
 }
+
+[stat-card] > div {
+    text-align: start;
+}
