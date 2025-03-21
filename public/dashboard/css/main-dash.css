@@ -77,8 +77,12 @@
 }
 
 /* -------------------------------------------------------- */
-/* Main Dashboard Container */
-.dashboard-container {
+
+[overview] h3 {
+    text-align: start;
+}
+
+[dashboard-container] {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
@@ -87,7 +91,7 @@
 }
 
 /* Dashboard Sections */
-.dashboard-section {
+[dashboard-section] {
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
     border-radius: 10px;
@@ -95,18 +99,18 @@
 }
 
 /* Overview Section */
-.overview {
+[overview] {
     grid-column: span 2; /* Makes the overview section span full width */
 }
 
 /* Stat Cards */
-.cards {
+[cards] {
     display: flex;
     justify-content: space-between;
     gap: 15px;
 }
 
-.stat-card {
+[stat-card] {
     flex: 1;
     background: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
@@ -117,27 +121,27 @@
     transition: transform 0.3s ease-in-out;
 }
 
-.stat-card:hover {
+[stat-card]:hover {
     transform: translateY(-5px);
 }
 
-.stat-card i {
+[stat-card] i {
     font-size: 24px;
     color: #4CAF50;
 }
 
-.stat-card h4 {
+[stat-card] h4 {
     margin: 0;
     font-size: 16px;
 }
 
-.stat-card p {
+[stat-card] p {
     margin: 5px 0 0;
     font-size: 14px;
     font-weight: bold;
 }
 
-.stat-card span {
+[stat-card] span {
     display: block;
     font-size: 12px;
     color: #888;
