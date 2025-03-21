@@ -198,7 +198,8 @@ aside ul li {
     margin-bottom: 20px;
 }
 
-[home-content] img {
+[home-content] img ,
+[info-content] img {
     max-width: 100%;
     height: auto;
     margin-bottom: 20px;
