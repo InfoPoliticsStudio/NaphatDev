@@ -102,29 +102,7 @@
 
     <script src="dashboard.js"></script>
     <script src="list.js"></script>
-    <script>
-        function updateStatCardWidth() {
-            const homeContent = document.querySelector("[home-content]");
-            const statCards = document.querySelectorAll("[stat-card]");
-        
-            if (homeContent && statCards.length > 0) {
-                const homeContentWidth = homeContent.offsetWidth;
-        
-                if (homeContentWidth < 660) {
-                    statCards.forEach(card => {
-                        card.style.width = "calc(50% - 30px)";
-                    });
-                } else {
-                    statCards.forEach(card => {
-                        card.style.width = ""; // รีเซ็ตค่าเมื่อเกิน 660px
-                    });
-                }
-            }
-        }
-        
-        // เรียกใช้เมื่อลดขนาดหรือโหลดหน้าใหม่
-        window.addEventListener("resize", updateStatCardWidth);
-        window.addEventListener("load", updateStatCardWidth);
-    </script>
+    <script src="js/days.js"></script>
+    <script src="js/days.js"></script>
 </body>
 </html>
