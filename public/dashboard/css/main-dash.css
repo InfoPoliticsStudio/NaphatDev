@@ -273,7 +273,8 @@
     color: #ffffff !important;
 }
 [data-h2] {
-    font-size: calc(1.3rem + .6vw);
+    text-align: center !important;
+    font-size: calc(1.3rem + .6vw) !important;
 }
 
 [data-h6] {
