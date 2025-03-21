@@ -249,4 +249,5 @@ li[active] {
 }
 [home-content] h2, [info-content] h2{
     text-align: start;
+    margin: 0;
 }
