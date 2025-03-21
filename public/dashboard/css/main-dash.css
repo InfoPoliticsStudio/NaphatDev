@@ -21,6 +21,11 @@
     cursor: pointer;
     margin-right: 10px;
     color: #333;
+    transition: color .3s ease;
+}
+
+[menu-btn]:hover {
+    color: #f16322;
 }
 
 [search-bar] {
@@ -64,4 +69,7 @@
     border-radius: 50%;
     border: 2px solid white;
     object-fit: cover;
+}
+[home-content] h2:before {
+    display: none !important;
 }
