@@ -247,3 +247,6 @@ aside ul li {
 li[active] {
     background-color: #444;
 }
+[home-content] h2, [info-content] h2{
+    text-align: start;
+}
