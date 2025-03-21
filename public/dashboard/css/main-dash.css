@@ -158,3 +158,26 @@
 [stat-card-a] > div {
     text-align: start;
 }
+ /* --------------------------------------------------------------------------------- */
+.heatmap-grid {
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    gap: 5px;
+    padding: 10px;
+}
+
+/* Heatmap Square */
+.heatmap-cell {
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    background: rgba(100, 100, 100, 0.2);
+    transition: background 0.3s;
+}
+
+/* Darker Squares for Higher Sales */
+.heatmap-cell[data-sales="1"] { background: rgba(50, 150, 250, 0.4); }
+.heatmap-cell[data-sales="2"] { background: rgba(50, 150, 250, 0.6); }
+.heatmap-cell[data-sales="3"] { background: rgba(50, 150, 250, 0.8); }
+.heatmap-cell[data-sales="4"] { background: rgba(50, 150, 250, 1); }
