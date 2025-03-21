@@ -298,6 +298,9 @@ section {
     [box-sub-document] {
         width: calc(50% - 30px);
     }
+    [header-left] h2, [search-bar] {
+        display: none;
+    }
 }
 
 /* ถ้าขนาดหน้าจอน้อยกว่า 400px */
