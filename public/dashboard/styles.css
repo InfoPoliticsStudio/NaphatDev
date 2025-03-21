@@ -298,8 +298,8 @@ section {
     [box-sub-document] {
         width: calc(50% - 30px);
     }
-    [header-left] h2, [search-bar] {
-        display: none;
+    [header-left] h2, [search-bar], [profile-tab] {
+        display: none !important;
     }
 }
 
