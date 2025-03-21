@@ -214,12 +214,14 @@
     margin-top: 0;
     margin-right: calc(-.5* 1.5rem);
     margin-left: calc(-.5* 1.5rem);
+    width: 100%;
+    justify-content: center;
 }
 
 @media (min-width: 576px) {
     [col-sm-3] {
         flex: 0 0 auto;
-        width: 25%;
+        width: 20% !important;
     }
 }
 [row] > * {
@@ -227,7 +229,7 @@
     width: 100%;
     max-width: 100%;
     padding-right: calc(1.5rem * .5);
-    padding-left: calc(var1.5rem * .5);
+    padding-left: calc(1.5rem * .5);
     margin-top: 0;
 }
 
@@ -273,6 +275,7 @@
     color: #ffffff !important;
 }
 [data-h2] {
+    display: unset !important;
     text-align: center !important;
     font-size: calc(1.3rem + .6vw) !important;
 }
