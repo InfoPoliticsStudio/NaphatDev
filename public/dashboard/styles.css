@@ -6,6 +6,7 @@ body {
     flex-direction: column;
     height: 100vh;
     background: radial-gradient(circle, white, skyblue, lightgreen);
+    overflow: hidden;
 }
 
 [data-flex] {
@@ -263,4 +264,9 @@ li[active] {
     background: #f16322;
     display: flex;
     margin-right: 10px;
+}
+
+section {
+    height: calc(100vh - 140px);
+    overflow-y: auto;
 }
