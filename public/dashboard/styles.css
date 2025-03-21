@@ -275,4 +275,17 @@ section {
 
 [box-document] {
     display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+[box-sub-document] {
+    width: calc(25% - 30px);
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #111;
+}
+[box-sub-document] img {
+    margin-bottom: 0;
 }
