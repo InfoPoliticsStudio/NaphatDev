@@ -112,6 +112,12 @@
     gap: 15px;
 }
 
+@media (max-width: 660px) {
+    [stat-card-a] {
+        width: calc(50% - 30px);
+    }
+}
+
 [stat-card-a] {
     width: calc(25% - 45px);
     background: rgba(255, 255, 255, 0.3);
