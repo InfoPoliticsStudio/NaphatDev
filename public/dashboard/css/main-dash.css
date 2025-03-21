@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 15px 20px;
-    background: rgba(255, 255, 255, 0.2); /* Semi-transparent */
+    background: rgba(255, 194, 166, 0.2); /* Semi-transparent */
     backdrop-filter: blur(10px); /* Blurry Effect */
     border-radius: 10px;
     margin-bottom: 20px;
