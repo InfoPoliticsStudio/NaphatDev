@@ -317,11 +317,11 @@
 }
 
 [bg-success] {
-    background-color: #17c666;
+    background-color: #17c666 !important;
 }
 
 [bg-danger] {
-    background-color: #ea4d4d;
+    background-color: #ea4d4d !important;
 }
 
 [bg-warning] {
