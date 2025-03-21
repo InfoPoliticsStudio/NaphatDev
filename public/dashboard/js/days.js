@@ -1,9 +1,8 @@
-
-        document.addEventListener("DOMContentLoaded", function () {
-            const salesData = Array.from({ length: 30 }, () => Math.floor(Math.random() * 35));
+document.addEventListener("DOMContentLoaded", function () {
+            const salesData = Array.from({ length: 28 }, () => Math.floor(Math.random() * 35));
             const heatmap = document.getElementById("salesHeatmap");
             
-            for (let i = 0; i < 30; i++) {
+            for (let i = 0; i < 28; i++) {
                 const cell = document.createElement("div");
                 cell.classList.add("heatmap-cell");
                 
