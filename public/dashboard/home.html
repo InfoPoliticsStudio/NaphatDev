@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/public/assets/fonts/Anuphan.css">
     <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@100..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/main-dash.css">
 </head>
 <body>
     <header>
@@ -27,22 +28,28 @@
         <main data-main-info="" data-ml="">
             <section home-content>
                 <img src="/public/assets/images/dash.png" width="100%" alt="Dashboard Image">
-                <h2>หน้าหลัก</h2>
-                <p>ยินดีต้อนรับสู่แดชบอร์ดของคุณ!</p>
-                <div stat-cards>
-                    <div stat-card>
-                        <h3>ข้อมูลรวม</h3>
-                        <p>รายละเอียดข้อมูลที่เกี่ยวข้อง</p>
-                    </div>
-                    <div stat-card>
-                        <h3>การประชุมล่าสุด</h3>
-                        <p>ข้อมูลประชุมที่สำคัญ</p>
-                    </div>
-                    <div stat-card>
-                        <h3>กิจกรรมทั้งหมด</h3>
-                        <p>ข้อมูลกิจกรรมที่ผ่านมา</p>
-                    </div>
-                </div>
+                <header dashboard-header>
+                  <div header-left>
+                      <button menu-btn><i class="fas fa-bars"></i></button>
+                      <h2>Dashboard</h2>
+                  </div>
+        
+                  <div search-bar>
+                      <input type="text" placeholder="Search...">
+                      <button><i class="fas fa-search"></i></button>
+                  </div>
+        
+                  <div header-icons>
+                      <i class="fas fa-bell"></i>
+                      <i class="fas fa-envelope"></i>
+                      <i class="fas fa-cog"></i>
+                  </div>
+        
+                  <div profile-tab id="userImg">
+                        <!-- <img> -->
+                      
+                  </div>
+              </header>
             </section>
         </main>
     </div>
