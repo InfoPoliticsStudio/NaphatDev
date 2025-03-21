@@ -251,6 +251,7 @@ li[active] {
     text-align: start;
     margin: 0;
     display: flex;
+    font-size: 2rem;
 }
 
 [home-content] h2:before, [info-content] h2:before {
