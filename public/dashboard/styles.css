@@ -291,5 +291,18 @@ section {
 }
 [box-sub-document] img {
     margin-bottom: 0;
-    max-height: 133px;
+    max-height: 120px;
+}
+/* ถ้าขนาดหน้าจอน้อยกว่า 900px */
+@media (max-width: 900px) {
+    [box-sub-document] {
+        width: calc(50% - 30px);
+    }
+}
+
+/* ถ้าขนาดหน้าจอน้อยกว่า 400px */
+@media (max-width: 400px) {
+    [box-sub-document] {
+        width: 100%;
+    }
 }
