@@ -26,6 +26,7 @@
 
 [menu-btn]:hover {
     color: #f16322;
+    background: transparent;
 }
 
 [search-bar] {
@@ -70,6 +71,7 @@
     border: 2px solid white;
     object-fit: cover;
 }
+
 [home-content] h2:before {
     display: none !important;
 }
