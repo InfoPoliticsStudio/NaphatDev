@@ -78,10 +78,6 @@
 
 /* -------------------------------------------------------- */
 
-[overview] {
-    width:  calc(50% - 50px);
-}
-
 [overview] h3 {
     text-align: start;
     margin: 0;
@@ -111,10 +107,6 @@
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 15px;
-}
-
-[attendance] {
-    width: calc(50% - 50px);
 }
 
 @media (max-width: 660px) {
