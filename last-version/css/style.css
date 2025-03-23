@@ -1,0 +1,461 @@
+@keyframes arrow 
+{
+    0% {
+        transform: translateY(-.5em);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(1em);
+        opacity: .5;
+    }
+}
+
+:root{
+    --c-blue: #01008d;
+    --c-salmon: #f26b55;
+    --c-yellow: #ffb600;
+    --c-pink: #FF7F7F;
+    --c-orange: #ff8a00;
+    --c-green: #0B9C23;
+}
+/* ลบ padding และ margin ของ body */
+body {
+    font-family: "Prompt", sans-serif!important;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* ปิดการเลื่อนโดยอัตโนมัติ */
+}
+
+body {
+    overflow-y: scroll; /* เปิดการเลื่อนในแนว y */
+}
+
+
+.top {
+    position: fixed;
+    top: 0;
+    width: -webkit-fill-available;
+    z-index: 9999;
+    font-size: 16px;
+    background: var(--c-yellow);
+    justify-content: flex-end;
+    display: none;
+    padding: 0 20px;
+}
+
+.top a {
+    padding: 0 10px;
+    color: var(--c-blue);
+}
+
+.top a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+ /* Header Styling */
+/*  
+
+
+/* สไตล์ของเมนู */
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    transition: .5s;
+}
+
+nav a:hover {
+color: var(--c-yellow); /* เปลี่ยนสีของลิงก์เมื่อชี้เมาส์ */
+text-decoration: none; /* ปิดการแสดงเส้นใต้เมื่อชี้เมาส์ */
+}
+ */
+
+
+/* สไตล์ของ Countdown Banner */
+.countdown-banner {
+    background: linear-gradient(var(--c-yellow), var(--c-orange), var(--c-salmon));
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.countdown {
+    margin: 20px 0;
+    font-size: 24px;
+    color: #d10000;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 15px;
+}
+
+.countdown div {
+    text-align: center;
+    font-size: 16px;
+    font-weight: normal;
+    color: #ffffff; /* สีที่ใกล้เคียงกับในภาพ */
+}
+
+.countdown div span {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff; /* สีที่ใกล้เคียงกับในภาพ */
+}
+
+
+/* สไตล์ของ Timeline */
+.countdown-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.countdown-group {
+    width: 45%;
+}
+
+.countdown-group:first-child {
+    text-align: right;
+}
+
+.countdown-group:last-child {
+    text-align: left;
+}
+
+.countdown-item {
+    margin-bottom: 30px;
+}
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 80px auto ; /* เพิ่ม top margin เพื่อเว้นระยะจาก header */
+}
+
+.timeline-box {
+  display: flex;
+  z-index: 90;
+  position: relative;
+  padding: 5px;
+  background: #d10000;
+  color: #fff;
+  width: 120px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: #d10000;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+.timeline-item {
+    padding: 20px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+.timeline-item.left {
+    left: 0;
+}
+
+.timeline-item.right {
+    left: 50%;
+}
+
+.timeline-item::after {
+    content: ' ';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: 62.5px;
+    background-color: white;
+    border: 4px solid #d10000;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item.right::after {
+    left: -16px;
+}
+
+.timeline-content {
+    padding: 20px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+}
+
+.timeline-content img {
+    width: 90%;
+    height: auto;
+    border-radius: 6px;
+}
+
+.timeline-content p {
+    margin: 10px 0 0 0;
+    width: 90%;
+}
+.countdown-group:first-child .countdown{
+    justify-content: flex-end;
+}
+.countdown-group:last-child .countdown{
+    justify-content: flex-start;
+}
+.specifically {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip {
+    cursor: pointer;
+    color: red;
+    margin-left: 5px;
+}
+
+.tooltip:hover::after {
+    content: "< เป็นการสอบเฉพาะผู้ที่ลงทะเบียน";
+    position: absolute;
+    left: 110%;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+/* Style for the .menu button */
+.menu {
+    position: fixed;
+    top: 100px;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background: #fff; 
+    border: 1px solid;
+    border-right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000; /* Make sure it appears above other elements */
+}
+
+/* Style for the .full-menu */
+
+.full-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-top: 60px;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    border: 1px solid;
+    border-left: 0;
+    border-top: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transition effects */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+}
+
+/* Style for showing the full-menu */
+.full-menu.show {
+    opacity: 1;
+}
+
+/* Style for the menu items */
+.full-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.full-menu ul li {
+    border-bottom: 1px solid #ddd;
+}
+
+.full-menu ul li a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #333;
+}
+
+.full-menu ul li a:hover {
+    background: #f0f0f0;
+}
+
+/* Style for the About Me Section */
+#about-me {
+    padding: 20px;
+    background: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+/*     height: calc(100vh - 470px); */
+}
+
+.about-me-content {
+    display: flex;
+    align-items: flex-start;
+    max-width: 1000px; /* Adjust as needed */
+    width: 100%;
+    margin: auto;
+}
+
+.about-me-text {
+    flex: 2;
+    padding-right: 20px; /* Space between text and image */
+}
+
+.about-me-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-me-image img {
+    width: 100%;
+    height: auto;
+    max-width: 300px; /* Adjust as needed */
+    aspect-ratio: 3 / 4; /* Maintain 3:4 aspect ratio */
+}
+
+
+/* Style for the Academic Results Table */
+#academic-results {
+    width: 100%; /* Full width */
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#academic-results th, #academic-results td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#academic-results th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+
+/* Style for the Academic Results Table */
+#academic-results-2 {
+    width: 100%; /* Full width */
+    border-collapse: collapse;
+}
+
+#academic-results-2 th, #academic-results-2 td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#academic-results-2 th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+
+/* Style for paragraphs in the About Me Section */
+#about-me p {
+    margin-bottom: 10px; /* Space between paragraphs */
+    line-height: 1.6; /* Line height for better readability */
+    text-align: justify; /* Justify text for full-width alignment */
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+@media (min-width: 730px) {
+    
+}
+@media (max-width: 730px) {
+    .about-me-image img {
+        display: none; /* Hide the image */
+    }
+
+    .about-me-content {
+        flex-direction: column; /* Stack text and image vertically */
+        align-items: center; /* Center the content */
+    }
+
+    .about-me-text {
+        padding-right: 0; /* Remove right padding */
+    }
+    #about-me {
+        height: calc(100vh - 145px);
+    }
+}
+
+@media (min-width: 855px) {
+    .about-me-image img {
+        max-width: 225px; /* Set max-width to 225px */
+    }
+}
+
+#ar2 {
+    padding: 20px;
+    background: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+green{
+    color: #0B9C23;
+}
+
+red{
+    color: #d10000;
+}
+
+none{
+    color: #ffb600;
+}
+
+
+
+.fill-white {
+    fill: #fff;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+.h-6 {
+    height: 1.5rem;
+}
+.hero-arrow {
+    animation: arrow 1s infinite;
+}
+audio, canvas, embed, iframe, img, object, svg, video {
+    display: block;
+    vertical-align: middle;
+}
