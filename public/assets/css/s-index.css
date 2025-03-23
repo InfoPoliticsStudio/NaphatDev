@@ -107,6 +107,10 @@ h1[data-h1], h2[data-h2] {
     background: #fff;
 }
 
+[data-nav-links-active] [submenu] li a {
+    padding: 0;
+}
+
 [data-nav-links-active] [data-has-submenu] > a {
     padding: 10px 0;
 }
