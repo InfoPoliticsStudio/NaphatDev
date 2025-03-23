@@ -45,6 +45,7 @@ window.addEventListener("load", checkScreenSize);
 
 // เรียกใช้เมื่อปรับขนาดหน้าจอ
 window.addEventListener("resize", checkScreenSize);
+
 document.addEventListener("DOMContentLoaded", function () {
     const submenuParents = document.querySelectorAll("[data-has-submenu]");
 
@@ -58,5 +59,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 submenu.classList.toggle("open");
             }
         });
+
+        // ป้องกันการกดใน <ul> ภายใน data-has-submenu
+        const submenuList = parent.querySelector("ul");
+        if (submenuList) {
+            submenuList.addEventListener("click", function (event) {
+                event.stopPropagation(); // ป้องกันการกระจาย event
+            });
+        }
     });
 });
