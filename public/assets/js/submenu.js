@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const submenuParents = document.querySelectorAll("[data-has-submenu]");
 
     submenuParents.forEach(parent => {
-        const submenu = parent.querySelector(".submenu");
+        const submenu = parent.querySelector("[submenu]");
 
         parent.addEventListener("click", function (event) {
             // ถ้าหน้าจอเล็กกว่า 768px ให้เปิดเมนูย่อยเมื่อคลิก
