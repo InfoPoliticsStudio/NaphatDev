@@ -20,6 +20,9 @@ header {
 
 }
 
+[active] {
+  max-height: 200px;
+}
 h1[data-h1], h2[data-h2] {
     color: #000;
     margin-top: 1em;
