@@ -46,3 +46,10 @@ window.addEventListener("load", checkScreenSize);
 // เรียกใช้เมื่อปรับขนาดหน้าจอ
 window.addEventListener("resize", checkScreenSize);
 
+document.querySelectorAll("[data-nav-links-active]").forEach(link => {
+    link.addEventListener("click", () => {
+        document.querySelectorAll("[data-has-submenu]").forEach(submenu => {
+            submenu.toggleAttribute("active");
+        });
+    });
+});
