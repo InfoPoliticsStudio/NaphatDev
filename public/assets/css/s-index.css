@@ -98,6 +98,18 @@ h1[data-h1], h2[data-h2] {
         [data-has-submenu].active [submenu] {
             max-height: 200px;
         }
+        
+[data-nav-links-active] [submenu] {
+    position: relative;
+    top: unset;
+    width: 100%;
+    margin: 0;
+    background: #fff;
+}
+
+[data-nav-links-active] [data-has-submenu] > a {
+    padding: 10px 0;
+}
 
 [data-nav-links] li a,
 [data-nav-links-active] li a {
@@ -392,9 +404,9 @@ a {
     }
     
     [data-nav-links] {
-        display: none;
+        display: none !important;
         flex-direction: column;
-        gap: 10px;
+        gap: 10px!important;
         background: #fff;
         position: absolute;
         top: 68px;
@@ -402,6 +414,7 @@ a {
         width: 100%;
         padding: 15px 0;
         height: calc(100vh - 114px);
+        margin-top: 16px !important;
     }
     
     [data-nav-links-active] li {
