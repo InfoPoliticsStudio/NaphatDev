@@ -45,11 +45,18 @@ window.addEventListener("load", checkScreenSize);
 
 // เรียกใช้เมื่อปรับขนาดหน้าจอ
 window.addEventListener("resize", checkScreenSize);
+document.addEventListener("DOMContentLoaded", function () {
+    const submenuParents = document.querySelectorAll("[data-has-submenu]");
 
-document.querySelectorAll("[data-nav-links-active]").forEach(link => {
-    link.addEventListener("click", () => {
-        document.querySelectorAll("[data-has-submenu]").forEach(submenu => {
-            submenu.toggleAttribute("active");
+    submenuParents.forEach(parent => {
+        const submenu = parent.querySelector(".submenu");
+
+        parent.addEventListener("click", function (event) {
+            // ถ้าหน้าจอเล็กกว่า 768px ให้เปิดเมนูย่อยเมื่อคลิก
+            if (window.innerWidth < 768) {
+                event.preventDefault(); // ป้องกันลิงก์ทำงาน
+                submenu.classList.toggle("open");
+            }
         });
     });
 });
