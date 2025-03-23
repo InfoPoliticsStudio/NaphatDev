@@ -126,7 +126,7 @@ h1[data-h1], h2[data-h2] {
     content: "\f0d7"; /* Unicode ของ fa-caret-down */
     font-family: "Font Awesome 6 Free";
     font-weight: 900; /* ทำให้เป็น Solid */
-    font-size: 12px;
+    font-size: 15px;
     margin-left: 8px;
     display: inline-block;
     transition: transform 0.3s ease-in-out;
