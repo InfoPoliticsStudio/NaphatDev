@@ -51,6 +51,19 @@
         .btn:hover {
             background-color: #0056b3;
         }
+        @keyframes dots {
+            0% { content: ""; }
+            33% { content: "."; }
+            66% { content: ".."; }
+            100% { content: "..."; }
+        }
+        
+        h1::after {
+            content: "";
+            display: inline-block;
+            animation: dots 1.5s steps(3, end) infinite;
+        }
+
     </style>
 </head>
 <body>
