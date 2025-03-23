@@ -10,29 +10,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script defer src="/public/assets/js/script.js"></script>
     <style>
-        .submenu {
+        [submenu] {
             list-style: none;
             position: absolute;
             top: 100%;
-            left: 0;
-            background: black;
+            background: #ff7d41;
             padding: 0;
             display: none;
             width: max-content;
         }
         
-        .submenu li {
+        [submenu] li {
             display: block;
+            padding: 0 15px;
         }
         
-        .submenu li a {
+        [submenu] li a {
             padding: 10px;
             display: block;
             color: white;
             text-decoration: none;
         }
         
-        [data-nav-links] li:hover .submenu {
+        [data-nav-links] li:hover [submenu] {
             display: block;
         }
     </style>
@@ -54,14 +54,14 @@
                     <li><a href="news.html">ข่าวสาร</a></li>
                     <li>
                         <a>โครงสร้าง</a>
-                        <ul class="submenu">
+                        <ul submenu>
                             <li><a href="team.html">ทีมงาน</a></li>
                             <li><a href="department.html">แผนก</a></li>
                         </ul>
                     </li>
                     <li>
                         <a>เกี่ยวกับ</a>
-                        <ul class="submenu">
+                        <ul submenu>
                             <li><a href="vision.html">วิสัยทัศน์</a></li>
                             <li><a href="mission.html">พันธกิจ</a></li>
                         </ul>
