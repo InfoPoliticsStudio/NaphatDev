@@ -23,13 +23,20 @@ document.addEventListener("click", function (event) {
         });
     }
 });
+
 function checkScreenSize() {
     const nav = document.querySelector("ul[data-nav-links-active]");
-    
-    // ตรวจสอบว่ามี ul[data-nav-links-active] และขนาดหน้าจอเกิน 768px หรือไม่
+    const icon = document.querySelector("[data-icon='1']");
+
+    // ถ้าหน้าจอใหญ่กว่า 768px ให้เปลี่ยน data-nav-links-active -> data-nav-links
     if (nav && window.innerWidth > 768) {
         nav.setAttribute("data-nav-links", ""); // เปลี่ยนเป็น data-nav-links
         nav.removeAttribute("data-nav-links-active"); // ลบ data-nav-links-active
+    }
+
+    // ถ้าพบ data-icon="1" และหน้าจอใหญ่กว่า 768px ให้เปลี่ยนเป็น data-icon="0"
+    if (icon && window.innerWidth > 768) {
+        icon.setAttribute("data-icon", "0");
     }
 }
 
@@ -38,3 +45,4 @@ window.addEventListener("load", checkScreenSize);
 
 // เรียกใช้เมื่อปรับขนาดหน้าจอ
 window.addEventListener("resize", checkScreenSize);
+
