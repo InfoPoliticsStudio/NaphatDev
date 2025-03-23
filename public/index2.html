@@ -30,7 +30,7 @@
         }
         
         /* เมนูย่อยซ่อนค่าเริ่มต้น และมี transition */
-        .submenu {
+        [submenu] {
             list-style: none;
             position: absolute;
             top: 100%;
@@ -43,11 +43,11 @@
         }
         
         /* ปรับปรุงให้เมนูมี padding */
-        .submenu li {
+        [submenu] li {
             display: block;
         }
         
-        .submenu li a {
+        [submenu] li a {
             padding: 10px;
             display: block;
             color: white;
@@ -55,12 +55,12 @@
         }
         
         /* แสดงเมนูย่อยเมื่อ hover */
-        [data-has-submenu]:hover .submenu {
+        [data-has-submenu]:hover [submenu] {
             max-height: 200px; /* ปรับความสูงตามจำนวนเมนู */
         }
         
         /* แสดงเมนูเมื่อกด */
-        [data-has-submenu].active .submenu {
+        [data-has-submenu].active [submenu] {
             max-height: 200px;
         }
     </style>
@@ -80,16 +80,16 @@
                 <ul data-nav-links="">
                     <li><a href="index.html">หน้าแรก</a></li>
                     <li><a href="news.html">ข่าวสาร</a></li>
-                    <li>
+                    <li data-has-submenu>
                         <a>โครงสร้าง</a>
-                        <ul data-has-submenu>
+                        <ul submenu>
                             <li><a href="team.html">ทีมงาน</a></li>
                             <li><a href="department.html">แผนก</a></li>
                         </ul>
                     </li>
-                    <li>
+                    <li data-has-submenu>
                         <a>เกี่ยวกับ</a>
-                        <ul data-has-submenu>
+                        <ul submenu>
                             <li><a href="vision.html">วิสัยทัศน์</a></li>
                             <li><a href="mission.html">พันธกิจ</a></li>
                         </ul>
