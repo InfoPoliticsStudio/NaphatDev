@@ -341,11 +341,12 @@ background-color: #0056b3;
     flex-direction: column;
 }
 [data-sub-news="0"] {
-    display: flex;
+    display: grid;
     align-items: center;
     justify-content: space-between; 
     text-align: left;
     width: 90% ; 
+    color: #000;
 }
 [data-sub-news], [data-sub-dev] {
     display: flex;
