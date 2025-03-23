@@ -23,3 +23,18 @@ document.addEventListener("click", function (event) {
         });
     }
 });
+function checkScreenSize() {
+    const nav = document.querySelector("ul[data-nav-links-active]");
+    
+    // ตรวจสอบว่ามี ul[data-nav-links-active] และขนาดหน้าจอเกิน 768px หรือไม่
+    if (nav && window.innerWidth > 768) {
+        nav.setAttribute("data-nav-links", ""); // เปลี่ยนเป็น data-nav-links
+        nav.removeAttribute("data-nav-links-active"); // ลบ data-nav-links-active
+    }
+}
+
+// เรียกใช้เมื่อโหลดหน้า
+window.addEventListener("load", checkScreenSize);
+
+// เรียกใช้เมื่อปรับขนาดหน้าจอ
+window.addEventListener("resize", checkScreenSize);
