@@ -1,0 +1,646 @@
+		.h5 {
+		  font-size: 2.6em !important;
+		}
+		.h8 {
+		  font-size: 1.3em !important;
+		}
+              @media (min-width: 1170px) {
+                  .cont, .cont-pd {
+                      max-width: 1170px!important;
+                      padding-left: 30px!important;
+                      padding-right: 30px!important;
+                  }
+              }
+              @media (min-width: 992px) {
+                  .cont, .cont-pd {
+                      max-width: 1200px!important;
+                      padding-left: 30px!important;
+                      padding-right: 30px!important;
+                  }
+              }
+              .cont-pd, cont-pd {
+                  max-width: 1200px;
+                  min-width: 320px;
+                  display: block;
+                  position: relative;
+                  margin: auto;
+                  padding: 0 16px;
+              }
+    .n-box {
+        max-width: 700px;
+        background-color: #fff;
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, .15);
+        padding: 20px;
+        border-radius: 3px;
+        margin: 30px 2.75rem 30px 2.75rem;
+    }
+    
+    .n-box .title {
+        background-color: var(--c-blue);
+        color: #fff;
+        padding: 12px var(--n-box);
+        margin: calc(var(--n-box)* -1) calc(var(--n-box)* -1) var(--n-box);
+        position: relative;
+        border-radius: 3px 3px 0 0;
+    }
+    
+    .n-box .title>a {
+        color: #fff;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        border: 1px solid #fff;
+        padding: 4px 6px 3px;
+        right: 12px;
+        font-size: 16px;
+        border-radius: 3px;
+        font-weight: normal;
+    }
+    
+    .n-box .title>a:hover {
+        background: var(--c-green);
+    }
+    ._border_0 {
+        border: none !important;
+    }
+    
+    
+    a {
+        color: #1a477f;
+        align-items: center;
+        gap: 6px;
+    }
+    
+    a {
+        text-decoration: none;
+        transition: .3s;
+    }
+    
+    .n-box table {
+        margin-bottom: 0;
+        line-height: 1.5;
+    }
+    table {
+        margin: 0 -6px var(--s-space);
+        border-collapse: collapse;
+    	width: 100%;
+    }
+    
+    .align-middle {
+        vertical-align: middle;
+    }
+    th, td {
+        padding: 3px 6px;
+    }
+    
+    ._heading {
+        font-weight: 500;
+        font-size: 1.125em;
+    }
+    
+    .img-rounded {
+        border-radius: 5px;
+    }
+    img, video {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .list-none {
+        list-style-type: none;
+        padding-left: 0;
+    }
+    .m-0 {
+        margin: 0 !important;
+    }
+    
+    
+    
+    
+    @media (min-width: 768px) {
+        :root {
+            --n-space: 20px;
+            --n-box: 20px;
+            --n-gap: 20px;
+        }
+    }
+    :root {
+        --n-space: 16px;
+        --n-gap: 16px;
+        --n-box: 16px;
+        --c-blue: #01008d;
+        --c-salmon: #f26b55;
+        --c-yellow: #ffb600;
+        --c-pink: #FF7F7F;
+        --c-orange: #ff8a00;
+        --c-green: #0B9C23;
+    }
+        
+    .s-box {
+        width: 20%;
+        background-color: #fff;
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, .15);
+        padding: 20px;
+        border-radius: 3px;
+        margin: 30px 2.75rem 30px 2.75rem;
+    }
+    
+    .s-box .title {
+        background-color: var(--c-yellow);
+        color: #fff;
+        padding: 12px var(--n-box);
+        margin: calc(var(--n-box)* -1) calc(var(--n-box)* -1) var(--n-box);
+        position: relative;
+        border-radius: 3px 3px 0 0;
+    }
+.n-section {
+    text-align: center;
+    padding: 50px;
+    background-color: #ffffff;
+}
+
+.main-heading {
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--c-blue);
+    margin:0;
+}
+
+.sub-heading {
+    font-size: 1.5em;
+    color: var(--c-orange);
+    margin-top: 10px;
+    text-indent: 0;
+}
+	    
+.n-body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    padding: 0 50px 50px 50px;
+    background-color: #ffffff;
+    max-width: 1200px;
+    width: 100%;
+}
+
+@media (max-width: 920px) {
+    .profile-section {
+        display: inline-grid;
+        gap: 20px;
+        align-items: center;
+    }
+}
+
+@media (max-width: 640px) {
+    .image-content {
+        display: none !important;
+    }
+}
+
+.text-content {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.title {
+    font-size: 2em;
+    font-weight: bold;
+    color: #000000;
+    margin: 0;
+}
+
+.description {
+    font-size: 1em;
+    color: #6c757d;
+    margin-top: 10px;
+}
+
+.image-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.image-content img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 8px;
+}
+	    
+
+table.content-s {
+    margin: 0 auto;
+    padding: 20px;
+    font-weight: 500;
+    width: 540px;
+}
+	    
+.content-s tbody {
+    width: 50%;
+}
+	    /* Styles for screens 1130px wide or less */
+@media (max-width: 1130px) {
+    .content {
+        display: grid!important;
+        justify-content: center;
+    }
+
+    p {
+        text-indent: 0 !important;
+    }
+
+    .info {
+        margin-top: 10px;
+    }
+
+    x {
+        justify-content: center;
+        display: flex;
+    }
+}
+	.logo{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+	}    
+    .nav-menu.active {
+        margin-top: 0!important;
+    }
+		
+@media (max-width: 768px) {
+    .nav-menu {
+        top: 73.2px !important;
+    }
+}
+
+.spec {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.spec img {
+    width: calc(25% - 10px);
+}
+img{
+    user-select: none;
+}
+  @media (max-width: 600px) {
+    .spec img {
+      width: calc(50% - 10px);
+    }
+  }
+
+  @media (max-width: 376px) {
+    .spec {
+      gap: 0px; /* ไม่มีระยะห่างระหว่างรูป */
+    }
+
+    .spec img {
+      width: 100%; /* รูปภาพเต็มความกว้างของบรรทัด */
+    }
+  }
+</style>
+
+.news {
+    margin-bottom: 1.5rem !important;
+    margin-top: 1.5rem !important;
+    -webkit-box-align: center !important;
+    -ms-flex-align: center !important;
+    align-items: center !important;
+    -webkit-box-pack: justify !important;
+    -ms-flex-pack: justify !important;
+    justify-content: space-between !important;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+}
+
+.news h2{
+    line-height: 1.4;
+    font-size: 2.25rem;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    margin-top: 0;
+    color: unset;
+    background: unset;
+    padding: unset;
+}
+
+.news a{
+    box-shadow: none;
+    text-decoration: none;
+    color: var(--c-yellow);
+}
+
+.row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+@media (min-width: 992px) {
+    .col-lg-4 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 33.33333%;
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
+    }
+}
+@media (min-width: 768px) {
+    .col-md-6 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+.col-12 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.col, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col-auto, .col-lg, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-auto, .col-md, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md-auto, .col-sm, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-auto {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+@media (max-width: 600px) {
+  .col-4 {
+    flex-basis: 50% !important; /* แก้ไข: เพิ่ม ':' */
+    max-width: 50% !important;  /* แก้ไข: เพิ่ม ':' */
+  }
+}
+
+@media (max-width: 376px) {
+  .col-4 {
+    flex-basis: 100% !important; /* แก้ไข: เพิ่ม ':' */
+    max-width: 100% !important;  /* แก้ไข: เพิ่ม ':' */
+  }
+}
+
+    
+	p {
+	    text-indent: 2.5em;
+	}
+        .body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+	    margin: 0 0 30px 0;
+	    padding-top: 0;
+        }
+    
+        .outer-container {
+            display: flex;
+            gap: 20px;
+	    width: 1200px;
+	    max-width: 1200px;
+    	    padding: 0 50px 50px 50px;
+        }
+    
+        .t-container {
+            display: grid;
+            gap: 20px;
+	    width: 540px;
+	    margin: 0 auto;
+        }
+    
+        .box {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, .15);
+            width: auto;
+        }
+    
+        h2 {
+            color: #fff;
+            background: #01008d;
+            margin: 0;
+            padding: 12px 20px;
+        }
+    
+        .content {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            font-weight: 500;
+            font-size: 1.125em;
+            line-height: 1.5;
+        }
+    
+        .body img {
+            width: 120px;
+            height: auto;
+            border-radius: 8px;
+        }
+    
+        .info p {
+            color: #555;
+            margin: 0;
+        }
+    
+        .info b {
+            color: #333;
+        }
+    
+        </style>
+        <style> 
+    
+	p {
+	    text-indent: 2.5em;
+	}
+        .body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+	    margin: 0 0 30px 0;
+	    padding-top: 0;
+        }
+    
+        .outer-container {
+            display: flex;
+            gap: 20px;
+	    width: 1200px;
+	    max-width: 1200px;
+    	    padding: 0 50px 50px 50px;
+        }
+    
+    
+        .box {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, .15);
+            width: auto;
+        }
+    
+        h2 {
+            color: #fff;
+            background: #01008d;
+            margin: 0;
+            padding: 12px 20px;
+        }
+    
+        .content {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            font-weight: 500;
+            font-size: 1.125em;
+            line-height: 1.5;
+        }
+    
+        .body img {
+            width: 120px;
+            height: auto;
+            border-radius: 8px;
+        }
+    
+        .info p {
+            color: #555;
+            margin: 0;
+        }
+    
+        .info b {
+            color: #333;
+        }
+
+/* -------------------------------   เริ่มภาพสไลด์   --------------------------------- */
+
+        /* สไตล์ของภาพสไลด์ */
+        .countdown-banner {
+            position: relative;
+            width: 100%;
+            max-width: auto;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .slide {
+            height: 100vh;
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100vh;
+            display: block;
+            object-fit: cover;
+        }
+        
+        /* สไตล์ของจุด (Indicators) */
+        .dots {
+            text-align: center;
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+        }
+
+        .dot {
+            height: 10px;
+            width: 10px;
+            margin: 0 5px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background-color: #ff0000;
+        }
+
+/* -------------------------------   จบภาพสไลด์   --------------------------------- */
+
+/* -------------------------------   START LOADER   --------------------------------- */
+        .css-1ltj605 {
+            height: 100vh;
+            display: flex;
+                  position: fixed;
+                  inset: 0px;
+                  background: rgb(255, 255, 255);
+                  z-index: 99999;
+                  -webkit-box-align: center;
+                  align-items: center;
+                  -webkit-box-pack: center;
+                  justify-content: center;
+                  transition: opacity 0.75s, visibility 0.75s;
+              }
+        .css-1ltj605-hidden{
+            opacity: 0;
+            visibility: hidden;
+        }
+              
+        .css-nvmvi3 *, .css-nvmvi3 *::before, .css-nvmvi3 *::after {
+                  box-sizing: inherit;
+              }
+              .css-z01bqi {
+                  display: inline-block;
+                  color: #800;
+                  animation: 1.4s linear 0s infinite normal none running animation-61bdi0;
+              }
+              .css-nvmvi3 *, .css-nvmvi3 *::before, .css-nvmvi3 *::after {
+                  box-sizing: inherit;
+              }
+              @keyframes animation-61bdi0{
+              0% {
+                  transform: rotate(0deg);
+              }
+              100% {
+                  transform: rotate(360deg);
+              }
+                }
+              .css-13o7eu2 {
+                  display: block;
+              }
+              .css-nvmvi3 *, .css-nvmvi3 *::before, .css-nvmvi3 *::after {
+                  box-sizing: inherit;
+              }
+              .css-14891ef {
+                  stroke: currentcolor;
+                  stroke-dasharray: 80px, 200px;
+                  stroke-dashoffset: 0;
+                  animation: 1.4s ease-in-out 0s infinite normal none running animation-1p2h4ri;
+              }
+              
+              .css-nvmvi3 *, .css-nvmvi3 *::before, .css-nvmvi3 *::after {
+                  box-sizing: inherit;
+              }
+              
+              @keyframes nimation-1p2h4ri{
+              0% {
+                  stroke-dasharray: 1px, 200px;
+                  stroke-dashoffset: 0;
+              }
+              50% {
+                  stroke-dasharray: 100px, 200px;
+                  stroke-dashoffset: -15px;
+              }
+              100% {
+                  stroke-dasharray: 100px, 200px;
+                  stroke-dashoffset: -125px;
+              }
+              }
+/* -------------------------------   END LOADER   --------------------------------- */
