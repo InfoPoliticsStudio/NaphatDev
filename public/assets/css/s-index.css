@@ -340,8 +340,14 @@ background-color: #0056b3;
     display: flex;
     flex-direction: column;
 }
-
-[data-sub-news], [data-sub-news="0"], [data-sub-dev] {
+[data-sub-news="0"] {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    text-align: left;
+    width: 90% ; 
+}
+[data-sub-news], [data-sub-dev] {
     display: flex;
     align-items: center;
     justify-content: space-between; 
