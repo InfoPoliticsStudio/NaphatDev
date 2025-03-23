@@ -425,6 +425,10 @@ a {
     [data-nav-links-active] li {
         padding: 10px 0;
     }
+  
+    [data-nav-links-active] > li {
+        border-bottom: 1px solid #555;
+    }
     
     [data-nav-links-active] li a {
         color: #f16322;
