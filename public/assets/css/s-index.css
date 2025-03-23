@@ -93,14 +93,28 @@ h1[data-h1], h2[data-h2] {
             color: white;
             text-decoration: none;
         }
+
+        @media (min-width: 768px) {
+            [data-has-submenu]:hover [submenu] {
+                max-height: 200px;
+                transition: max-height 0.3s ease-in-out;
+            }
+        }
         
-        [data-has-submenu]:hover [submenu] {
-            max-height: 200px;
+        @media (max-width: 767px) {
+            [data-has-submenu]:hover [submenu] {
+                max-height: 0 !important;
+            }
         }
         
         [data-has-submenu].active [submenu] {
             max-height: 200px;
         }
+
+        .submenu.open {
+            max-height: 200px;
+        }
+
 [data-has-submenu] > a{
     cursor: pointer;
 }
