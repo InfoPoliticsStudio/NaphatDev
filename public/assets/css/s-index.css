@@ -432,6 +432,10 @@ a {
 }
 /* Responsive สำหรับหน้าจอเล็ก */
 @media screen and (max-width: 768px) {
+    [data-has-submenu]:hover > a::after{
+        transform: none;
+    }
+  
     .container {
         text-align: center;
     }
