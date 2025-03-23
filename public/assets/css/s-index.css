@@ -94,7 +94,7 @@ h1[data-h1], h2[data-h2] {
             text-decoration: none;
         }
         
-        [data-nav-links] [data-has-submenu]:hover [submenu] {
+        [data-has-submenu]:hover [submenu] {
             max-height: 200px;
         }
         
