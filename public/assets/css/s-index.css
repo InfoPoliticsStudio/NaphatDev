@@ -98,7 +98,10 @@ h1[data-h1], h2[data-h2] {
         [data-has-submenu].active [submenu] {
             max-height: 200px;
         }
-        
+[data-has-submenu] > a{
+    cursor: pointer;
+}
+
 [data-nav-links-active] [submenu] {
     position: relative;
     top: unset;
