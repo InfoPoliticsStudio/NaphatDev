@@ -341,7 +341,7 @@ background-color: #0056b3;
     flex-direction: column;
 }
 [data-sub-news="0"] {
-    display: grid;
+    display: grid !important;
     align-items: center;
     justify-content: space-between; 
     text-align: left;
