@@ -344,7 +344,8 @@ background-color: #0056b3;
 [data-sub-news], [data-sub-news="0"], [data-sub-dev] {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; 
+    text-align: left;
     width: 90% !important; /* ค่าพื้นฐาน */
 }
 
