@@ -85,3 +85,7 @@ footer p {
     color: #666;
     margin-top: 15px;
 }
+
+input {
+    font-family: inherit;
+}
