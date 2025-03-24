@@ -1,0 +1,123 @@
+/* Footer Styles */
+footer {
+    background: linear-gradient( #d10000, #5c0000);
+    color: #fff;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+}
+
+footer .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+footer h3, footer h4 {
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+footer p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: #f1a01a;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer .categories ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer .categories ul li {
+    margin-bottom: 10px;
+}
+
+footer .categories ul li a {
+    color: #aaa;
+    text-decoration: none;
+}
+
+footer .categories ul li a:hover {
+    color: #f1a01a;
+}
+
+footer .tag-cloud span {
+    display: inline-block;
+    background: #333;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 0.9em;
+}
+
+footer .subscribe {
+    margin-top: 20px;
+}
+
+footer .subscribe form {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+footer .subscribe input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    font-size: 0.9em;
+}
+
+footer .subscribe button {
+    padding: 10px 15px;
+    background: #f1a01a;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+}
+
+footer .subscribe button:hover {
+    background: #e08d0c;
+}
+
+footer .social-links a {
+    margin: 0 10px;
+    color: #fff;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+footer .social-links a:hover {
+    color: #f1a01a;
+}
+
+footer .bottom-section {
+    text-align: center;
+    border-top: 1px solid #444;
+    margin-top: 20px;
+    padding-top: 20px;
+    color: #666;
+}
+
+footer .bottom-section a {
+    color: #666;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer .bottom-section a:hover {
+    color: #aaa;
+}
