@@ -9,22 +9,27 @@
 </head>
 <body>
     <div class="registration-container">
-        <h1>สภา <span class="highlight">วิศวกร</span></h1>
-        <h2>ลงทะเบียนเข้าร่วมกิจกรรม สภาวิศวกร</h2>
-        <p class="event-details">การประชุมใหญ่สามัญสภาวิศวกร ประจำปี 2568<br>โดย สภาวิศวกร</p>
-        <p class="date-time"><strong>วันที่ 18 กุมภาพันธ์ 2568 เวลา 09.00 น.</strong><br>ปิดรับลงทะเบียนวันที่ 17 กุมภาพันธ์ 2568</p>
-        
+        <header>
+            <h1>สภาวิศวกร</h1>
+            <p>ลงทะเบียนเข้าร่วมกิจกรรม</p>
+        </header>
+        <section class="registration-details">
+            <h2>การประชุมใหญ่สามัญสภาวิศวกร ประจำปี 2568</h2>
+            <p><strong>วันที่:</strong> 18 กุมภาพันธ์ 2568 เวลา 09.00 น.</p>
+            <p><strong>ปิดรับลงทะเบียน:</strong> 17 กุมภาพันธ์ 2568</p>
+        </section>
         <form class="registration-form">
-            <label for="citizen-id">เลขบัตรประจำตัวประชาชน</label>
-            <input type="text" id="citizen-id" placeholder="1-2345-67890-12-3" required>
+            <label for="id-number">เลขบัตรประชาชน</label>
+            <input type="text" id="id-number" placeholder="1-2345-67890-12-3">
             
-            <label for="name">ชื่อ-นามสกุล / ที่ทำงาน ของท่าน</label>
-            <input type="text" id="name" placeholder="กรุณากรอกข้อมูล" required>
+            <label for="name">ชื่อ-นามสกุล/ที่ทำงาน</label>
+            <input type="text" id="name" placeholder="กรุณากรอก">
             
-            <button type="submit" class="register-btn">ลงทะเบียนเข้าร่วมกิจกรรม</button>
+            <button type="submit">ลงทะเบียนเข้าร่วมกิจกรรม</button>
         </form>
-        
-        <p class="note">วัตถุประสงค์หลักของการลงทะเบียนคือรับหน่วยกิต CPD ที่เกี่ยวข้องกับกิจกรรม</p>
+        <footer>
+            <p>วัตถุประสงค์เพื่อลงทะเบียนรับหน่วย CPD ที่เกี่ยวข้องกับกิจกรรม</p>
+        </footer>
     </div>
 </body>
 </html>
