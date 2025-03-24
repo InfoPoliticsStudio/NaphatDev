@@ -66,7 +66,7 @@ header p {
 
 button {
     margin-top: 20px;
-    background: #d00;
+    background: #f16322;
     color: #fff;
     padding: 12px;
     font-size: 16px;
@@ -76,7 +76,7 @@ button {
 }
 
 button:hover {
-    background: #a00;
+    background: #ff5000;
 }
 
 footer p {
