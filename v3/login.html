@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>เข้าสู่ระบบ NaphatDev</title>
+  <link rel="stylesheet" href="https://slw-system.pages.dev/assets/css/font-face.css">
+  <style>
+    * {
+        box-sizing: border-box;
+    }
+    button, input {
+      font-family: CPN, sans-serif;
+      outline: none;
+    }
+    body {
+      font-family: CPN, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(#0072c6, #003f6b);
+      color: white;
+    }
+    .login-box {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      text-align: center;
+      backdrop-filter: blur(8px);
+    }
+    input {
+      padding: 0.5rem;
+      width: 100%;
+      margin: 1rem 0;
+      border-radius: 0.5rem;
+      border: none;
+    }
+    button {
+      padding: 0.5rem 1.5rem;
+      background: #fff;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .error {
+      color: #ff8080;
+    }
+    .frac {font-size: 20px;}
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2>เข้าสู่ระบบ Canva แบบลัด</h2>
+    <p>จงใส่รหัสผ่านให้ถูกต้อง<br></p>
+    <p class="frac">
+    \( \displaystyle \lim_{x \to 2} \frac{\sqrt{x^2 + 21} - 5}{x^2 - 4} \)
+    </p>
+
+    <form id="login-form">
+      <input type="password" id="password" placeholder="กรอกรหัสผ่าน">
+      <button type="submit">เข้าสู่ระบบ</button>
+      <p class="error" id="error-msg"></p>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('login-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const input = document.getElementById('password').value.trim();
+      const correctPassword = '0.1';
+      if (input === correctPassword) {
+        window.location.href = 'https://www.canva.com/design/DAGgLxX1WDI/ULr671OEqRnsj_UR1NAPAQ/edit?utm_content=DAGgLxX1WDI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton'; // ไปหน้า portfolio
+      } else {
+        document.getElementById('error-msg').textContent = 'รหัสผ่านไม่ถูกต้อง ลองอีกครั้ง';
+      }
+    });
+  </script>
+  <!-- MathJax สำหรับแสดงสูตร -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+</html>
