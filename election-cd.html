@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>นับถอยหลังปิดหีบเลือกตั้ง</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ตั้งค่าพื้นฐาน */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Prompt', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* ความสูงเต็มหน้าจอ */
+            color: #333;
+        }
+
+        /* กล่องคอนเทนเนอร์ตรงกลาง */
+        .container {
+            background-color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+            border-top: 8px solid #61CB30; /* สีหลักที่กำหนด */
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #444;
+        }
+
+        /* ส่วนแสดงเวลานับถอยหลัง */
+        .timer-wrapper {
+            background-color: #f9f9f9;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            border: 1px solid #eee;
+        }
+
+        #countdown {
+            font-size: 5rem; /* ขนาดตัวเลขใหญ่ */
+            font-weight: 600;
+            color: #61CB30; /* สีหลักที่กำหนด */
+            line-height: 1;
+            font-variant-numeric: tabular-nums; /* ป้องกันตัวเลขขยับไปมา */
+        }
+
+        .labels {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 10px;
+        }
+
+        .info-text {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .status {
+            margin-top: 1rem;
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            background-color: rgba(97, 203, 48, 0.15);
+            color: #61CB30;
+            font-weight: 600;
+        }
+
+        /* ปรับขนาดสำหรับหน้าจอมือถือ */
+        @media (max-width: 480px) {
+            #countdown {
+                font-size: 3.5rem;
+            }
+            .container {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>นับถอยหลังปิดหีบเลือกตั้ง ส.ส.</h1>
+        <p class="info-text">จะปิดหีบเวลา 18:30 น.</p>
+
+        <div class="timer-wrapper">
+            <div id="countdown">--:--:--</div>
+            <div class="status" id="status-text">กำลังเปิดรับลงคะแนน</div>
+        </div>
+
+        <p style="font-size: 0.85rem; color: #999;">กรุณาตรวจสอบเวลาอย่างเป็นทางการอีกครั้ง</p>
+    </div>
+
+    <script>
+        function updateCountdown() {
+            const now = new Date();
+            const target = new Date();
+            
+            // ตั้งเวลาเป้าหมายเป็น วันนี้ เวลา 18:30:00
+            target.setHours(18, 30, 0, 0);
+
+            // คำนวณความต่างของเวลา (หน่วยมิลลิวินาที)
+            let diff = target - now;
+
+            // อ้างอิง Element
+            const countdownEl = document.getElementById('countdown');
+            const statusEl = document.getElementById('status-text');
+
+            // กรณีเวลาปัจจุบันเลย 18:30 น. ไปแล้ว (หมดเวลา)
+            if (diff <= 0) {
+                countdownEl.innerHTML = "00:00:00";
+                countdownEl.style.color = "#d63031"; // เปลี่ยนเป็นสีแดงเมื่อหมดเวลา
+                statusEl.innerHTML = "ปิดหีบเลือกตั้งแล้ว";
+                statusEl.style.backgroundColor = "rgba(214, 48, 49, 0.1)";
+                statusEl.style.color = "#d63031";
+                return; 
+            }
+
+            // คำนวณ ชั่วโมง นาที วินาที
+            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+            // จัดรูปแบบให้มีเลข 0 นำหน้าถ้าน้อยกว่า 10 (เช่น 09, 05)
+            const hStr = h < 10 ? "0" + h : h;
+            const mStr = m < 10 ? "0" + m : m;
+            const sStr = s < 10 ? "0" + s : s;
+
+            // แสดงผล
+            countdownEl.innerHTML = `${hStr}:${mStr}:${sStr}`;
+        }
+
+        // เรียกฟังก์ชันทุกๆ 1 วินาที (1000 ms)
+        setInterval(updateCountdown, 1000);
+        
+        // เรียกครั้งแรกทันทีเพื่อไม่ให้มีดีเลย์ตอนโหลดหน้าเว็บ
+        updateCountdown();
+    </script>
+</body>
+</html>
